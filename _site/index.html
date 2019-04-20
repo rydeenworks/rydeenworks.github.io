@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>RydeenWorks Dev Note</title>
+  <meta name="description" content="RydeenWorks is my development site.
+">
+  
+  <meta name="author" content="rydeenworks">
+  <meta name="copyright" content="&copy; rydeenworks 2019">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/zenburn.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="alternate" type="application/rss+xml" title="RydeenWorks Dev Note" href="http://localhost:4000/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="RydeenWorks Dev Note">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        
+          
+          <li class="nav-link"><a href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <li class="nav-link"><a href="/posts/">Posts</a>
+          
+        
+          
+          <li class="nav-link"><a href="/projects/">Projects</a>
+          
+        
+          
+        
+          
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="home">
+
+<div class="site-header-container has-cover" style="background-image: url(/assets/header_image.jpg);">
+  <div class="scrim has-cover">
+    <header class="site-header">
+      <h1 class="title">RydeenWorks Dev Note</h1>
+      
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+<ul class="post-list">
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/2019/04/01/mybookreading-finished">図書館ほんだなアプリ開発の振り返り</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <!-- <p>総括としては次にアプリを作るときは開発とリリースのサイクルを早くすることを最優先にする。 収支(2017/11月-2019/03月)について 収益 2000円未満 費用 約2800円(25$) Google開発者登録費用 合計 -1000円程度 課題と対策について 課題１）開発速度が上がらない 「図書館ほんだな」では、図書館に借りたい本が無い場合ユーザはAmazonから本を購入するという仮説を立てた。 この仮説は外れていたが収益は上がっていたので、ユーザビリティ向上してユーザ数を増やそうと考えた。 具体的には以下の対応を予定した。 機種変更対応(ほんだなデータのGoogleDriveバックアップ) Android8対応 しかし不慣れな Xamarin/C# を採用していたためGoogleDriveの挙動ではまってしまった。 多少の妥協をしてバックアップ機能は実現したが、今度はAndroid8対応ではパーミッション処理が解決できなかった。 パーミッションが解決しないとGooglePlayで公開できないため、致命的な問題だった。 課題２）Amazon PAAPIへの依存 APIの規約が変わって売り上げ実績の無いアカウントではAPIによる書籍検索ができなくなった。 問題の回避策として、Webブラウザで閲覧中の書籍をほんだなに登録するアイデアを思いついたが 前述のGooglePlayで公開できない問題が解決してなかったため対応できなかった。 外部サービスに依存した機能設計をすることのリスクを思い知った。 課題３）技術のドメインが広すぎた 勉強になると思って広く手を出したが、色々な技術に依存するとリスクが高まることを知った。 iOS/Android両対応(Xamarin/C#/Visual Studio for Mac) 結局iOS版はリリースしなかったので、Java/AndroidStudioで開発すればよかった。 Realm Database(NoSQL) SQLiteで十分だった。 GoogleAnalytics 入れて見たもののあまり使いこなせなかった。 そもそもユーザ数が10人程度なので統計取っても無駄な気がする。 ユーザからの意見・質問フォームをおいた方が具体的な要望がわかった。 対策1）開発速度 クラウドによるサービス提供をメインとする。 スマホのネイティブアプリでないと機能やユーザビリティが実現できない場合は手を出さない。またはクラウドでコンセプト確認できる所を先に作るなど、進め方を考える。GooglePlayを通してのリリースもリスクを考える。 対策２) 外部サービス依存 リスクを許容する。 クラウドによるサービス提供は、解決策が見つかれば改修してリリースする事は容易なため。 対策３）技術は枯れたものを使う 新しい技術の習得は目的では無い。...</p> -->
+      <p><p>総括としては次にアプリを作るときは開発とリリースのサイクルを早くすることを最優先にする。</p>
+
+</p>
+    </section>
+    <section class="post-meta">
+      <div class="post-date">April 1, 2019</div>
+      <div class="post-categories">
+      in 
+        
+        <a href="/posts/#dev">Dev</a>
+        
+      
+      </div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/2019/03/23/orgmode-gtd-visioning-system">orgmodeとGTDによるVisioningシステム</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <!-- <p>システム構成 説明 紙のメモ帳(memopad)を持ち歩いて思いついた事をすぐ書きとめます OrgzlyはDropBox上のorgファイルと同期するアプリです(Androidではorgmodeの閲覧だけです) ブログ記事→Jekyllの_postsフォルダ、orgmode→orgフォルダ Macの方がストレスがないと思いますが、WindowsでもOK orgmodeファイル構成 メイン ファイル名 内容 goal.org GTDにおける望んでいる結果。将来の夢やビジョンなど実現したい事を書く。 todo.org GTDにおける次の具体的行動。TODO/MAYBE/WAIT/PROJは全部ここに入れる。 logbook.org アイデアや感情などを記録する。私は紙のメモ帳を使うのでほとんど使わない。 plan.org 日単位の記録。私はほとんど使わない。使い方は検討中。 journal.org 週単位の記録、および週次レビューの振り返りを記録する。 review.org 週次レビューチェックリスト。 proj_xxxx.org GTDにおけるプロジェクト。プロジェクト単位にファイルを作る。 doc_xxxx.org GTDにおける資料。ファイルの分け方は任意。 Emacs設定関連 ファイル名 内容 org-global.el orgmodeの設定 template-review.org 週次レビューチェックリストのテンプレート todo.org_archive 完了したタスクをアーカイブするファイル。Emacsが自動的に作る。 使い方 内容整理中。 感謝 https://orgmode.org Emacsとorgmodeはとても素晴らしいツールです。 Orgmode E07S02: Presenting my systema この動画に出会わなければ本システムは構築できなかったと思います。 The power of orgmode...</p> -->
+      <p><h2 id="システム構成">システム構成</h2>
+
+</p>
+    </section>
+    <section class="post-meta">
+      <div class="post-date">March 23, 2019</div>
+      <div class="post-categories">
+      in 
+        
+        <a href="/posts/#orgmode">Orgmode</a>
+        
+      
+      </div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/2019/01/19/portfolio-website-by-jekyll">Jekyllによるウェブサイト構築方法</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <!-- <p>個人開発や技術メモを整理するためウェブサイトを構築する事にした。GitHub Pagesを利用して静的サイトジェネレータを使う方針とし、StaticGenなどで調査してJekyllを使う事にした。 選定理由は以下の通り。 Rubyのエコシステムに習熟したい Jekyllは利用者数が多くてだいぶ枯れていて情報が多そう GitHub PagesがJekyllに公式に対応しているので困る事が少なそう 参考 ウェブサイト構築にあたっては以下を特に参考にした。 Jekyll 公式サイト Jekyll 公式サイトの日本語訳ページ Jekyll themeをCentrariumに変更する - Memotaro Centrarium のGitHubリポジトリのREADME.md 環境 macOS Ruby環境はHomeBrewでrbenvをインストールしてバージョン管理している Bundlerはインストール済み GitHubアカウントは取得済みのものを利用 github.ioリポジトリは作成済みのものを利用 手順 - 入門編 入門編では公式サイトのチュートリアル通りの手順で環境構築とウェブサイト生成と動作確認を実施する。本番に向けた練習段階です。 Jekyllインストールとウェブサイトテンプレート生成 JekyllはRubyGemとして提供されているのでBundlerで管理したいため、公式サイトのUsing Jekyll with Bundlerの手順でJekyllインストールを行う。 mkdir my-website cd my-website bundle init bundle add jekyll bundle exec jekyll new --force --skip-bundle ....</p> -->
+      <p><p>個人開発や技術メモを整理するためウェブサイトを構築する事にした。<a href="https://pages.github.com/">GitHub Pages</a>を利用して静的サイトジェネレータを使う方針とし、<a href="https://www.staticgen.com/">StaticGen</a>などで調査して<a href="https://jekyllrb.com/">Jekyll</a>を使う事にした。
+選定理由は以下の通り。</p>
+
+</p>
+    </section>
+    <section class="post-meta">
+      <div class="post-date">January 19, 2019</div>
+      <div class="post-categories">
+      in 
+        
+        <a href="/posts/#jekyll">Jekyll</a>
+        
+      
+      </div>
+    </section>
+  </li>
+  
+  
+</ul>
+
+<nav class="pagination" role="navigation">
+	<p>
+    
+		<span class="fa-stack fa-lg">
+      <i class="fa fa-square fa-stack-2x"></i>
+      <i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+    </span>
+		
+		<span class="page-number">Page 1 of 1</span>
+		
+		<span class="fa-stack fa-lg">
+      <i class="fa fa-square fa-stack-2x"></i>
+      <i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+    </span>
+		
+	</p>
+</nav>
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">RydeenWorks Dev Note</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+        
+        
+          <li class="nav-link"><a href="/about/">About</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          <li class="nav-link"><a href="/posts/">Posts</a>
+        
+        
+        
+          <li class="nav-link"><a href="/projects/">Projects</a>
+        
+        
+        
+        
+        
+        
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:rydeenworks[at]gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">rydeenworks[at]gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://twitter.com/rydeenworks" title="Follow me on Twitter">
+              <i class="fa fa-twitter"></i>
+              <span class="username">rydeenworks</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://github.com/rydeenworks" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">rydeenworks</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">RydeenWorks is my development site.
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+});
+
+</script>
+
+
+
+
+
+
+  </body>
+
+</html>

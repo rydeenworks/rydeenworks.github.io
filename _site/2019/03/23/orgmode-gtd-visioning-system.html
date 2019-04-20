@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>orgmodeとGTDによるVisioningシステム</title>
+  <meta name="description" content="システム構成">
+  
+  <meta name="author" content="rydeenworks">
+  <meta name="copyright" content="&copy; rydeenworks 2019">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/zenburn.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/2019/03/23/orgmode-gtd-visioning-system">
+  <link rel="alternate" type="application/rss+xml" title="RydeenWorks Dev Note" href="http://localhost:4000/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="RydeenWorks Dev Note">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        
+          
+          <li class="nav-link"><a href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <li class="nav-link"><a href="/posts/">Posts</a>
+          
+        
+          
+          <li class="nav-link"><a href="/projects/">Projects</a>
+          
+        
+          
+        
+          
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">orgmodeとGTDによるVisioningシステム</h1>
+      <!-- <p class="info">by <strong></strong></p> -->
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">March 23, 2019</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/posts/#orgmode">Orgmode</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h2 id="システム構成">システム構成</h2>
+
+<p><img src="/assets/orgmode-system.jpg" alt="orgmode-system" /></p>
+
+<h3 id="説明">説明</h3>
+
+<ul>
+  <li>紙のメモ帳(memopad)を持ち歩いて思いついた事をすぐ書きとめます</li>
+  <li>OrgzlyはDropBox上のorgファイルと同期するアプリです(Androidではorgmodeの閲覧だけです)</li>
+  <li>ブログ記事→Jekyllの_postsフォルダ、orgmode→orgフォルダ</li>
+  <li>Macの方がストレスがないと思いますが、WindowsでもOK</li>
+</ul>
+
+<h2 id="orgmodeファイル構成">orgmodeファイル構成</h2>
+
+<p><img src="/assets/org-directory.png" alt="org-directory" /></p>
+
+<h3 id="メイン">メイン</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>ファイル名</th>
+      <th>内容</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>goal.org</td>
+      <td>GTDにおける<strong>望んでいる結果</strong>。将来の夢やビジョンなど実現したい事を書く。</td>
+    </tr>
+    <tr>
+      <td>todo.org</td>
+      <td>GTDにおける<strong>次の具体的行動</strong>。TODO/MAYBE/WAIT/PROJは全部ここに入れる。</td>
+    </tr>
+    <tr>
+      <td>logbook.org</td>
+      <td>アイデアや感情などを記録する。私は紙のメモ帳を使うのでほとんど使わない。</td>
+    </tr>
+    <tr>
+      <td>plan.org</td>
+      <td>日単位の記録。私はほとんど使わない。使い方は検討中。</td>
+    </tr>
+    <tr>
+      <td>journal.org</td>
+      <td>週単位の記録、および週次レビューの振り返りを記録する。</td>
+    </tr>
+    <tr>
+      <td>review.org</td>
+      <td>週次レビューチェックリスト。</td>
+    </tr>
+    <tr>
+      <td>proj_xxxx.org</td>
+      <td>GTDにおけるプロジェクト。プロジェクト単位にファイルを作る。</td>
+    </tr>
+    <tr>
+      <td>doc_xxxx.org</td>
+      <td>GTDにおける資料。ファイルの分け方は任意。</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="emacs設定関連">Emacs設定関連</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>ファイル名</th>
+      <th>内容</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>org-global.el</td>
+      <td>orgmodeの設定</td>
+    </tr>
+    <tr>
+      <td>template-review.org</td>
+      <td>週次レビューチェックリストのテンプレート</td>
+    </tr>
+    <tr>
+      <td>todo.org_archive</td>
+      <td>完了したタスクをアーカイブするファイル。Emacsが自動的に作る。</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="使い方">使い方</h2>
+
+<p>内容整理中。</p>
+
+<h2 id="感謝">感謝</h2>
+
+<ul>
+  <li>
+    <p><a href="https://orgmode.org">https://orgmode.org</a></p>
+
+    <p>Emacsとorgmodeはとても素晴らしいツールです。</p>
+  </li>
+  <li>
+    <p><a href="https://www.youtube.com/watch?v=-2RXhPV_zgc">Orgmode E07S02: Presenting my system</a>a</p>
+
+    <p>この動画に出会わなければ本システムは構築できなかったと思います。</p>
+  </li>
+  <li>
+    <p><a href="https://koenig-haunstetten.de/2014/08/29/the-power-of-orgmode-capture-templates/">The power of orgmode capture templates</a></p>
+
+    <p>動画作者の投稿記事。org-captureを強化するための参考になりました。</p>
+  </li>
+  <li>
+    <p><a href="http://spacemacs.org/">http://spacemacs.org/</a></p>
+
+    <p>spacemacsはEmacsのコマンド名が出てくるので愛用しています。</p>
+  </li>
+  <li>
+    <p><a href="https://gettingthingsdone.com/">https://gettingthingsdone.com/</a></p>
+
+    <p><a href="https://gettingthingsdone.com/2018/08/episode-43-the-power-of-the-gtd-weekly-review/">Weekly Reviewのページ</a>と<a href="https://gettingthingsdone.com/five-steps/">Five Stepsのページ</a>を参考にしました。<a target="_blank" href="https://www.amazon.co.jp/%E5%85%A8%E9%9D%A2%E6%94%B9%E8%A8%82%E7%89%88-%E3%81%AF%E3%81%98%E3%82%81%E3%81%A6%E3%81%AEGTD-%E3%82%B9%E3%83%88%E3%83%AC%E3%82%B9%E3%83%95%E3%83%AA%E3%83%BC%E3%81%AE%E6%95%B4%E7%90%86%E8%A1%93-%E3%83%87%E3%83%93%E3%83%83%E3%83%89%E3%83%BB%E3%82%A2%E3%83%AC%E3%83%B3/dp/4576151878?&amp;_encoding=UTF8&amp;tag=dynamitecruis-22&amp;linkCode=ur2&amp;linkId=9327cd4b2c7d8ad114597dbdb499647c&amp;camp=247&amp;creative=1211">GTDの本</a><img src="//ir-jp.amazon-adsystem.com/e/ir?t=dynamitecruis-22&amp;l=ur2&amp;o=9" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /> は全面改訂版で再読しました。</p>
+  </li>
+  <li>
+    <p><a href="https://typora.io/">https://typora.io/</a></p>
+
+    <p>Typoraは最近出会いましたが素晴らしいです。</p>
+  </li>
+</ul>
+
+
+</article>
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<!--
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+      <a href="//twitter.com/share?text=orgmode%E3%81%A8GTD%E3%81%AB%E3%82%88%E3%82%8BVisioning%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0&url=http%3A%2F%2Flocalhost%3A4000%2F2019%2F03%2F23%2Forgmode-gtd-visioning-system&via=rydeenworks"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=255');return false;">
+        <i class="fa fa-twitter-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+-->
+
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">RydeenWorks Dev Note</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+        
+        
+          <li class="nav-link"><a href="/about/">About</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          <li class="nav-link"><a href="/posts/">Posts</a>
+        
+        
+        
+          <li class="nav-link"><a href="/projects/">Projects</a>
+        
+        
+        
+        
+        
+        
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:rydeenworks[at]gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">rydeenworks[at]gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://twitter.com/rydeenworks" title="Follow me on Twitter">
+              <i class="fa fa-twitter"></i>
+              <span class="username">rydeenworks</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://github.com/rydeenworks" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">rydeenworks</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">RydeenWorks is my development site.
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+});
+
+</script>
+
+
+
+
+
+
+  </body>
+
+</html>
