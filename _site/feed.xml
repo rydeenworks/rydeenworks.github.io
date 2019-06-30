@@ -6,9 +6,243 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 20 Apr 2019 22:30:18 +0900</pubDate>
-    <lastBuildDate>Sat, 20 Apr 2019 22:30:18 +0900</lastBuildDate>
+    <pubDate>Sun, 30 Jun 2019 20:56:13 +0900</pubDate>
+    <lastBuildDate>Sun, 30 Jun 2019 20:56:13 +0900</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>私生活向けorgmodeによるGTDの使い方</title>
+        <description>&lt;p&gt;私は自宅PCでも会社PCでもorgmodeによるGTDを運用していますが、それぞれの使い方は異なります。&lt;/p&gt;
+
+&lt;p&gt;自宅でのorgmodeは私生活での大事なことや将来的な目標を整理して実現するために利用します。毎週末にレビューすることでGTDのリズムを作る事を重視します。平日はorgmodeの更新はしないため日々のTODOは登録せず中長期的な&lt;code class=&quot;highlighter-rouge&quot;&gt;TODOタスク&lt;/code&gt;と&lt;code class=&quot;highlighter-rouge&quot;&gt;プロジェクト&lt;/code&gt;と&lt;code class=&quot;highlighter-rouge&quot;&gt;目標&lt;/code&gt;を管理します。また、平日は手帳・Googleカレンダー・OrgzlyでGTDの運用とorgmodeの参照を補完します。&lt;/p&gt;
+
+&lt;p&gt;会社でのorgmodeは業務のTODOタスクとプロジェクト課題を整理するために使います。週次レビューはしません。会社PC以外でorgmodeは参照しません。&lt;/p&gt;
+
+&lt;p&gt;今回は自宅でのorgmodeの使い方の説明ですので、&lt;strong&gt;私生活向け&lt;/strong&gt;としています。&lt;/p&gt;
+
+&lt;h1 id=&quot;前提知識&quot;&gt;前提知識&lt;/h1&gt;
+
+&lt;p&gt;次の知識があると理解しやすいです。&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Emacsとorgmode&lt;/li&gt;
+  &lt;li&gt;GTD&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;環境構築&quot;&gt;環境構築&lt;/h1&gt;
+
+&lt;h2 id=&quot;orgファイルを配置する&quot;&gt;orgファイルを配置する&lt;/h2&gt;
+
+&lt;p&gt;orgファイルは全て&lt;a href=&quot;https://github.com/rydeenworks/orgmode-gtd-visioning-system&quot;&gt;github&lt;/a&gt;で公開していますので使ってください。&lt;/p&gt;
+
+&lt;p&gt;orgファイルの内容は「&lt;code class=&quot;highlighter-rouge&quot;&gt;猫&lt;/code&gt; が本システムを使った場合」を例に書いてます。&lt;/p&gt;
+
+&lt;p&gt;フォルダ構成は以下のとおり。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/org-directory.png&quot; alt=&quot;org-directory&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;DropBoxで共有することでOrgzlyというAndroidアプリでorgファイルを参照できます。&lt;/p&gt;
+
+&lt;h2 id=&quot;org-globalelをemacsにロードさせる&quot;&gt;org-global.elをEmacsにロードさせる&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-lisp&quot;&gt;(load &quot;~/Dropbox/org/org-global&quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;私はSpacemacsを使っているため以下の画像のように設定してます。ファイルパスは自身の環境に合わせてください。
+&lt;img src=&quot;/assets/spacemacs-org-global-setting.png&quot; alt=&quot;spacemacs-org-global-setting&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;org-globalelファイルを修正する&quot;&gt;org-global.elファイルを修正する&lt;/h2&gt;
+&lt;p&gt;ファイルパスは自身の環境に合わせてください。
+&lt;img src=&quot;/assets/org-global-el.png&quot; alt=&quot;org-global-el&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;org-captureの使い方&quot;&gt;org-captureの使い方&lt;/h1&gt;
+
+&lt;p&gt;org-captureを実行すると次の画面が出ます。(キー操作は&lt;code class=&quot;highlighter-rouge&quot;&gt;C-c c&lt;/code&gt;)
+&lt;img src=&quot;/assets/org-capture-template.png&quot; alt=&quot;org-capture-template&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;t&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;p&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;j&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;r&lt;/code&gt; それぞれのキーは、&lt;code class=&quot;highlighter-rouge&quot;&gt;todo.org&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;plan.org&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;journal.org&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;review.org&lt;/code&gt;それぞれのファイルへのエントリー作成に対応しています。
+&lt;strong&gt;私生活向け&lt;/strong&gt;では&lt;code class=&quot;highlighter-rouge&quot;&gt;plan.org&lt;/code&gt;は使ってないので以降は割愛します。&lt;/p&gt;
+
+&lt;h1 id=&quot;orgmodeによるgtdの運用の仕方&quot;&gt;orgmodeによるGTDの運用の仕方&lt;/h1&gt;
+
+&lt;p&gt;本システムは以下のファイルで構成します。&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;ファイル名&lt;/th&gt;
+      &lt;th&gt;内容&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;goal.org&lt;/td&gt;
+      &lt;td&gt;私生活の大事な事や目標など実現したい事を書く&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;todo.org&lt;/td&gt;
+      &lt;td&gt;TODOタスクを書く&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;journal.org&lt;/td&gt;
+      &lt;td&gt;週次レビューの時に振り返りを書く&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;review.org&lt;/td&gt;
+      &lt;td&gt;週次レビューのチェックリスト&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;proj_xxxx.org&lt;/td&gt;
+      &lt;td&gt;goal実現のためのプロジェクト&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;goal.org&lt;/code&gt; を実現するために &lt;code class=&quot;highlighter-rouge&quot;&gt;proj_xxxx.org&lt;/code&gt; や&lt;code class=&quot;highlighter-rouge&quot;&gt;todo.org&lt;/code&gt; があります。&lt;/p&gt;
+
+&lt;p&gt;そして、&lt;code class=&quot;highlighter-rouge&quot;&gt;goal.org&lt;/code&gt; 実現に向かっているか確認するために &lt;code class=&quot;highlighter-rouge&quot;&gt;review.org&lt;/code&gt; と &lt;code class=&quot;highlighter-rouge&quot;&gt;journal.org&lt;/code&gt; で振り返ります。&lt;/p&gt;
+
+&lt;p&gt;システムの運用を始めるときは、&lt;code class=&quot;highlighter-rouge&quot;&gt;goal.org&lt;/code&gt; の内容を自分なりに書き出すところから始めます。&lt;/p&gt;
+
+&lt;h1 id=&quot;私生活におけるgtdのポイント&quot;&gt;私生活におけるGTDのポイント&lt;/h1&gt;
+
+&lt;p&gt;Get Things Doneという言葉から集中してどんどんタスクを片付けるイメージを持つかもしれませんが、それでは単なるタスクマシーンになりがちです。そのような忙しい私生活は望まないため、&lt;code class=&quot;highlighter-rouge&quot;&gt;goal.org&lt;/code&gt; を一番大事にします。&lt;/p&gt;
+
+&lt;p&gt;週末毎に次の手順を行います。&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;org-captureで &lt;code class=&quot;highlighter-rouge&quot;&gt;review.org&lt;/code&gt; へレビューチェック表を追加する&lt;/li&gt;
+  &lt;li&gt;org-captureで &lt;code class=&quot;highlighter-rouge&quot;&gt;journal.org&lt;/code&gt; へ振り返りエントリーを追加する&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;review.org&lt;/code&gt; のレビューチェックをつける事で本システムの整理・振り返り・フィードバックを行う&lt;/li&gt;
+  &lt;li&gt;振り返りで気づいたことがあれば、 &lt;code class=&quot;highlighter-rouge&quot;&gt;journal.org&lt;/code&gt; にメモする&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;proj_xxxx.org&lt;/code&gt; と &lt;code class=&quot;highlighter-rouge&quot;&gt;todo.org&lt;/code&gt; はレビューチェックをつける事で更新される&lt;/li&gt;
+  &lt;li&gt;必要があれば &lt;code class=&quot;highlighter-rouge&quot;&gt;goal.org&lt;/code&gt; の記述を見直す&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;週次レビュー&quot;&gt;週次レビュー&lt;/h1&gt;
+
+&lt;h2 id=&quot;revieworg&quot;&gt;review.org&lt;/h2&gt;
+
+&lt;p&gt;org-captureで &lt;code class=&quot;highlighter-rouge&quot;&gt;r&lt;/code&gt; キーを押すと次の画面が表示されます。
+&lt;img src=&quot;/assets/org-capture-review.png&quot; alt=&quot;org-capture-review&quot; /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;C-c C-c&lt;/code&gt; とキー入力すると &lt;code class=&quot;highlighter-rouge&quot;&gt;review.org&lt;/code&gt; にレビューチェック表が挿入されます。&lt;/p&gt;
+
+&lt;p&gt;参考としてレビューチェック表の内容を以下に掲載します。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;クリアにする
+    &lt;ul&gt;
+      &lt;li&gt;把握する―“気になること”のすべてを把握する
+        &lt;ul class=&quot;task-list&quot;&gt;
+          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;紙の書類&lt;/li&gt;
+          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;コミュニケーションツール(メール、Slack)&lt;/li&gt;
+          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;手帳(memopad)&lt;/li&gt;
+          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;アプリ(ブックマーク、メモ、etc..)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;頭を空っぽにする
+        &lt;ul class=&quot;task-list&quot;&gt;
+          &lt;li&gt;頭の中にある新規プロジェクト、活動、気になること、いつかやりたいこと、などを書き出す&lt;/li&gt;
+          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;タイマーを5分セットして頭の中のことを書き出す&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;見極める―気になる事が何か解明する、整理する―あるべき場所に納める
+        &lt;ul class=&quot;task-list&quot;&gt;
+          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;気になること -&amp;gt; 望んでいる結果(goal) or 次の具体的行動(TODO) ( or MAYBE/WAIT/PROJ/doc) へ変換する&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;現状に更新する 
+  更新する―システムの機能を維持する
+    &lt;ul&gt;
+      &lt;li&gt;アクションリストを見直す
+        &lt;ul class=&quot;task-list&quot;&gt;
+          &lt;li&gt;完了したアクションは消す。振り返りとして、アクションを段階的に推進するための記述更新とリマインドを行う。&lt;/li&gt;
+          &lt;li&gt;もう興味のないアイテムは削除する。&lt;/li&gt;
+          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;完了タスクをDONEにする&lt;/li&gt;
+          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;興味がなくなった MAYBE は SKIP にする&lt;/li&gt;
+          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;必要があればリマインダーをセットする&lt;/li&gt;
+          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;アクションを推進するためのタスクを定義して追加する&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;カレンダーを見返す
+        &lt;ul class=&quot;task-list&quot;&gt;
+          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;アクションアイテム残件を思い出すために過去のカレンダーを詳細に振り返る。そしてorg-modeシステムに反映する&lt;/li&gt;
+          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;長期・短期のカレンダー予定を確認し適切なアクションを登録する&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;待ちタスクの振り返り
+        &lt;ul class=&quot;task-list&quot;&gt;
+          &lt;li&gt;受け取ったもののフォロー・チェックをして適切なアクションを登録する&lt;/li&gt;
+          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;WAIT タスクをチェックする&lt;/li&gt;
+          &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;フォロータスクを登録する&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;プロジェクト と ゴール を管理する
+    &lt;ul class=&quot;task-list&quot;&gt;
+      &lt;li&gt;プロジェクトとその成果の振り返り&lt;/li&gt;
+      &lt;li&gt;proj/goalの状態とそれぞれの成果について１つ１つ評価する、少なくともアクティブなアクションアイテム１つごとに確実に。
+　プロジェクト計画書、補足資料、その他作成中の資料をみて新規アクション・完了・待ちタスクのトリガーとする。&lt;/li&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;人生の目的とそのあり方&lt;/li&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;長期的な構想リスト、１〜２年後の目標&lt;/li&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;重点的に取り組む分野&lt;/li&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;現在のプロジェクト&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;選択する―最善の行動を選ぶ
+    &lt;ul class=&quot;task-list&quot;&gt;
+      &lt;li&gt;関連するチェックリストを振り返る&lt;/li&gt;
+      &lt;li&gt;何か新しいアクションのためのトリガーとする&lt;/li&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;先週のデイリープラン(TODO)がどのように良いパフォーマンスだったかチェックする&lt;/li&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;先週の good &amp;amp; bad ポイントについて 簡潔な Jounal entry を作成する&lt;/li&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;ゴールに貢献した アクション( TODO / PROJ ) と価値のないアクションをチェックする&lt;/li&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;日付のない アクション( TODO / PROJ ) を計画する&lt;/li&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;DONE/SKIPはアーカイブする&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;創造性を手に入れる
+    &lt;ul class=&quot;task-list&quot;&gt;
+      &lt;li&gt;SOMEDAY/MAYBE リストを振り返る&lt;/li&gt;
+      &lt;li&gt;アクティブになるかもしれないプロジェクトを振り返る。PROJ に登録する。&lt;/li&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;MAYBE は TODO / PROJ になるか？&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Be Creative and Couragous(夢を創造し勇気を持って挑戦する)
+    &lt;ul class=&quot;task-list&quot;&gt;
+      &lt;li&gt;Any new, wonderful, hare-brained, creative, thought-provoking,
+risk-taking ideas to add into your system?&lt;/li&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;タイマーを５分セットして夢想する&lt;/li&gt;
+      &lt;li class=&quot;task-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; class=&quot;task-list-item-checkbox&quot; disabled=&quot;disabled&quot; /&gt;その結果をorgmodeシステムに登録する&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;journalorg&quot;&gt;journal.org&lt;/h2&gt;
+
+&lt;p&gt;org-captureで &lt;code class=&quot;highlighter-rouge&quot;&gt;j&lt;/code&gt; キーを押すと次の画面が表示されます。
+&lt;img src=&quot;/assets/org-capture-journal.png&quot; alt=&quot;org-capture-journal&quot; /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;C-c C-c&lt;/code&gt; とキー入力すると &lt;code class=&quot;highlighter-rouge&quot;&gt;journal.org&lt;/code&gt; にレビューチェック表が挿入されます。&lt;/p&gt;
+
+&lt;h1 id=&quot;参照&quot;&gt;参照&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://orgmode.org/ja/index.html&quot;&gt;orgmodeのページ&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://gettingthingsdone.com/2018/08/episode-43-the-power-of-the-gtd-weekly-review/&quot;&gt;GTDのWeekly Reviewのページ&lt;/a&gt;と&lt;a href=&quot;https://gettingthingsdone.com/five-steps/&quot;&gt;GTDのFive Stepsのページ&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.amazon.co.jp/%E5%85%A8%E9%9D%A2%E6%94%B9%E8%A8%82%E7%89%88-%E3%81%AF%E3%81%98%E3%82%81%E3%81%A6%E3%81%AEGTD-%E3%82%B9%E3%83%88%E3%83%AC%E3%82%B9%E3%83%95%E3%83%AA%E3%83%BC%E3%81%AE%E6%95%B4%E7%90%86%E8%A1%93-%E3%83%87%E3%83%93%E3%83%83%E3%83%89%E3%83%BB%E3%82%A2%E3%83%AC%E3%83%B3/dp/4576151878?&amp;amp;_encoding=UTF8&amp;amp;tag=dynamitecruis-22&amp;amp;linkCode=ur2&amp;amp;linkId=9327cd4b2c7d8ad114597dbdb499647c&amp;amp;camp=247&amp;amp;creative=1211&quot;&gt;GTDの本&lt;/a&gt;&lt;img src=&quot;//ir-jp.amazon-adsystem.com/e/ir?t=dynamitecruis-22&amp;amp;l=ur2&amp;amp;o=9&quot; width=&quot;1&quot; height=&quot;1&quot; border=&quot;0&quot; alt=&quot;&quot; style=&quot;border:none !important; margin:0px !important;&quot; /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Sun, 30 Jun 2019 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2019/06/30/how-to-use-orgmode</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/06/30/how-to-use-orgmode</guid>
+        
+        
+        <category>orgmode</category>
+        
+      </item>
     
       <item>
         <title>図書館ほんだなアプリ開発の振り返り</title>

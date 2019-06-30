@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>私生活向けorgmodeによるGTDの使い方</title>
+  <meta name="description" content="私は自宅PCでも会社PCでもorgmodeによるGTDを運用していますが、それぞれの使い方は異なります。">
+  
+  <meta name="author" content="rydeenworks">
+  <meta name="copyright" content="&copy; rydeenworks 2019">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/zenburn.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/2019/06/30/how-to-use-orgmode">
+  <link rel="alternate" type="application/rss+xml" title="RydeenWorks Dev Note" href="http://localhost:4000/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="RydeenWorks Dev Note">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        
+          
+          <li class="nav-link"><a href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <li class="nav-link"><a href="/posts/">Posts</a>
+          
+        
+          
+          <li class="nav-link"><a href="/projects/">Projects</a>
+          
+        
+          
+        
+          
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">私生活向けorgmodeによるGTDの使い方</h1>
+      <!-- <p class="info">by <strong></strong></p> -->
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">June 30, 2019</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/posts/#orgmode">Orgmode</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <p>私は自宅PCでも会社PCでもorgmodeによるGTDを運用していますが、それぞれの使い方は異なります。</p>
+
+<p>自宅でのorgmodeは私生活での大事なことや将来的な目標を整理して実現するために利用します。毎週末にレビューすることでGTDのリズムを作る事を重視します。平日はorgmodeの更新はしないため日々のTODOは登録せず中長期的な<code class="highlighter-rouge">TODOタスク</code>と<code class="highlighter-rouge">プロジェクト</code>と<code class="highlighter-rouge">目標</code>を管理します。また、平日は手帳・Googleカレンダー・OrgzlyでGTDの運用とorgmodeの参照を補完します。</p>
+
+<p>会社でのorgmodeは業務のTODOタスクとプロジェクト課題を整理するために使います。週次レビューはしません。会社PC以外でorgmodeは参照しません。</p>
+
+<p>今回は自宅でのorgmodeの使い方の説明ですので、<strong>私生活向け</strong>としています。</p>
+
+<h1 id="前提知識">前提知識</h1>
+
+<p>次の知識があると理解しやすいです。</p>
+<ul>
+  <li>Emacsとorgmode</li>
+  <li>GTD</li>
+</ul>
+
+<h1 id="環境構築">環境構築</h1>
+
+<h2 id="orgファイルを配置する">orgファイルを配置する</h2>
+
+<p>orgファイルは全て<a href="https://github.com/rydeenworks/orgmode-gtd-visioning-system">github</a>で公開していますので使ってください。</p>
+
+<p>orgファイルの内容は「<code class="highlighter-rouge">猫</code> が本システムを使った場合」を例に書いてます。</p>
+
+<p>フォルダ構成は以下のとおり。</p>
+
+<p><img src="/assets/org-directory.png" alt="org-directory" /></p>
+
+<p>DropBoxで共有することでOrgzlyというAndroidアプリでorgファイルを参照できます。</p>
+
+<h2 id="org-globalelをemacsにロードさせる">org-global.elをEmacsにロードさせる</h2>
+
+<pre><code class="language-lisp">(load "~/Dropbox/org/org-global")
+</code></pre>
+<p>私はSpacemacsを使っているため以下の画像のように設定してます。ファイルパスは自身の環境に合わせてください。
+<img src="/assets/spacemacs-org-global-setting.png" alt="spacemacs-org-global-setting" /></p>
+
+<h2 id="org-globalelファイルを修正する">org-global.elファイルを修正する</h2>
+<p>ファイルパスは自身の環境に合わせてください。
+<img src="/assets/org-global-el.png" alt="org-global-el" /></p>
+
+<h1 id="org-captureの使い方">org-captureの使い方</h1>
+
+<p>org-captureを実行すると次の画面が出ます。(キー操作は<code class="highlighter-rouge">C-c c</code>)
+<img src="/assets/org-capture-template.png" alt="org-capture-template" /></p>
+
+<p><code class="highlighter-rouge">t</code> <code class="highlighter-rouge">p</code> <code class="highlighter-rouge">j</code> <code class="highlighter-rouge">r</code> それぞれのキーは、<code class="highlighter-rouge">todo.org</code> <code class="highlighter-rouge">plan.org</code> <code class="highlighter-rouge">journal.org</code> <code class="highlighter-rouge">review.org</code>それぞれのファイルへのエントリー作成に対応しています。
+<strong>私生活向け</strong>では<code class="highlighter-rouge">plan.org</code>は使ってないので以降は割愛します。</p>
+
+<h1 id="orgmodeによるgtdの運用の仕方">orgmodeによるGTDの運用の仕方</h1>
+
+<p>本システムは以下のファイルで構成します。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>ファイル名</th>
+      <th>内容</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>goal.org</td>
+      <td>私生活の大事な事や目標など実現したい事を書く</td>
+    </tr>
+    <tr>
+      <td>todo.org</td>
+      <td>TODOタスクを書く</td>
+    </tr>
+    <tr>
+      <td>journal.org</td>
+      <td>週次レビューの時に振り返りを書く</td>
+    </tr>
+    <tr>
+      <td>review.org</td>
+      <td>週次レビューのチェックリスト</td>
+    </tr>
+    <tr>
+      <td>proj_xxxx.org</td>
+      <td>goal実現のためのプロジェクト</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code class="highlighter-rouge">goal.org</code> を実現するために <code class="highlighter-rouge">proj_xxxx.org</code> や<code class="highlighter-rouge">todo.org</code> があります。</p>
+
+<p>そして、<code class="highlighter-rouge">goal.org</code> 実現に向かっているか確認するために <code class="highlighter-rouge">review.org</code> と <code class="highlighter-rouge">journal.org</code> で振り返ります。</p>
+
+<p>システムの運用を始めるときは、<code class="highlighter-rouge">goal.org</code> の内容を自分なりに書き出すところから始めます。</p>
+
+<h1 id="私生活におけるgtdのポイント">私生活におけるGTDのポイント</h1>
+
+<p>Get Things Doneという言葉から集中してどんどんタスクを片付けるイメージを持つかもしれませんが、それでは単なるタスクマシーンになりがちです。そのような忙しい私生活は望まないため、<code class="highlighter-rouge">goal.org</code> を一番大事にします。</p>
+
+<p>週末毎に次の手順を行います。</p>
+<ul>
+  <li>org-captureで <code class="highlighter-rouge">review.org</code> へレビューチェック表を追加する</li>
+  <li>org-captureで <code class="highlighter-rouge">journal.org</code> へ振り返りエントリーを追加する</li>
+  <li><code class="highlighter-rouge">review.org</code> のレビューチェックをつける事で本システムの整理・振り返り・フィードバックを行う</li>
+  <li>振り返りで気づいたことがあれば、 <code class="highlighter-rouge">journal.org</code> にメモする</li>
+  <li><code class="highlighter-rouge">proj_xxxx.org</code> と <code class="highlighter-rouge">todo.org</code> はレビューチェックをつける事で更新される</li>
+  <li>必要があれば <code class="highlighter-rouge">goal.org</code> の記述を見直す</li>
+</ul>
+
+<h1 id="週次レビュー">週次レビュー</h1>
+
+<h2 id="revieworg">review.org</h2>
+
+<p>org-captureで <code class="highlighter-rouge">r</code> キーを押すと次の画面が表示されます。
+<img src="/assets/org-capture-review.png" alt="org-capture-review" />
+<code class="highlighter-rouge">C-c C-c</code> とキー入力すると <code class="highlighter-rouge">review.org</code> にレビューチェック表が挿入されます。</p>
+
+<p>参考としてレビューチェック表の内容を以下に掲載します。</p>
+
+<hr />
+
+<ul>
+  <li>クリアにする
+    <ul>
+      <li>把握する―“気になること”のすべてを把握する
+        <ul class="task-list">
+          <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />紙の書類</li>
+          <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />コミュニケーションツール(メール、Slack)</li>
+          <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />手帳(memopad)</li>
+          <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />アプリ(ブックマーク、メモ、etc..)</li>
+        </ul>
+      </li>
+      <li>頭を空っぽにする
+        <ul class="task-list">
+          <li>頭の中にある新規プロジェクト、活動、気になること、いつかやりたいこと、などを書き出す</li>
+          <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />タイマーを5分セットして頭の中のことを書き出す</li>
+        </ul>
+      </li>
+      <li>見極める―気になる事が何か解明する、整理する―あるべき場所に納める
+        <ul class="task-list">
+          <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />気になること -&gt; 望んでいる結果(goal) or 次の具体的行動(TODO) ( or MAYBE/WAIT/PROJ/doc) へ変換する</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>現状に更新する 
+  更新する―システムの機能を維持する
+    <ul>
+      <li>アクションリストを見直す
+        <ul class="task-list">
+          <li>完了したアクションは消す。振り返りとして、アクションを段階的に推進するための記述更新とリマインドを行う。</li>
+          <li>もう興味のないアイテムは削除する。</li>
+          <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />完了タスクをDONEにする</li>
+          <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />興味がなくなった MAYBE は SKIP にする</li>
+          <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />必要があればリマインダーをセットする</li>
+          <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />アクションを推進するためのタスクを定義して追加する</li>
+        </ul>
+      </li>
+      <li>カレンダーを見返す
+        <ul class="task-list">
+          <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />アクションアイテム残件を思い出すために過去のカレンダーを詳細に振り返る。そしてorg-modeシステムに反映する</li>
+          <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />長期・短期のカレンダー予定を確認し適切なアクションを登録する</li>
+        </ul>
+      </li>
+      <li>待ちタスクの振り返り
+        <ul class="task-list">
+          <li>受け取ったもののフォロー・チェックをして適切なアクションを登録する</li>
+          <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />WAIT タスクをチェックする</li>
+          <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />フォロータスクを登録する</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>プロジェクト と ゴール を管理する
+    <ul class="task-list">
+      <li>プロジェクトとその成果の振り返り</li>
+      <li>proj/goalの状態とそれぞれの成果について１つ１つ評価する、少なくともアクティブなアクションアイテム１つごとに確実に。
+　プロジェクト計画書、補足資料、その他作成中の資料をみて新規アクション・完了・待ちタスクのトリガーとする。</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />人生の目的とそのあり方</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />長期的な構想リスト、１〜２年後の目標</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />重点的に取り組む分野</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />現在のプロジェクト</li>
+    </ul>
+  </li>
+  <li>選択する―最善の行動を選ぶ
+    <ul class="task-list">
+      <li>関連するチェックリストを振り返る</li>
+      <li>何か新しいアクションのためのトリガーとする</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />先週のデイリープラン(TODO)がどのように良いパフォーマンスだったかチェックする</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />先週の good &amp; bad ポイントについて 簡潔な Jounal entry を作成する</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />ゴールに貢献した アクション( TODO / PROJ ) と価値のないアクションをチェックする</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />日付のない アクション( TODO / PROJ ) を計画する</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />DONE/SKIPはアーカイブする</li>
+    </ul>
+  </li>
+  <li>創造性を手に入れる
+    <ul class="task-list">
+      <li>SOMEDAY/MAYBE リストを振り返る</li>
+      <li>アクティブになるかもしれないプロジェクトを振り返る。PROJ に登録する。</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />MAYBE は TODO / PROJ になるか？</li>
+    </ul>
+  </li>
+  <li>Be Creative and Couragous(夢を創造し勇気を持って挑戦する)
+    <ul class="task-list">
+      <li>Any new, wonderful, hare-brained, creative, thought-provoking,
+risk-taking ideas to add into your system?</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />タイマーを５分セットして夢想する</li>
+      <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />その結果をorgmodeシステムに登録する</li>
+    </ul>
+  </li>
+</ul>
+
+<hr />
+
+<h2 id="journalorg">journal.org</h2>
+
+<p>org-captureで <code class="highlighter-rouge">j</code> キーを押すと次の画面が表示されます。
+<img src="/assets/org-capture-journal.png" alt="org-capture-journal" />
+<code class="highlighter-rouge">C-c C-c</code> とキー入力すると <code class="highlighter-rouge">journal.org</code> にレビューチェック表が挿入されます。</p>
+
+<h1 id="参照">参照</h1>
+<ul>
+  <li><a href="https://orgmode.org/ja/index.html">orgmodeのページ</a></li>
+  <li><a href="https://gettingthingsdone.com/2018/08/episode-43-the-power-of-the-gtd-weekly-review/">GTDのWeekly Reviewのページ</a>と<a href="https://gettingthingsdone.com/five-steps/">GTDのFive Stepsのページ</a></li>
+  <li><a target="_blank" href="https://www.amazon.co.jp/%E5%85%A8%E9%9D%A2%E6%94%B9%E8%A8%82%E7%89%88-%E3%81%AF%E3%81%98%E3%82%81%E3%81%A6%E3%81%AEGTD-%E3%82%B9%E3%83%88%E3%83%AC%E3%82%B9%E3%83%95%E3%83%AA%E3%83%BC%E3%81%AE%E6%95%B4%E7%90%86%E8%A1%93-%E3%83%87%E3%83%93%E3%83%83%E3%83%89%E3%83%BB%E3%82%A2%E3%83%AC%E3%83%B3/dp/4576151878?&amp;_encoding=UTF8&amp;tag=dynamitecruis-22&amp;linkCode=ur2&amp;linkId=9327cd4b2c7d8ad114597dbdb499647c&amp;camp=247&amp;creative=1211">GTDの本</a><img src="//ir-jp.amazon-adsystem.com/e/ir?t=dynamitecruis-22&amp;l=ur2&amp;o=9" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" /></li>
+</ul>
+
+
+</article>
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<!--
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+      <a href="//twitter.com/share?text=%E7%A7%81%E7%94%9F%E6%B4%BB%E5%90%91%E3%81%91orgmode%E3%81%AB%E3%82%88%E3%82%8BGTD%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9&url=http%3A%2F%2Flocalhost%3A4000%2F2019%2F06%2F30%2Fhow-to-use-orgmode&via=rydeenworks"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=255');return false;">
+        <i class="fa fa-twitter-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+-->
+
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">RydeenWorks Dev Note</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+        
+        
+          <li class="nav-link"><a href="/about/">About</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          <li class="nav-link"><a href="/posts/">Posts</a>
+        
+        
+        
+          <li class="nav-link"><a href="/projects/">Projects</a>
+        
+        
+        
+        
+        
+        
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:rydeenworks[at]gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">rydeenworks[at]gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://twitter.com/rydeenworks" title="Follow me on Twitter">
+              <i class="fa fa-twitter"></i>
+              <span class="username">rydeenworks</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://github.com/rydeenworks" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">rydeenworks</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">RydeenWorks is my development site.
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+});
+
+</script>
+
+
+
+
+
+
+  </body>
+
+</html>
