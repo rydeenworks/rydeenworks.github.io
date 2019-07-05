@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 30 Jun 2019 20:56:13 +0900</pubDate>
-    <lastBuildDate>Sun, 30 Jun 2019 20:56:13 +0900</lastBuildDate>
+    <pubDate>Sat, 06 Jul 2019 07:14:22 +0900</pubDate>
+    <lastBuildDate>Sat, 06 Jul 2019 07:14:22 +0900</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -121,8 +121,9 @@
 &lt;h2 id=&quot;revieworg&quot;&gt;review.org&lt;/h2&gt;
 
 &lt;p&gt;org-captureで &lt;code class=&quot;highlighter-rouge&quot;&gt;r&lt;/code&gt; キーを押すと次の画面が表示されます。
-&lt;img src=&quot;/assets/org-capture-review.png&quot; alt=&quot;org-capture-review&quot; /&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;C-c C-c&lt;/code&gt; とキー入力すると &lt;code class=&quot;highlighter-rouge&quot;&gt;review.org&lt;/code&gt; にレビューチェック表が挿入されます。&lt;/p&gt;
+&lt;img src=&quot;/assets/org-capture-review.png&quot; alt=&quot;org-capture-review&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;C-c C-c&lt;/code&gt; とキー入力すると &lt;code class=&quot;highlighter-rouge&quot;&gt;review.org&lt;/code&gt; にレビューチェック表が挿入されます。&lt;/p&gt;
 
 &lt;p&gt;参考としてレビューチェック表の内容を以下に掲載します。&lt;/p&gt;
 
@@ -224,8 +225,9 @@ risk-taking ideas to add into your system?&lt;/li&gt;
 &lt;h2 id=&quot;journalorg&quot;&gt;journal.org&lt;/h2&gt;
 
 &lt;p&gt;org-captureで &lt;code class=&quot;highlighter-rouge&quot;&gt;j&lt;/code&gt; キーを押すと次の画面が表示されます。
-&lt;img src=&quot;/assets/org-capture-journal.png&quot; alt=&quot;org-capture-journal&quot; /&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;C-c C-c&lt;/code&gt; とキー入力すると &lt;code class=&quot;highlighter-rouge&quot;&gt;journal.org&lt;/code&gt; にレビューチェック表が挿入されます。&lt;/p&gt;
+&lt;img src=&quot;/assets/org-capture-journal.png&quot; alt=&quot;org-capture-journal&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;C-c C-c&lt;/code&gt; とキー入力すると &lt;code class=&quot;highlighter-rouge&quot;&gt;journal.org&lt;/code&gt; にレビューチェック表が挿入されます。&lt;/p&gt;
 
 &lt;h1 id=&quot;参照&quot;&gt;参照&lt;/h1&gt;
 &lt;ul&gt;
