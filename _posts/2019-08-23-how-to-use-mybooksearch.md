@@ -44,7 +44,7 @@ categories: dev
 
 ![0_book_history.png]({{site.baseurl}}/assets/mybooksearch/0_book_history.png)
 
-(3)Amazonで本の検索結果ページを表示されるので、「Amazonページで表示中の本が図書館にあるか調べる」の方法で調べてください
+(3)Amazonで本の検索結果ページが表示されるので、「Amazonページで表示中の本が図書館にあるか調べる」の方法で調べてください
 
 # 詳細仕様
 - Amazonページの解析内容
@@ -60,7 +60,7 @@ categories: dev
 
 # ソースコード
 GitHubで公開している。
-https://github.com/rydeenworks/MyBookSearch
+[https://github.com/rydeenworks/MyBookSearch](https://github.com/rydeenworks/MyBookSearch)
 
 # 参照
 - [カーリルの図書館設定のページ](https://calil.jp/settings)

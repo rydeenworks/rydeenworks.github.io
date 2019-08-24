@@ -6,8 +6,8 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 24 Aug 2019 12:12:24 +0900</pubDate>
-    <lastBuildDate>Sat, 24 Aug 2019 12:12:24 +0900</lastBuildDate>
+    <pubDate>Sat, 24 Aug 2019 12:41:08 +0900</pubDate>
+    <lastBuildDate>Sat, 24 Aug 2019 12:41:08 +0900</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -48,7 +48,7 @@
 
 &lt;p&gt;&lt;img src=&quot;/assets/mybooksearch/0_book_history.png&quot; alt=&quot;0_book_history.png&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;(3)Amazonで本の検索結果ページを表示されるので、「Amazonページで表示中の本が図書館にあるか調べる」の方法で調べてください&lt;/p&gt;
+&lt;p&gt;(3)Amazonで本の検索結果ページが表示されるので、「Amazonページで表示中の本が図書館にあるか調べる」の方法で調べてください&lt;/p&gt;
 
 &lt;h1 id=&quot;詳細仕様&quot;&gt;詳細仕様&lt;/h1&gt;
 &lt;ul&gt;
@@ -68,7 +68,7 @@
 
 &lt;h1 id=&quot;ソースコード&quot;&gt;ソースコード&lt;/h1&gt;
 &lt;p&gt;GitHubで公開している。
-https://github.com/rydeenworks/MyBookSearch&lt;/p&gt;
+&lt;a href=&quot;https://github.com/rydeenworks/MyBookSearch&quot;&gt;https://github.com/rydeenworks/MyBookSearch&lt;/a&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;参照&quot;&gt;参照&lt;/h1&gt;
 &lt;ul&gt;
