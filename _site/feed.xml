@@ -6,9 +6,84 @@
 </description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 06 Jul 2019 07:14:22 +0900</pubDate>
-    <lastBuildDate>Sat, 06 Jul 2019 07:14:22 +0900</lastBuildDate>
+    <pubDate>Sat, 24 Aug 2019 12:12:24 +0900</pubDate>
+    <lastBuildDate>Sat, 24 Aug 2019 12:12:24 +0900</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>Androidアプリ 図書さがし の使い方</title>
+        <description>&lt;p&gt;私はよく図書館で本を借ります。ネットサーフィンしてて気になる本を見かけたら、Amazonでレビューを見て読むか判断します。PC環境のGoogleChromeブラウザでは、Amazonページで表示中の本が図書館で借りられるか表示するプラグインがあるので便利です。AndroidのWebブラウザで同様の事を実現するのが、&lt;strong&gt;図書さがし&lt;/strong&gt; アプリです。&lt;/p&gt;
+
+&lt;h1 id=&quot;使い方&quot;&gt;使い方&lt;/h1&gt;
+
+&lt;h2 id=&quot;amazonページで表示中の本が図書館にあるか調べる&quot;&gt;Amazonページで表示中の本が図書館にあるか調べる&lt;/h2&gt;
+
+&lt;p&gt;(1)Webブラウザで読みたい本のAmazon書籍ページを表示する&lt;/p&gt;
+
+&lt;p&gt;(2)Chromeブラウザの右上のメニューボタンをタップしてメニューを表示する&lt;/p&gt;
+
+&lt;p&gt;(3)メニューの「共有…」をタップする&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/mybooksearch/1_chrome_browser_share.png&quot; alt=&quot;1_chrome_browser_share.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;(4)共有の選択画面が表示されるので、「図書さがし」をタップする&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/mybooksearch/2_share_mybooksearch.png&quot; alt=&quot;2_share_mybooksearch.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;(5)アプリが起動されて自動で &lt;strong&gt;カーリル&lt;/strong&gt; の書籍ページを開く&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/mybooksearch/3_mybooksearch_search_from_calil.png&quot; alt=&quot;3_mybooksearch_search_from_calil.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;注意事項カーリルの図書館設定&quot;&gt;(注意事項)カーリルの図書館設定&lt;/h3&gt;
+
+&lt;p&gt;カーリルのページでは探したい図書館を設定してください。最初に一度設定すれば大丈夫です。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/mybooksearch/4_calil_setting.png&quot; alt=&quot;4_calil_setting.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;アプリの履歴から本が図書館にあるか調べる&quot;&gt;アプリの履歴から本が図書館にあるか調べる&lt;/h2&gt;
+
+&lt;p&gt;(1)ホーム画面から「図書さがし」アプリを起動する&lt;/p&gt;
+
+&lt;p&gt;(2)履歴一覧から調べたい本のリンクをタップする&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/mybooksearch/0_book_history.png&quot; alt=&quot;0_book_history.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;(3)Amazonで本の検索結果ページを表示されるので、「Amazonページで表示中の本が図書館にあるか調べる」の方法で調べてください&lt;/p&gt;
+
+&lt;h1 id=&quot;詳細仕様&quot;&gt;詳細仕様&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;Amazonページの解析内容
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;title&amp;gt;&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;/title&amp;gt;&lt;/code&gt;タグで本のタイトルを取得する&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ISBN-13&lt;/code&gt;タグでISBN文字列を取得する&lt;/li&gt;
+      &lt;li&gt;上記の理由によりKindle版の本には対応してない&lt;/li&gt;
+      &lt;li&gt;本のタイトル、ISBNを取得できない場合は”このページは検索できませんでした”と表示する&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Amazonページの解析に成功したら&lt;code class=&quot;highlighter-rouge&quot;&gt;https://calil.jp/book/&lt;/code&gt; URLに ISBN文字列をつけて外部ブラウザを起動する。&lt;/li&gt;
+  &lt;li&gt;カーリルが対応してない本は図書館にあるか調べられない&lt;/li&gt;
+  &lt;li&gt;本の履歴は100件&lt;/li&gt;
+  &lt;li&gt;履歴ページのリンクは、Amazonの検索クエリURLに本のタイトル付与して生成する&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;ソースコード&quot;&gt;ソースコード&lt;/h1&gt;
+&lt;p&gt;GitHubで公開している。
+https://github.com/rydeenworks/MyBookSearch&lt;/p&gt;
+
+&lt;h1 id=&quot;参照&quot;&gt;参照&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://calil.jp/settings&quot;&gt;カーリルの図書館設定のページ&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.rydeenworks.mybooksearch&quot;&gt;Google Play 図書さがしアプリ&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 23 Aug 2019 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2019/08/23/how-to-use-mybooksearch</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/08/23/how-to-use-mybooksearch</guid>
+        
+        
+        <category>dev</category>
+        
+      </item>
     
       <item>
         <title>私生活向けorgmodeによるGTDの使い方</title>

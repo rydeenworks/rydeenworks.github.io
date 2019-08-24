@@ -6,9 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Posts</title>
-  <meta name="description" content="RydeenWorks is my development site.
-">
+  <title>Androidアプリ 図書さがし の使い方</title>
+  <meta name="description" content="私はよく図書館で本を借ります。ネットサーフィンしてて気になる本を見かけたら、Amazonでレビューを見て読むか判断します。PC環境のGoogleChromeブラウザでは、Amazonページで表示中の本が図書館で借りられるか表示するプラグインがあるので便利です。AndroidのWebブラウザで同様の事を実現するのが...">
   
   <meta name="author" content="rydeenworks">
   <meta name="copyright" content="&copy; rydeenworks 2019">
@@ -48,7 +47,7 @@
 
   <!-- Site styles -->
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/posts/">
+  <link rel="canonical" href="http://localhost:4000/2019/08/23/how-to-use-mybooksearch">
   <link rel="alternate" type="application/rss+xml" title="RydeenWorks Dev Note" href="http://localhost:4000/feed.xml" />
 </head>
 
@@ -108,83 +107,141 @@
 
 
     <div class="page-content">
-        <div class="wrapper">
-<div class="page">
+        <div class="post">
 
-  <header class="post-header">
-    <h1 class="post-title">Posts</h1>
-  </header>
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">Androidアプリ 図書さがし の使い方</h1>
+      <!-- <p class="info">by <strong></strong></p> -->
+    </header>
+  </div>
+</div>
 
-  <span class="page-divider">
+<div class="wrapper">
+
+ <span class="page-divider">
   <span class="one"></span>
   <span class="two"></span>
 </span>
+ 
 
-
-  <article class="post-content">
+<section class="post-meta">
+  <div class="post-date">August 23, 2019</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/posts/#dev">Dev</a>
     
   
-  <h2 id="jekyll">Jekyll</h2>
-  
-  <ul class="posts-list">
-  
-    <li>
-      <strong>
-        <a href="/2019/01/19/portfolio-website-by-jekyll">Jekyllによるウェブサイト構築方法</a>
-      </strong>
-      <span class="post-date">- 19 January 2019</span>
-    </li>
-  
-  </ul>
-  <hr>
+  </div>
+</section>
 
-  
-  <h2 id="orgmode">Orgmode</h2>
-  
-  <ul class="posts-list">
-  
-    <li>
-      <strong>
-        <a href="/2019/06/30/how-to-use-orgmode">私生活向けorgmodeによるGTDの使い方</a>
-      </strong>
-      <span class="post-date">- 30 June 2019</span>
-    </li>
-  
-    <li>
-      <strong>
-        <a href="/2019/03/23/orgmode-gtd-visioning-system">orgmodeとGTDによるVisioningシステム</a>
-      </strong>
-      <span class="post-date">- 23 March 2019</span>
-    </li>
-  
-  </ul>
-  <hr>
+<article class="post-content">
+  <p>私はよく図書館で本を借ります。ネットサーフィンしてて気になる本を見かけたら、Amazonでレビューを見て読むか判断します。PC環境のGoogleChromeブラウザでは、Amazonページで表示中の本が図書館で借りられるか表示するプラグインがあるので便利です。AndroidのWebブラウザで同様の事を実現するのが、<strong>図書さがし</strong> アプリです。</p>
 
-  
-  <h2 id="dev">Dev</h2>
-  
-  <ul class="posts-list">
-  
-    <li>
-      <strong>
-        <a href="/2019/08/23/how-to-use-mybooksearch">Androidアプリ 図書さがし の使い方</a>
-      </strong>
-      <span class="post-date">- 23 August 2019</span>
-    </li>
-  
-    <li>
-      <strong>
-        <a href="/2019/04/01/mybookreading-finished">図書館ほんだなアプリ開発の振り返り</a>
-      </strong>
-      <span class="post-date">- 01 April 2019</span>
-    </li>
-  
-  </ul>
-  
+<h1 id="使い方">使い方</h1>
 
-<br>
+<h2 id="amazonページで表示中の本が図書館にあるか調べる">Amazonページで表示中の本が図書館にあるか調べる</h2>
 
-  </article>
+<p>(1)Webブラウザで読みたい本のAmazon書籍ページを表示する</p>
+
+<p>(2)Chromeブラウザの右上のメニューボタンをタップしてメニューを表示する</p>
+
+<p>(3)メニューの「共有…」をタップする</p>
+
+<p><img src="/assets/mybooksearch/1_chrome_browser_share.png" alt="1_chrome_browser_share.png" /></p>
+
+<p>(4)共有の選択画面が表示されるので、「図書さがし」をタップする</p>
+
+<p><img src="/assets/mybooksearch/2_share_mybooksearch.png" alt="2_share_mybooksearch.png" /></p>
+
+<p>(5)アプリが起動されて自動で <strong>カーリル</strong> の書籍ページを開く</p>
+
+<p><img src="/assets/mybooksearch/3_mybooksearch_search_from_calil.png" alt="3_mybooksearch_search_from_calil.png" /></p>
+
+<h3 id="注意事項カーリルの図書館設定">(注意事項)カーリルの図書館設定</h3>
+
+<p>カーリルのページでは探したい図書館を設定してください。最初に一度設定すれば大丈夫です。</p>
+
+<p><img src="/assets/mybooksearch/4_calil_setting.png" alt="4_calil_setting.png" /></p>
+
+<h2 id="アプリの履歴から本が図書館にあるか調べる">アプリの履歴から本が図書館にあるか調べる</h2>
+
+<p>(1)ホーム画面から「図書さがし」アプリを起動する</p>
+
+<p>(2)履歴一覧から調べたい本のリンクをタップする</p>
+
+<p><img src="/assets/mybooksearch/0_book_history.png" alt="0_book_history.png" /></p>
+
+<p>(3)Amazonで本の検索結果ページを表示されるので、「Amazonページで表示中の本が図書館にあるか調べる」の方法で調べてください</p>
+
+<h1 id="詳細仕様">詳細仕様</h1>
+<ul>
+  <li>Amazonページの解析内容
+    <ul>
+      <li><code class="highlighter-rouge">&lt;title&gt;</code> <code class="highlighter-rouge">&lt;/title&gt;</code>タグで本のタイトルを取得する</li>
+      <li><code class="highlighter-rouge">ISBN-13</code>タグでISBN文字列を取得する</li>
+      <li>上記の理由によりKindle版の本には対応してない</li>
+      <li>本のタイトル、ISBNを取得できない場合は”このページは検索できませんでした”と表示する</li>
+    </ul>
+  </li>
+  <li>Amazonページの解析に成功したら<code class="highlighter-rouge">https://calil.jp/book/</code> URLに ISBN文字列をつけて外部ブラウザを起動する。</li>
+  <li>カーリルが対応してない本は図書館にあるか調べられない</li>
+  <li>本の履歴は100件</li>
+  <li>履歴ページのリンクは、Amazonの検索クエリURLに本のタイトル付与して生成する</li>
+</ul>
+
+<h1 id="ソースコード">ソースコード</h1>
+<p>GitHubで公開している。
+https://github.com/rydeenworks/MyBookSearch</p>
+
+<h1 id="参照">参照</h1>
+<ul>
+  <li><a href="https://calil.jp/settings">カーリルの図書館設定のページ</a></li>
+  <li><a href="https://play.google.com/store/apps/details?id=com.rydeenworks.mybooksearch">Google Play 図書さがしアプリ</a></li>
+</ul>
+
+</article>
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<!--
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+      <a href="//twitter.com/share?text=Android%E3%82%A2%E3%83%97%E3%83%AA+%E5%9B%B3%E6%9B%B8%E3%81%95%E3%81%8C%E3%81%97+%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9&url=http%3A%2F%2Flocalhost%3A4000%2F2019%2F08%2F23%2Fhow-to-use-mybooksearch&via=rydeenworks"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=255');return false;">
+        <i class="fa fa-twitter-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+-->
+
+
+
 
 </div>
 </div>
