@@ -13,13 +13,8 @@ categories: orgmode
 このTipsとコードは[Rainer氏のブログ](https://koenig-haunstetten.de/2018/02/17/improving-my-orgmode-workflow/) と[動画](https://www.youtube.com/watch?v=be8TC-i-NpE)を見つけて取り込みました。
 
 ``` lisp
-(defun my/copy-idlink-to-clipboard() "Copy an ID link with the
-headline to killring, if no ID is there then create a new unique
-ID.  This function works only in org-mode or org-agenda buffers. 
-
-The purpose of this function is to easily construct id:-links to 
-org-mode items. If its assigned to a key it saves you marking the
-text and copying to the killring."
+(defun my/copy-idlink-to-clipboard() 
+  "Copy an ID link with the headline to killring, if no ID is there then create a new unique ID.  This function works only in org-mode or org-agenda buffers.  The purpose of this function is to easily construct id:-links to org-mode items. If its assigned to a key it saves you marking the text and copying to the killring."
        (interactive)
        (when (eq major-mode 'org-agenda-mode) ;switch to orgmode
          (org-agenda-show)
