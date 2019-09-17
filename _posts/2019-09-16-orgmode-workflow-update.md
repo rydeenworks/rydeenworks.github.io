@@ -25,7 +25,7 @@ categories: orgmode
          (setq mytmplink (format "[[id:%s][%s]]" mytmpid mytmphead))
          (kill-new mytmplink)
          (message "Copied %s to killring (clipboard)" mytmplink)
-         )
+         ))
 ```
 
 私はこのコードを`org-global.el`に入れて使ってます([6/30の記事参照](https://rydeenworks.github.io/2019/06/30/how-to-use-orgmode))。Rainer氏はF5キーを割り当ててますが、私はキー割り当て無しで試用中です。
