@@ -9,7 +9,7 @@ categories: programming
 
 組み込み系のC言語/C++の開発現場に配属されたんだけど、なんか、CPUやメモリなどハードウェアの事についてよく知らない、組み込みプログラミングの基礎知識が欲しい。あと、ついでに良い学習の仕方があれば知りたい、と考えていませんか？
 
-![computer-board]({{site.baseurl}}/assets/computer-board.jpg)
+![computer-board]({{site.baseurl}}/assets/computer-board.jpg) 
 
 
 
