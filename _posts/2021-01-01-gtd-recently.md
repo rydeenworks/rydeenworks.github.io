@@ -14,11 +14,11 @@ inboxにどんどん情報を収集した結果、情報を整理できずに活
 
 # 本記事の概要
 
-本記事では[GTDの5ステップ][https://gettingthingsdone.com/what-is-gtd/]のうち、ステップ1-3をブックマーク機能を使って実現する方法を説明します。
+本記事では[GTDの5ステップ](https://gettingthingsdone.com/what-is-gtd/)のうち、ステップ1-3をブックマーク機能を使って実現する方法を説明します。
 
-STEP1 CAPTURE  - あなたの気を引くものを捕らえる ->ブラウザからブックマークする
-STEP2 CLARIFY  - それが何を意味するのか明確にする ->ブックマークを定期的に見直す
-STEP3 ORGANIZE - それをあるべき所に整理する -> ブックマークを定期的にしかるべきフォルダに移動する
+- STEP1 CAPTURE  - あなたの気を引くものを捕らえる ->ブラウザからブックマークする
+- STEP2 CLARIFY  - それが何を意味するのか明確にする ->ブックマークを定期的に見直す
+- STEP3 ORGANIZE - それをあるべき所に整理する -> ブックマークを定期的にしかるべきフォルダに移動する
 
 この運用のメリットは次のとおりです。
 - ブックマークするだけで **CAPTURE** できる
@@ -44,9 +44,7 @@ STEP3 ORGANIZE - それをあるべき所に整理する -> ブックマーク�
 ブックマークのフォルダ構成を決めておく事が大事です。
 フォルダ構成を決めておかないと、GTDをスピーディに運用できないからです。
 
-フォルダは1つのinbox、複数の整理用フォルダを用意します。整理用フォルダは、以下の過去記事のgoal.org「私生活の大事な事や目標など実現したい事」の構成に合わせます。
-
-https://rydeenworks.hatenablog.com/entry/2019/09/01/212052
+フォルダは1つのinbox、複数の整理用フォルダを用意します。整理用フォルダは、[過去記事](https://rydeenworks.hatenablog.com/entry/2019/09/01/212052)のgoal.org「私生活の大事な事や目標など実現したい事」の構成に合わせます。
 
 私の場合、トップフォルダは以下のようなイメージです。
 ブックマークが多くなってきたらサブフォルダを作ってください。
@@ -81,12 +79,8 @@ inboxに貯めたブックマークは時々は棚卸しましょう。
 
 ## ステップ2の運用
 
-棚卸しの目的を以下URLから引用します。
-https://gettingthingsdone.com/what-is-gtd/
+棚卸しの目的はGTDの以下のプロセスの実行です。
 
->  it actionable? If so, decide the next action and project (if more than one action is required). If not, decide if it is trash, reference, or something to put on hold.
-
-次のような意味です。
 > それが実行可能なら次のアクションやプロジェクトにする。そうで無ければ、捨てるか、参考資料にするか、保留にする。
 
 私の経験上、ブックマークは「参考資料」か「捨てる」のどちらかです。「次のアクション」や「プロジェクト」にはせずに、目的のための「参考資料」とした方が運用しやすいためです。同様の理由で「保留」にはせずに、目的に役立つかどうかで「参考資料」か「捨てる」かどちらかにします。これでinboxを空にできます。
@@ -111,7 +105,7 @@ https://gettingthingsdone.com/what-is-gtd/
 
 # 参考
 ## GTDの5ステップ
-https://gettingthingsdone.com/what-is-gtd/
+[https://gettingthingsdone.com/what-is-gtd/](https://gettingthingsdone.com/what-is-gtd/)
 
 ## オススメの本
 GTDについて詳しく知りたい方は書籍がオススメです。
