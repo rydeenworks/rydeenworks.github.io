@@ -207,8 +207,7 @@ social:
 
 ### ウェブサイトのロゴ画像
 
-[ICOOON MONOから雷のフリーアイコン](http://icooon-mono.com/11232-%E9%9B%B7%E3%81%AE%E3%83%95%E3%83%AA%E3%83%BC%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3/)をダウンロードして`/assets/logo.png`に配置する。`rgb(142,70,169)`がちょうどいい感じ。また[http://www.favicon-generator.org/](http://www.favicon-generator.org/) というサイトを使うとicon一式を生成してくれたので`/assets/icons/`以下に一式配置した。
-
+[ICOOON MONOから雷のフリーアイコン](http://icooon-mono.com/11232-%E9%9B%B7%E3%81%AE%E3%83%95%E3%83%AA%E3%83%BC%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3/)をダウンロードして`/assets/logo.png`に配置する。`rgb(142,70,169)`がちょうどいい感じ。また[http://www.favicon-generator.org/](http://www.favicon-generator.org/) というサイトを使うとicon一式を生成してくれたので`/assets/icons/`以下に一式配置した。(2MB以上の画像を使ってFaviconを作りたい場合は、こちらのサイトを使うと良い。[https://www.websiteplanet.com/webtools/favicon-generator/](https://www.websiteplanet.com/webtools/favicon-generator/))
 
 ### ウェブサイトのカバー画像
 
