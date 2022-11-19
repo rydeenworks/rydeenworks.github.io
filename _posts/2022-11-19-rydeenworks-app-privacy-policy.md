@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "RyedeenWorks Android Application Privacy Policy"
+title:  "RydeenWorks Android Application Privacy Policy"
 date:   2022-11-19
 categories: dev
 ---
