@@ -5,13 +5,15 @@ date:   2023-10-29
 categories: dev
 ---
 
-ブログではなくカテゴライズされた資料置き場として整備したくなったので、ウェブサイトを見直すことを検討する。[GitHub Pages](https://pages.github.com/)は以前と変わらず[Jekyll](https://jekyllrb.com/)に対応しているので、サイドバーに対応したJekyllのテンプレートを探した。[jekyll-libdoc](https://jamstackthemes.dev/theme/jekyll-libdoc/)というテンプレートが良さそうなので、これをベースに資料置き場を構築する。
+# Webサイトを構築しなおす背景
 
-2019年当時はRubyやJekyllへのモチベーションがあったが、2023年はPCローカルには環境構築せずに全てWebブラウザ上で完結させる方針とする。[jekyll-libdocのGitHug](https://github.com/olivier3lanc/Jekyll-LibDoc#online---no-installation-copy-or-clone)に詳細の手順が紹介されているが、基本的にテンプレートをForkしてオンライのVSCodeで編集してコミットすることでWebページが更新できることがわかった。GitHubのリポジトリのページでピリオドキーを押すだけでVSCodeを使ってオンライン上で編集できる体験はとても感動した。
+ブログではなくカテゴライズされた資料置き場として整備したくなったので、ウェブサイトを見直したい。[GitHub Pages](https://pages.github.com/)は以前と変わらず[Jekyll](https://jekyllrb.com/)に対応しているので、サイドバーに対応したJekyllのテンプレートを探したところ、[jekyll-libdoc](https://jamstackthemes.dev/theme/jekyll-libdoc/)というテンプレートが良さそうなので、これをベースに資料置き場を構築する。
+
+2019年当時はRubyやJekyllへのモチベーションがあったが、2023年はPCローカルには環境構築せずに全てWebブラウザ上で完結させる方針とする。[jekyll-libdocのGitHub](https://github.com/olivier3lanc/Jekyll-LibDoc#online---no-installation-copy-or-clone)に詳細の手順が紹介されているが、基本的にテンプレートをForkしてオンライのVSCodeで編集してコミットすることでWebページが更新できることがわかった。GitHubのリポジトリのページでピリオドキーを押すだけでVSCodeを使ってオンライン上で編集できる体験はとても感動した。
 
 # Codespacesについて
 
-オンラインのVSCodeで編集する機能はCodespacesという。個人ユーザはベータ版を無料で使えるようだ。
+オンラインのVSCodeで編集する機能はGitHubが提供するCodespacesというサービスによるもの。個人ユーザはベータ版を無料で使えるようだ。
 
 [GitHub codespaces](https://github.co.jp/features/codespaces)
 
@@ -25,5 +27,5 @@ categories: dev
 
 # 参考
 
-* 2019年に当サイトを構築したときの記録 ![Jekyllによるウェブサイト構築方法]({{site.baseurl}}/posts/2019-01-19-portfolio-website-by-jekyll.markdown)
+* 2019年に当サイトを構築したときの記録 ![Jekyllによるウェブサイト構築方法]({{site.url}}/2019/01/19/portfolio-website-by-jekyll.markdown)
 
