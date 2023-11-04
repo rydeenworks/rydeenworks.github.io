@@ -27,5 +27,5 @@ categories: dev
 
 # 参考
 
-* 2019年に当サイトを構築したときの記録 ![Jekyllによるウェブサイト構築方法]({{site.url}}/2019/01/19/portfolio-website-by-jekyll)
+* 2019年に当サイトを構築したときの記録 [Jekyllによるウェブサイト構築方法]({{site.url}}/2019/01/19/portfolio-website-by-jekyll)
 
