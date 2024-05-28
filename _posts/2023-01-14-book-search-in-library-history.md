@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Androidアプリ「図書探し」更新履歴"
+title:  "Androidアプリ「図書さがし」更新履歴"
 date:   2023-01-14
-categories: dev
+categories: mybooksearch
 ---
 
 **2023/01/14 ver13.0**

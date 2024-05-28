@@ -2,7 +2,7 @@
 layout: post
 title:  "Androidアプリ 図書さがし の使い方"
 date:   2019-08-23
-categories: dev
+categories: mybooksearch
 ---
 私はよく図書館で本を借ります。ネットサーフィンしてて気になる本を見かけたら、Amazonでレビューを見て読むか判断します。PC環境のGoogleChromeブラウザでは、Amazonページで表示中の本が図書館で借りられるか表示するプラグインがあるので便利です。AndroidのWebブラウザで同様の事を実現するのが、**図書さがし** アプリ([Google Play](https://play.google.com/store/apps/details?id=com.rydeenworks.mybooksearch))です。
 

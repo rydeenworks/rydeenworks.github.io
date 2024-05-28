@@ -2,7 +2,7 @@
 layout: post
 title:  "Jekyllによるウェブサイト構築方法"
 date:   2019-01-19
-categories: jekyll
+categories: Dev
 ---
 
 個人開発や技術メモを整理するためウェブサイトを構築する事にした。[GitHub Pages](https://pages.github.com/)を利用して静的サイトジェネレータを使う方針とし、[StaticGen](https://www.staticgen.com/)などで調査して[Jekyll](https://jekyllrb.com/)を使う事にした。
