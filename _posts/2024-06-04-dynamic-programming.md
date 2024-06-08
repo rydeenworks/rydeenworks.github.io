@@ -34,3 +34,14 @@ categories: dev
 - [B17 - Frog 1 with Restoration](https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_cp)
 - [B18 - Subset Sum with Restoration](https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_cq)
 
+## [B19 - Knapsack 2](https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_cr)
+
+2-3日ほど考えてましたが自力で解答できず13/26のテストケースは通るのに残り13ケースが全然クリアできませんでした。あきらめて[githubの解答ページ](https://github.com/E869120/kyopro-tessoku?tab=readme-ov-file)を参照したところ、自分のハマりポイントは2つあって、品物の選び方とdp配列初期値に問題がありました。同じ価値なら重さが軽い方を選ぶという考えはあったのですが、品物の選び方を漸化式で表現しきらずに、重さの条件文を追加してなんとかしようとした所に課題があったと気付けた点が収穫でした。
+
+## [B20 - Edit Distance](https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_cs)
+
+"編集距離"でググってアルゴリズムを理解して実装したところ、あまり苦労せずにクリアできました。
+
+# まとめ
+
+動的計画法について基本的な考え方と演習問題を解いたことで、過去に解けなかった問題が解けるようになった。また、新規問題に挑戦して動的計画法で解けた。以上のことから、一定レベルで動的計画法を習得できた。
