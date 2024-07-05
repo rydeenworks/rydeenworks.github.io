@@ -74,3 +74,6 @@ categories: book
 - グリテンラジオと書籍「転職学」のおかげで多角的に転職活動を見れるようになった
 - あとは自分の軸や要件を整理すれば良いのでは？というところまで学びが蓄積できた気がした
 
+## 参考
+
+[パーソル総合研究所 転職学ページ](https://rc.persol-group.co.jp/thinktank/spe/career-change/)
