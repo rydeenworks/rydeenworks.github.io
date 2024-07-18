@@ -45,4 +45,3 @@ categories: dev
 ## 参考
 
 - [WEB+DB PRESS総集編［Vol.1～136］](https://amzn.to/3LflMg9)
-- [10年越しの Web フロントエンドという職種界隈についての考 | Offers Tech Blog](https://zenn.dev/overflow_offers/articles/20221017-definition-of-frontend)
