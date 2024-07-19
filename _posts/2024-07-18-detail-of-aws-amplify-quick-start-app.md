@@ -94,7 +94,7 @@ export declare function generateClient<T extends Record<any, any> = never>(optio
 
 前掲のConceptページには以下の記載がある。
 「On your app's frontend, you can use the generateClient function, which provides a typed client instance, making it easy to integrate CRUD (create, read, update, delete) operations for your models in your application code.」
-つまりCRUD
+つまりCRUD操作ができる。それ以上に複雑なことを実現する場合は、何らかの機能拡張が必要となる。おそらくAWS::CDKを使ってAWS::Lambdaで個別に機能実現していくのではないだろうか。
 
 
 ### クイックスタートアプリの実装(AppSync Pub/Sub API)
