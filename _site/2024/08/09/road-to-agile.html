@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>アジャイル開発への道</title>
+  <meta name="description" content="目的">
+  
+  <meta name="author" content="rydeenworks">
+  <meta name="copyright" content="&copy; rydeenworks 2024">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/zenburn.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://rydeenworks.github.io/2024/08/09/road-to-agile">
+  <link rel="alternate" type="application/rss+xml" title="RydeenWorks Dev Note" href="https://rydeenworks.github.io/feed.xml" />
+</head>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-119889066-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="RydeenWorks Dev Note">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        
+          
+          <li class="nav-link"><a href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <li class="nav-link"><a href="/posts/">Posts</a>
+          
+        
+          
+          <li class="nav-link"><a href="/projects/">Projects</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">アジャイル開発への道</h1>
+      <!-- <p class="info">by <strong></strong></p> -->
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">August 9, 2024</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/posts/#dev">Dev</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1 id="目的">目的</h1>
+
+<ul>
+  <li>アジャイル開発に習熟したい</li>
+  <li>自身の経験の棚卸し</li>
+  <li>役に立ちそうな情報の整理</li>
+  <li>アジャイル開発を成立させる要因について自身の見解を持ちたい</li>
+  <li>注意)記載内容は、あくまで個人の経験に基づく主観です</li>
+</ul>
+
+<h1 id="背景">背景</h1>
+
+<ul>
+  <li>2020年にスクラム開発にチャレンジ中のプロジェクトにPMとして合流した
+    <ul>
+      <li>その時はプロジェクトがうまく進んでなかった、具体的には…
+        <ul>
+          <li>2weekのスプリント期間にタスクが終わらない
+            <ul>
+              <li>終わらなかった作業を別タスクとしてチケット化して継続開発してた</li>
+            </ul>
+          </li>
+          <li>スプリントが終わった時点で動作するソフトウェアがない
+            <ul>
+              <li>スクラッチから開発したので動作するまでの実装量が多かった</li>
+              <li>GUI画面が多かったしUI/UX考えながら作ってた</li>
+              <li>別システムとの通信部分が実装されないと主要な機能が動かないシステムだった</li>
+            </ul>
+          </li>
+          <li>PBI(Product Backlog Items)が100個くらいあった
+            <ul>
+              <li>作りたい機能の数が多そうに思うが普通なのだろうか？
+                <ul>
+                  <li>受託開発の見積もり規模算出のために必要だった</li>
+                </ul>
+              </li>
+              <li>PBI全部にストーリーポイントを振ってた</li>
+            </ul>
+          </li>
+          <li>ストーリーポイントの見積もりが妥当かどうか判断つかなかった
+            <ul>
+              <li>経験を積んで見積もり精度が上がれば良い？</li>
+            </ul>
+          </li>
+          <li>スプリント期間に対応中のタスクの半分は課題があって進みが悪かった
+            <ul>
+              <li>タスクに着手してから新しい事実がわかってストーリーポイント通りに開発できない事が頻発してた</li>
+            </ul>
+          </li>
+          <li>スプリント振り返りを途中からやめた
+            <ul>
+              <li>KPT法で振り返りを実施していた</li>
+              <li>議事録から推測するに、学びはあるが改善につながる分析・行動への落とし込みまでできてなかった状況</li>
+              <li>開発が遅れてたため、振り返りの時間を開発に充てる方針となった</li>
+            </ul>
+          </li>
+          <li>リリースマイルストーンに対して開発が順調でなかった
+            <ul>
+              <li>ベロシティが改善すれば間に合うという説明をしていたが、改善の見通しが立ってなかった</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>3ヶ月ほど様子見したが最終的にスクラムやめてウォーターフォール開発に変更した
+        <ul>
+          <li>開発計画を立て直した結果、顧客の要望に沿ったリリースができた</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>その後3年くらいクリーンアーキテクチャ・ドメイン駆動設計・テスト駆動開発などに取り組んだ結果アジャイルっぽくなった
+    <ul>
+      <li>アジャイル開発を実現させるために支配的な問題は、スクラムのプラクティスではなくて設計スキル不足だと思うようになった</li>
+    </ul>
+  </li>
+  <li>チームの熟練度があがりドメインの知識も獲得したので、アジャイル開発に再チャレンジしようという意見が出てきた</li>
+</ul>
+
+<h1 id="問題事象の分析">問題事象の分析</h1>
+
+<ul>
+  <li>スクラムをやめたあと、なぜ上手くいってないのか色々と分析した</li>
+  <li>そもそも難しいプロジェクトだった
+    <ul>
+      <li>3プロジェクト(3つのシステム開発)を並行して進めるプロジェクトだった
+        <ul>
+          <li>プロジェクト間の優先度を考慮してリソース配分やマイルストーンを調整して計画することは開発プロセスに関係なく難しい</li>
+        </ul>
+      </li>
+      <li>初めての顧客、初めてのドメイン知識となるプロジェクトだった
+        <ul>
+          <li>会社としても新規事業領域だった</li>
+          <li>ブリッジSEとして出向している人がいて連携が取れる体制になってはいた</li>
+        </ul>
+      </li>
+      <li>複数のサブシステムを連携させる複雑なシステムだった
+        <ul>
+          <li>PC</li>
+          <li>ラズパイ</li>
+          <li>マイコン</li>
+          <li>信号処理プロセッサ</li>
+        </ul>
+      </li>
+      <li>3つのうち2つのプロジェクトは別会社が過去に開発したソースコードをベースに仕様追加・変更するプロジェクトだった
+        <ul>
+          <li>いわゆるレガシーコード</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>良い設計について語れる人がベテラン１名しかいなかった
+    <ul>
+      <li>ベテランについていけるほど設計スキル・経験がある人は自分も含めていなかった</li>
+    </ul>
+  </li>
+  <li>PLはプロジェクト運営経験が少なかった
+    <ul>
+      <li>スクラムガイド通りに運営することを目的化している雰囲気がうかがえた</li>
+      <li>チームが混乱していた時に立て直すための仕切りができていなかった</li>
+      <li>プロジェクトにどんな課題があるか整理されておらず、またチームに共有されてなかった
+        <ul>
+          <li>プロジェクト課題の分析・対策が着手できてなかった</li>
+          <li>プロジェクト課題の優先順位づけがされてなかった</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>良かった点
+    <ul>
+      <li>チームメンバーが意欲的で協力的だった
+        <ul>
+          <li>当時のPLや若手メンバーは自主的にスクラムについて勉強してた</li>
+          <li>振り返りや勉強会でチームメンバーに対してスクラムの情報共有もされていた</li>
+          <li>スクラムのプラクティスは一通り取り組めていた</li>
+        </ul>
+      </li>
+      <li>スクラムの運用ツールも用意されてた
+        <ul>
+          <li>Atlassianツール(JIRA,Confluence)を使ってスクラムを運用してた</li>
+          <li>ソースコード管理がGitではなくSVNだったのは残念だったが、そのことを課題と感じることはなかった</li>
+        </ul>
+      </li>
+      <li>顧客の担当者の方がとても優秀かつ意欲的・協力的だった
+        <ul>
+          <li>プロダクトオーナーとして密なコミュニケーションを主体的にとってくれた</li>
+          <li>デイリースクラムやりましょうと言ってくれて、毎日ミーティングでコミュニケーションとってくれた</li>
+          <li>ウォーターフォールに変えた後も、プロジェクトが安定するまでデイリースクラムを継続した</li>
+          <li>率直な意見交換をしてくれた
+            <ul>
+              <li>アジャイル開発をとてもよく研究されているようで自身の見解を話してくれて参考になった</li>
+              <li>設計改善のためにアーキテクチャや設計技法の導入を強く推進してくれた
+                <ul>
+                  <li>MVVM</li>
+                  <li>クリーンアーキテクチャ</li>
+                  <li>ドメイン駆動設計</li>
+                  <li>テスト駆動開発</li>
+                  <li>アトミックデザイン</li>
+                </ul>
+              </li>
+              <li>顧客はソフトウェアエンジニアではないのに、自分より設計技法について詳しかったのは反省点</li>
+              <li>それ以来、自分も継続的に勉強するようになった</li>
+              <li>プロジェクト課題を設計改善で解決するという視点は衝撃的だった</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="課題設定">課題設定</h1>
+
+<ul>
+  <li>ウォータフォールでの計画作成やプロジェクト課題解決は得意だったので、プロジェクトの混乱は解決した</li>
+  <li>仕様追加に時間がかかる、バグが多い、機能追加の影響でバグが出る、開発期間が長いなどの課題が残った</li>
+  <li>ソフトウェアの設計改善により課題を解決する方針とした</li>
+</ul>
+
+<h1 id="結果">結果</h1>
+
+<ul>
+  <li>設計改善により、ソフトウェアの理解容易性・修正容易性・テスト容易性が改善された</li>
+  <li>開発期間が短縮された</li>
+  <li>バグも減った</li>
+  <li>仕様変更も容易になった</li>
+  <li>自身の設計スキルはとても向上した</li>
+  <li>チームメンバーも設計を理解して開発できるようになった</li>
+  <li>設計スキル向上や開発体験向上によりチームメンバーが喜んでくれた</li>
+</ul>
+
+<h1 id="参考">参考</h1>
+
+<ul>
+  <li>アジャイル開発に習熟するために知っておきたい情報</li>
+  <li><a href="https://agilemanifesto.org/iso/ja/manifesto.html">アジャイルソフトウェア開発宣言</a>
+    <ul>
+      <li>この宣言を道のりの起点にすると、アジャイル開発理解の見通しが良い</li>
+      <li>2002年頃に宣言の文章を読んだ時は「理想はわかるが実際どうやるのだろう」と思った
+        <ul>
+          <li>エクストリームプログラミングという開発手法があるらしいという情報には触れたし、社内で少し話題になった</li>
+          <li>そのころに当時の先輩と2-3回ペアプロをしたが、それっきりやめてしまった</li>
+        </ul>
+      </li>
+      <li>ソフトウェア設計の技術書を読みまくった時期(2021年-2022年)に、宣言した人の顔ぶれが読んだ技術書の著者だと気づいた
+        <ul>
+          <li>以下の本を読んでた</li>
+          <li>Kent Beck
+            <ul>
+              <li><a href="https://amzn.to/3SGTBuG">テスト駆動開発</a></li>
+            </ul>
+          </li>
+          <li>James Grenning
+            <ul>
+              <li><a href="https://amzn.to/3SEw8dE">テスト駆動開発による組み込みプログラミング ―C言語とオブジェクト指向で学ぶアジャイルな設計</a></li>
+            </ul>
+          </li>
+          <li>Robert C. Martin
+            <ul>
+              <li><a href="https://amzn.to/3SBNb08">Clean Architecture</a></li>
+            </ul>
+          </li>
+          <li>Martin Fowler
+            <ul>
+              <li><a href="https://amzn.to/4dqnF5U">リファクタリング</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>気づいたきっかけは書籍「<a href="https://amzn.to/4cxW1Dj">.NETのエンタープライズアプリケーションアーキテクチャ　第２版</a>」
+        <ul>
+          <li>“Evansの代表作に著されているDDDの定義では、ドメインモデルという言葉は Martin Fowler が定義した Domain Model パターンに由来しています。”と書いてあった</li>
+          <li>この文章から、ソフトウェア設計技術というのは影響を受けながら進化・変化しているという理解ができた</li>
+          <li>さらに、それらの設計技術はアジャイル開発を成立させるための技術なのでは、という仮説に気づいた</li>
+          <li>この書籍の最初の方にアジャイルマニフェストについて言及があった</li>
+          <li>アジャイル開発手法としてエクストリームプログラミングやスクラムについて言及があった</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="https://www.ipa.go.jp/jinzai/skill-standard/plus-it-ui/itssplus/ps6vr70000001i7c-att/000065601.pdf">アジャイルソフトウェア開発宣言の読みとき方</a>
+    <ul>
+      <li>“<a href="https://agilemanifesto.org/iso/ja/principles.html">アジャイル宣言の背後にある原則</a>“について丁寧な解説が書いてある</li>
+      <li>IPAがまとめた資料なので信頼できそう</li>
+      <li>アジャイルに取り組む前に読むべき資料</li>
+    </ul>
+  </li>
+  <li><a href="https://www.atlassian.com/ja/agile/manifesto">アジャイルマニフェストはいまだに重要性を持つか</a>
+    <ul>
+      <li>スクラムがうまくいかなかった理由を分析していた当時にAtlassianの記事を見つけた</li>
+      <li>以下の文章が目にとまった
+        <ul>
+          <li>“「偽のアジャイル」 (別名「ダーク アジャイル」) は、アジャイル教育とコンサルティングの収益化によってさらに悪化すると多くの人が主張しています。”</li>
+        </ul>
+      </li>
+      <li>アジャイル開発のコンサルタントはポジショントークしている人がいるかもという観点を持つきっかけとなった</li>
+    </ul>
+  </li>
+  <li><a href="https://www.ipa.go.jp/jinzai/skill-standard/plus-it-ui/itssplus/ps6vr70000001i7c-att/agile-guidebook2022.pdf">アジャイルプロジェクト実践ガイドブック</a>
+    <ul>
+      <li>IPAがまとめた資料なので信頼できそう</li>
+      <li>アジャイルに取り組む前に読むべき資料</li>
+      <li>この資料はスクラムなどのプロセス寄りの話ではなく、必要な技術・スキルについて詳しく書いてあるという点で役にたつ</li>
+      <li>「Ⅲ. アジャイル開発における技術と難所」
+        <ul>
+          <li>「テスト駆動開発」「ドメイン駆動設計」は個人的に頑張ったし、必要性についても実感がある</li>
+          <li>「CI/CD」「ペアプログラミング・モブプログラミング」「クラウド技術」は、取り組めてないのでこれから頑張りたい</li>
+        </ul>
+      </li>
+      <li>「Ⅳ. エンジニアのスキル」
+        <ul>
+          <li>“アジャイル開発では、１、２週間の繰り返しの中でも、拡張性と変更容易性を考慮した設計・実装・テストを実践できるエンジニアが必要である。”
+            <ul>
+              <li>最初のスクラムが失敗した理由は、まさにこれだったと感じる</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>「V. アジャイル組織の育て方」
+        <ul>
+          <li>知らないことばかりなので試してみたい</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="https://www.ipa.go.jp/jinzai/skill-standard/plus-it-ui/itssplus/ps6vr70000001i7c-att/000065606.pdf">アジャイル開発の進め方</a>
+    <ul>
+      <li>IPAがまとめた資料なので信頼できそう</li>
+      <li>この資料の内容は初めてスクラムに取り組む前にチームメンバーは読んでいた(けど、うまくいかなかった)</li>
+      <li>個人的には、アジャイルプロジェクト実践ガイドブックの方が必要な情報だった</li>
+    </ul>
+  </li>
+  <li>スクラムとエクストリームプログラミングについて
+    <ul>
+      <li>ちょっと前まではどちらの手法でも好きに選べば良いと思っていたし、スクラムが一般的だと思ってた</li>
+      <li>以下の違いがあるらしい事を最近知った
+        <ul>
+          <li>スクラムはプロジェクトマネジメント・ビジネス寄りの手法</li>
+          <li>エクストリームプログラミングはプログラミング・技術寄りの手法</li>
+        </ul>
+      </li>
+      <li>参考情報)
+        <ul>
+          <li><a href="https://open.spotify.com/episode/7JP6BFOB2grTJt5V3VmI9Z">ポッドキャスト texta.fm 「5.Accelerate」</a>の冒頭５分くらい聞くと、和田卓人氏が「ビジネス側のプラクティスと技術プラクティス」という言い方でスクラムとエクストリームプログラミングを説明している
+            <ul>
+              <li><a href="https://qiita.com/takeshi_nozawa/items/c115379fafeb263ed807#textafm%E3%81%A7%E8%A8%80%E3%81%A3%E3%81%A6%E3%81%9F%E3%81%93%E3%81%A8">ポッドキャストの内容の文章化した記事(Qiita)</a></li>
+            </ul>
+          </li>
+          <li><a href="https://bliki-ja.github.io/FlaccidScrum">ヘロヘロScrum</a>というMartin Fowlerのブログ記事でも同様の言及がある。</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="まとめ">まとめ</h1>
+
+<ul>
+  <li>情報の整理ができた</li>
+  <li>次にアジャイル開発する時のために何に取り組むか決まった</li>
+  <li>次の取り組み
+    <ul>
+      <li><a href="https://amzn.to/3YxUBFn">LeanとDevOpsの科学</a>を読んでアジャイル開発の視野を広げる</li>
+      <li>エクストリームプログラミングの技術的プラクティスの全体像を把握する</li>
+    </ul>
+  </li>
+</ul>
+
+
+</article>
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<!--
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+      <a href="//twitter.com/share?text=%E3%82%A2%E3%82%B8%E3%83%A3%E3%82%A4%E3%83%AB%E9%96%8B%E7%99%BA%E3%81%B8%E3%81%AE%E9%81%93&url=https%3A%2F%2Frydeenworks.github.io%2F2024%2F08%2F09%2Froad-to-agile&via=rydeenworks"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=255');return false;">
+        <i class="fa fa-twitter-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+-->
+
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">RydeenWorks Dev Note</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+        
+        
+          <li class="nav-link"><a href="/about/">About</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          <li class="nav-link"><a href="/posts/">Posts</a>
+        
+        
+        
+          <li class="nav-link"><a href="/projects/">Projects</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:rydeenworks[at]gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">rydeenworks[at]gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://twitter.com/rydeenworks" title="Follow me on Twitter">
+              <i class="fa fa-twitter"></i>
+              <span class="username">rydeenworks</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://github.com/rydeenworks" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">rydeenworks</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">RydeenWorks is my development site.
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+});
+
+</script>
+
+
+
+
+
+
+  </body>
+
+</html>

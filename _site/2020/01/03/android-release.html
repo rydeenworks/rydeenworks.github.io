@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>AndroidアプリをGooglePlayストアに公開する手順[APK版]</title>
+  <meta name="description" content="AndroidアプリをGooglePlayストアに公開するまでの手順についてまとめました。大まかな流れは以下の通りです。">
+  
+  <meta name="author" content="rydeenworks">
+  <meta name="copyright" content="&copy; rydeenworks 2024">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/zenburn.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://rydeenworks.github.io/2020/01/03/android-release">
+  <link rel="alternate" type="application/rss+xml" title="RydeenWorks Dev Note" href="https://rydeenworks.github.io/feed.xml" />
+</head>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-119889066-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="RydeenWorks Dev Note">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        
+          
+          <li class="nav-link"><a href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <li class="nav-link"><a href="/posts/">Posts</a>
+          
+        
+          
+          <li class="nav-link"><a href="/projects/">Projects</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">AndroidアプリをGooglePlayストアに公開する手順[APK版]</h1>
+      <!-- <p class="info">by <strong></strong></p> -->
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">January 3, 2020</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/posts/#dev">Dev</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <p>AndroidアプリをGooglePlayストアに公開するまでの手順についてまとめました。大まかな流れは以下の通りです。</p>
+
+<ul>
+  <li>アプリのバージョンを上げる</li>
+  <li>AndroidStudioでリリース向けのapkを作成をする</li>
+  <li>GooglePlayConsoleで新しいリリースを作成する</li>
+</ul>
+
+<p>私が個人開発したAndroid向けアプリ「図書さがし」を例に手順を説明します。
+<a href="https://play.google.com/store/apps/details?id=com.rydeenworks.mybooksearch&amp;pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" /></a></p>
+
+<p><strong>(注意事項)</strong> GoogleではBundle版でのリリースを推奨しているようですが、本記事ではAPKによるリリースの手順となっています。</p>
+
+<p><strong>(著者について)</strong> この記事を書いている私は個人開発歴は3年、今までに２つのアプリをリリースしています。</p>
+
+<h1 id="1-アプリのバージョンを上げる">1 アプリのバージョンを上げる</h1>
+
+<p>GooglePlayストアではアプリのバージョン情報を管理しているため、リリース済みのバージョンのままリリースする事はできません。バージョンを上げてリリースします。</p>
+
+<h1 id="11-buildgradleの表示">1.1 build.gradleの表示</h1>
+
+<p>AndroidStudioのProjectツールウィンドウからbuild.gradleを表示しましょう。</p>
+
+<p><img src="/assets/android_release/app-version.png" alt="app-version.png" /></p>
+
+<h1 id="12-バージョンを上げる">1.2 バージョンを上げる</h1>
+
+<p>上の画像の <code class="language-plaintext highlighter-rouge">versionCode</code>と<code class="language-plaintext highlighter-rouge">versionName</code> の部分がバージョンの記述です。この部分を書き換えればOKです。私は1ずつ上げてます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        versionCode 5
+        versionName "5.0"
+</code></pre></div></div>
+
+<h1 id="2-androidstudioでリリース向けのapkを作成をする">2 AndroidStudioでリリース向けのapkを作成をする</h1>
+
+<p>AndroidStudioの Buildメニュー &gt; Generate Signed Bundle / APK… を選択する。</p>
+
+<p><img src="/assets/android_release/release_build_menu.png" alt="release_build_menu" /></p>
+
+<p>APKを選択して[Next]ボタンを押す。</p>
+
+<p><img src="/assets/android_release/release_by_apk.png" alt="release_by_apk" /></p>
+
+<p>key情報を設定して[Next]ボタンを押す。</p>
+
+<p><img src="/assets/android_release/release_key_info.png" alt="release_key_info" /></p>
+
+<p>releaseを選択する。Signatureは V1 と V2 両方をチェックする。[Finish]ボタンを押す。</p>
+
+<p><img src="/assets/android_release/release_signature_info.png" alt="release_signature_info" /></p>
+
+<p>ビルドが終わるとAndroidStudio上に通知が出る。</p>
+
+<p><img src="/assets/android_release/release_build_notify.png" alt="release_build_notify" /></p>
+
+<p>作成したapkはきちんとバージョンがわかるようにして管理しましょう。以上でapk作成は完了です。</p>
+
+<p><img src="/assets/android_release/release_apk_version.png" alt="release_apk_version" /></p>
+
+<h1 id="3-googleplayconsoleで新しいリリースを作成する">3 GooglePlayConsoleで新しいリリースを作成する</h1>
+
+<p>今回は過去にGooglePlayConsoleでリリースしたことがあると前提とします。</p>
+
+<p>“アプリのリリース”の製品版の”管理”をクリックする。</p>
+
+<p><img src="/assets/android_release/console_product_manage.png" alt="console_product_manage" /></p>
+
+<p>[リリースを作成]ボタンを押す。</p>
+
+<p><img src="/assets/android_release/console_new_release.png" alt="console_new_release" /></p>
+
+<p>[ファイルを選択]ボタンを押して、作成したapkを選択する。</p>
+
+<p><img src="/assets/android_release/console_select_apk.png" alt="console_select_apk" /></p>
+
+<p>リリースノートを書いて保存ボタンを押す。</p>
+
+<p><img src="/assets/android_release/console_release_note.png" alt="console_release_note" /></p>
+
+<p>APKでリリースすると警告が出ますが、今回は無視します。</p>
+
+<p><img src="/assets/android_release/console_release_warning.png" alt="console_release_warning" /></p>
+
+<p>[製品版として公開を開始]ボタンを押すとGooglePlayストアで公開されます。1時間〜半日くらいでストアに反映されると思います。お疲れ様でした。</p>
+
+<p><img src="/assets/android_release/console_product_release.png" alt="console_product_release" /></p>
+
+<p><a href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3495347&amp;pid=886287729" rel="nofollow"><img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3495347&amp;pid=886287729" border="0" /></a></p>
+
+
+</article>
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<!--
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+      <a href="//twitter.com/share?text=Android%E3%82%A2%E3%83%97%E3%83%AA%E3%82%92GooglePlay%E3%82%B9%E3%83%88%E3%82%A2%E3%81%AB%E5%85%AC%E9%96%8B%E3%81%99%E3%82%8B%E6%89%8B%E9%A0%86%5BAPK%E7%89%88%5D&url=https%3A%2F%2Frydeenworks.github.io%2F2020%2F01%2F03%2Fandroid-release&via=rydeenworks"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=255');return false;">
+        <i class="fa fa-twitter-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+-->
+
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">RydeenWorks Dev Note</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+        
+        
+          <li class="nav-link"><a href="/about/">About</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          <li class="nav-link"><a href="/posts/">Posts</a>
+        
+        
+        
+          <li class="nav-link"><a href="/projects/">Projects</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:rydeenworks[at]gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">rydeenworks[at]gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://twitter.com/rydeenworks" title="Follow me on Twitter">
+              <i class="fa fa-twitter"></i>
+              <span class="username">rydeenworks</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://github.com/rydeenworks" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">rydeenworks</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">RydeenWorks is my development site.
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+});
+
+</script>
+
+
+
+
+
+
+  </body>
+
+</html>

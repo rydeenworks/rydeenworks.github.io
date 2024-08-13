@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>JavaScriptを学ぶ</title>
+  <meta name="description" content="目的">
+  
+  <meta name="author" content="rydeenworks">
+  <meta name="copyright" content="&copy; rydeenworks 2024">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/zenburn.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://rydeenworks.github.io/2024/08/05/road-to-javascript">
+  <link rel="alternate" type="application/rss+xml" title="RydeenWorks Dev Note" href="https://rydeenworks.github.io/feed.xml" />
+</head>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-119889066-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="RydeenWorks Dev Note">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        
+          
+          <li class="nav-link"><a href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <li class="nav-link"><a href="/posts/">Posts</a>
+          
+        
+          
+          <li class="nav-link"><a href="/projects/">Projects</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">JavaScriptを学ぶ</h1>
+      <!-- <p class="info">by <strong></strong></p> -->
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">August 5, 2024</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/posts/#dev">Dev</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1 id="目的">目的</h1>
+
+<ul>
+  <li>JavaScriptを手に馴染ませたい</li>
+  <li>基本的な文法や作法についても理解したい</li>
+</ul>
+
+<h1 id="取り組んだこと">取り組んだこと</h1>
+
+<ul>
+  <li><a href="https://dotinstall.com/home">ドットインストール</a>
+    <ul>
+      <li>知ってることも含まれてそうでしたが、一通りやってみた
+        <ul>
+          <li><a href="https://dotinstall.com/lessons/basic_javascript_v6">はじめてのJavaScript</a></li>
+          <li><a href="https://dotinstall.com/lessons/basic_javascript_grammar_v3">JavaScript入門 基礎文法編</a></li>
+          <li><a href="https://dotinstall.com/lessons/basic_javascript_functions">JavaScript入門 関数編</a></li>
+          <li><a href="https://dotinstall.com/lessons/basic_javascript_data_structure">JavaScript入門 データ構造編</a></li>
+          <li><a href="https://dotinstall.com/lessons/basic_javascript_dom_v3">JavaScript入門 DOM編</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="感想">感想</h1>
+
+<ul>
+  <li>一通り文法や作法を理解しつつ手を動かせたので抵抗感は少なくなった</li>
+  <li>スラスラとJavaScriptを書くためにはひたすら手を動かすのが良さそう</li>
+</ul>
+
+<h1 id="追加の取り組み">追加の取り組み</h1>
+
+<ul>
+  <li>JavaScriptベースのWebアプリ開発技術として、次はReact/Next.js/Node.jsに進みたい</li>
+  <li>その前にJavaScript関連技術の背景や技術変遷の経緯など周辺知識を理解したい</li>
+  <li>それらの知識に手軽に取り組めるポッドキャストで概要把握することにした</li>
+  <li>ポッドキャストは前に聞いたことがあったが、あらためて聞き直した
+    <ul>
+      <li>ポッドキャスト - Fukabori.fm
+        <ul>
+          <li><a href="https://fukabori.fm/episode/76">76. モダンウェブフロントエンド(2022)に至る歴史 - React Server Component、SSR Streaming w/ morishin127</a></li>
+          <li><a href="https://fukabori.fm/episode/82">82. Node.js、Deno、Bun （前編） w/ yosuke_furukawa</a></li>
+          <li><a href="https://fukabori.fm/episode/83">83. Node.js、Deno、Bun（後編） w/ yosuke_furukawa</a></li>
+        </ul>
+      </li>
+      <li>ポッドキャスト - texta.fm
+        <ul>
+          <li><a href="https://open.spotify.com/episode/66U74znggv3PqmomIY0GWC">Sideshow 4. Worse is Better</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>追加でYouTubeも参考にしましたが、よくまとまっていて参考になりました
+    <ul>
+      <li><a href="https://www.youtube.com/watch?v=PuomDgRbllw&amp;list=PLpYVzO5BZomrLfNDHVPi-oFcdDikWjq7u&amp;index=2">【モダンJavaScript #2】歴史から学ぶJavaScript前編。ECMAScript、CommonJS、モジュール、名前空間を知ろう【フロントエンドエンジニア講座】</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="結果">結果</h1>
+
+<ul>
+  <li>JavaScriptについて背景や経緯の把握ができた</li>
+</ul>
+
+<h1 id="参考">参考</h1>
+
+<ul>
+  <li><a href="https://techlife.cookpad.com/entry/2022/06/21/130736">モダンウェブフロントエンド勉強会を開催しました</a></li>
+  <li><a href="https://qiita.com/yukiji/items/ae2dbbd34f8557d5af19">JavaScript学習ロードマップ</a></li>
+  <li><a href="https://developer.mozilla.org/ja/docs/Web/JavaScript">MDN Web docs - JavaScript</a></li>
+  <li><a href="https://www.youtube.com/playlist?list=PLpYVzO5BZomrLfNDHVPi-oFcdDikWjq7u">_JavaScript（モダン）入門編</a></li>
+</ul>
+
+</article>
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<!--
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+      <a href="//twitter.com/share?text=JavaScript%E3%82%92%E5%AD%A6%E3%81%B6&url=https%3A%2F%2Frydeenworks.github.io%2F2024%2F08%2F05%2Froad-to-javascript&via=rydeenworks"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=255');return false;">
+        <i class="fa fa-twitter-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+-->
+
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">RydeenWorks Dev Note</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+        
+        
+          <li class="nav-link"><a href="/about/">About</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          <li class="nav-link"><a href="/posts/">Posts</a>
+        
+        
+        
+          <li class="nav-link"><a href="/projects/">Projects</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:rydeenworks[at]gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">rydeenworks[at]gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://twitter.com/rydeenworks" title="Follow me on Twitter">
+              <i class="fa fa-twitter"></i>
+              <span class="username">rydeenworks</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://github.com/rydeenworks" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">rydeenworks</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">RydeenWorks is my development site.
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+});
+
+</script>
+
+
+
+
+
+
+  </body>
+
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>AWS-Amplify入門</title>
+  <meta name="description" content="入門の動機">
+  
+  <meta name="author" content="rydeenworks">
+  <meta name="copyright" content="&copy; rydeenworks 2024">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/zenburn.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://rydeenworks.github.io/2024/07/13/beggining-of-aws-amplify">
+  <link rel="alternate" type="application/rss+xml" title="RydeenWorks Dev Note" href="https://rydeenworks.github.io/feed.xml" />
+</head>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-119889066-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="RydeenWorks Dev Note">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        
+          
+          <li class="nav-link"><a href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <li class="nav-link"><a href="/posts/">Posts</a>
+          
+        
+          
+          <li class="nav-link"><a href="/projects/">Projects</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">AWS-Amplify入門</h1>
+      <!-- <p class="info">by <strong></strong></p> -->
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">July 13, 2024</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/posts/#dev">Dev</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1 id="入門の動機">入門の動機</h1>
+
+<ul>
+  <li>ASW Amplifyというものがあることを知った</li>
+  <li>フロントエンド開発者に対してバックエンドやインフラ構築を半自動的に提供する体験をできそうなので試したくなった
+    <ul>
+      <li><a href="https://docs.amplify.aws/react/how-amplify-works/concepts/">AWS Amplify コンセプト抜粋</a>「AWS Amplify Gen 2 は、バックエンドの定義に TypeScript ベースのコードファースト開発者エクスペリエンス (DX) を使用します。Gen 2 DX は、ホスティング、バックエンド、UI 構築機能とコードファーストのアプローチを備えた統合された Amplify 開発者エクスペリエンスを提供します。Amplify を使用すると、フロントエンド開発者は、アプリのデータモデル、ビジネスロジック、認証、承認ルールを完全に TypeScript で表現するだけで、クラウドインフラストラクチャをデプロイできます。Amplify は適切なクラウドリソースを自動的に構成し、基盤となる AWS サービスをつなぎ合わせる必要がなくなります。」</li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="入門の仕方">入門の仕方</h1>
+
+<ul>
+  <li><a href="https://aws.amazon.com/jp/products/frontend-web-mobile/">Front-End Web &amp; Mobile on AWS</a> みて概要把握</li>
+  <li><a href="https://docs.amplify.aws/react/start/quickstart/">AWS Amplify Quick Start for React</a> を試す</li>
+</ul>
+
+<h1 id="クイックスタートの実行結果の調査">クイックスタートの実行結果の調査</h1>
+
+<ul>
+  <li>特に問題なくデプロイまでできた</li>
+  <li><a href="https://us-east-1.console.aws.amazon.com/amplify/apps">Amplifyコンソール画面</a>の当該アプリの「デプロイされたバックエンドリソース」から78個のバックエンドリソースが自動的に構築されたことが確認できた</li>
+  <li>バックエンドリソースを整理することでシステムイメージが深まりそう</li>
+  <li>amplify_outputs.jsonはgitignoreにコミット対象外ファイルとして定義済みだった</li>
+  <li>TODO削除機能を追加してlocalhostで動作確認したら デプロイ環境で追加したTODOが表示された</li>
+  <li>mainブランチ用バックエンドがローカル開発でも使われる(amplify_outputs.jsonが同じなので)</li>
+  <li>TODO削除機能をmainブランチにpushしたら自動的にデプロイされて削除機能が使えた</li>
+  <li><a href="https://docs.amplify.aws/react/start/account-setup/">アカウントセットアップ</a>は少し手こずったができた</li>
+  <li>サンドボックスも作れた</li>
+  <li>ユーザごとにTODOアイテムを持つように修正するとサンドボックスに自動的に反映されてデプロイされるようだ</li>
+  <li>チュートリアル通りだとユーザごとのデータ取得のタイミングがおかしい気がする</li>
+  <li>サインインした直後は以前のユーザのタスクが表示されるのがおかしい</li>
+  <li>useEffectのタイミングでsetTodosするのが設計としておかしい気がする</li>
+  <li><a href="https://ui.docs.amplify.aws/react/connected-components/authenticator/advanced">useAuthenticatorフック</a> を使えば良いのでは？</li>
+  <li>Authenticator周りは追加で調査する</li>
+</ul>
+
+<h2 id="感想">感想</h2>
+
+<ul>
+  <li>AWS Amplifyを使うことで、AWS::AppSync、AWS::CDK、AWS::Cognito、AWS::IAM、AWS::Lambda、AWS::S3、AWS::SSM、AWS::StepFunctionsがバックエンドリソースとして動いた</li>
+  <li>これらのシステム動作イメージをつかみたい</li>
+  <li>これをベースに独自アプリ作れそうな気がする</li>
+  <li>コード修正してGitHubにpushするとビルド・デプロイまでされる体験はとても良い</li>
+  <li>知識なしにアプリ開発に集中できる体験が特に良い</li>
+  <li>アプリ開発しながら必要な知識をつければ良さそうな点も良い</li>
+  <li>この体験のためだけに課金する価値ある</li>
+</ul>
+
+<h2 id="参考">参考</h2>
+
+<p>特になし</p>
+
+</article>
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<!--
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+      <a href="//twitter.com/share?text=AWS-Amplify%E5%85%A5%E9%96%80&url=https%3A%2F%2Frydeenworks.github.io%2F2024%2F07%2F13%2Fbeggining-of-aws-amplify&via=rydeenworks"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=255');return false;">
+        <i class="fa fa-twitter-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+-->
+
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">RydeenWorks Dev Note</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+        
+        
+          <li class="nav-link"><a href="/about/">About</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          <li class="nav-link"><a href="/posts/">Posts</a>
+        
+        
+        
+          <li class="nav-link"><a href="/projects/">Projects</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:rydeenworks[at]gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">rydeenworks[at]gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://twitter.com/rydeenworks" title="Follow me on Twitter">
+              <i class="fa fa-twitter"></i>
+              <span class="username">rydeenworks</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://github.com/rydeenworks" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">rydeenworks</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">RydeenWorks is my development site.
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+});
+
+</script>
+
+
+
+
+
+
+  </body>
+
+</html>

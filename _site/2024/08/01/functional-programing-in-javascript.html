@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>読書「関数型プログラミングの基礎 JavaScriptを使って学ぶ」</title>
+  <meta name="description" content="概要">
+  
+  <meta name="author" content="rydeenworks">
+  <meta name="copyright" content="&copy; rydeenworks 2024">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/zenburn.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://rydeenworks.github.io/2024/08/01/functional-programing-in-javascript">
+  <link rel="alternate" type="application/rss+xml" title="RydeenWorks Dev Note" href="https://rydeenworks.github.io/feed.xml" />
+</head>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-119889066-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="RydeenWorks Dev Note">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        
+          
+          <li class="nav-link"><a href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <li class="nav-link"><a href="/posts/">Posts</a>
+          
+        
+          
+          <li class="nav-link"><a href="/projects/">Projects</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">読書「関数型プログラミングの基礎 JavaScriptを使って学ぶ」</h1>
+      <!-- <p class="info">by <strong></strong></p> -->
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">August 1, 2024</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/posts/#book">Book</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1 id="概要">概要</h1>
+
+<ul>
+  <li>JavaScriptを手に馴染ませたい</li>
+  <li>JavaScriptでの関数型プログラミングを把握したい</li>
+  <li><a href="https://amzn.to/3WsRw6C">Amazon書籍ページ</a></li>
+  <li><a href="https://www.ric.co.jp/book/programming/detail/178">出版社ページ</a></li>
+  <li><a href="https://www.ric.co.jp/pdfs/html/error1059.html">書籍の正誤表</a></li>
+  <li><a href="https://github.com/akimichi/functionaljs">著者が提供するサンプルコード(node.jsバージョンがV16に上がってる様子)</a></li>
+  <li><a href="https://akimichi.github.io/functionaljs/">著者が提供する書籍の補足ページ</a></li>
+</ul>
+
+<h1 id="目次">目次</h1>
+
+<ul>
+  <li>第Ⅰ部　関数型プログラミングの基礎
+    <ul>
+      <li>第1章　「計算」とは
+        <ul>
+          <li>1.1　「計算」のモデル</li>
+          <li>1.2　命令型モデル</li>
+          <li>1.3　関数型モデル</li>
+        </ul>
+      </li>
+      <li>第2章　なぜ関数型プログラミングが重要か
+        <ul>
+          <li>2.1　プログラミング言語における関数の特徴</li>
+          <li>2.2　関数型プログラミングの特徴</li>
+          <li>2.3　関数型プログラミングの利点</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>第Ⅱ部　JavaScriptによる関数型プログラミングの実践
+    <ul>
+      <li>第3章　心の準備
+        <ul>
+          <li>3.1　DRY原則</li>
+          <li>3.2　抽象化への指向</li>
+          <li>3.3　セマンティクスを意識する</li>
+          <li>3.4　テストに親しむ</li>
+          <li>3.5　JavaScriptと関数型プログラミング</li>
+        </ul>
+      </li>
+      <li>第4章　データの種類と特徴
+        <ul>
+          <li>4.1　型とは何か</li>
+          <li>4.2　基本型</li>
+          <li>4.3　合成型</li>
+          <li>4.4　変数とデータの関係</li>
+          <li>4.5　参照透過性の仕組み</li>
+        </ul>
+      </li>
+      <li>第5章　プログラムをコントロールする仕組み
+        <ul>
+          <li>5.1　条件分岐の種類と特徴</li>
+          <li>5.2　反復処理の種類と特徴</li>
+          <li>5.3　再帰による反復処理</li>
+        </ul>
+      </li>
+      <li>第6章　関数を利用する
+        <ul>
+          <li>6.1　関数の基本</li>
+          <li>6.2　関数と参照透過性</li>
+        </ul>
+      </li>
+      <li>第7章　高階関数を活用する
+        <ul>
+          <li>7.1　高階関数とは何か</li>
+          <li>7.2　カリー化で関数を返す</li>
+          <li>7.3　コンビネータで関数を組み合わせる</li>
+          <li>7.4　クロージャーを使う</li>
+          <li>7.5　関数を渡す</li>
+          <li>7.6　モナドを作る</li>
+        </ul>
+      </li>
+      <li>第8章　関数型言語を作る
+        <ul>
+          <li>8.1　プログラミング言語の仕組み</li>
+          <li>8.2　抽象構文木を作る</li>
+          <li>8.3　環境を作る</li>
+          <li>8.4　評価器を作る</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>第Ⅲ部　付録
+    <ul>
+      <li>第9章　JavaScript環境を準備する
+        <ul>
+          <li>9.1　実行環境を準備する</li>
+          <li>9.2　テスト環境を準備する</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="方針">方針</h1>
+
+<ul>
+  <li>JavaScript実行環境をどうするか？
+    <ul>
+      <li>書籍の「9.1　実行環境を準備する」によるとNode.js v0.12.0を使用しておりES6規格以前の環境が前提の様子</li>
+      <li>GitHubページのコメントによるとNode.js v16に対応しているらしい</li>
+      <li><a href="https://nodejs.jp/">Node.js公式サイト</a>を見ると最新バージョンはv22だが、v16も環境として取得可能な様子</li>
+      <li>結論：Node.js v16をインストールする</li>
+      <li>しかし、v22はインストール済みだったので、環境をv16/v22で切り替え可能にする</li>
+      <li>Mac環境でHomebrewを使い慣れているのでNodebrewを使って切り替える方針とする</li>
+    </ul>
+
+    <h1 id="環境構築手順">環境構築手順</h1>
+
+    <ul>
+      <li>brew uninstall node
+        <ul>
+          <li>インストール済みのNode.jsをアンインストール</li>
+        </ul>
+      </li>
+      <li>brew install nodebrew</li>
+      <li>nodebrew setup</li>
+      <li>~/.zshrc に export PATH=$HOME/.nodebrew/current/bin:$PATH を記述</li>
+      <li>source ~/.zshrc
+        <ul>
+          <li>シェルの設定を再読み込み</li>
+        </ul>
+      </li>
+      <li>nodebrew install v16.20.2</li>
+      <li>nodebrew install v22.5.1</li>
+      <li>nodebrew use v16.20.2</li>
+      <li>node -v
+        <ul>
+          <li>v16.20.2が表示されたので成功</li>
+        </ul>
+      </li>
+      <li>npm -v
+        <ul>
+          <li>8.19.4が表示されたので成功</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="感想">感想</h1>
+
+<h2 id="まとめ">まとめ</h2>
+
+<h2 id="参考">参考</h2>
+
+<p><a href="https://aws.amazon.com/jp/events/aws-event-resource/hands-on/">AWS ハンズオン資料</a></p>
+
+</article>
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<!--
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+      <a href="//twitter.com/share?text=%E8%AA%AD%E6%9B%B8%E3%80%8C%E9%96%A2%E6%95%B0%E5%9E%8B%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%AE%E5%9F%BA%E7%A4%8E+JavaScript%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E5%AD%A6%E3%81%B6%E3%80%8D&url=https%3A%2F%2Frydeenworks.github.io%2F2024%2F08%2F01%2Ffunctional-programing-in-javascript&via=rydeenworks"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=255');return false;">
+        <i class="fa fa-twitter-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+-->
+
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">RydeenWorks Dev Note</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+        
+        
+          <li class="nav-link"><a href="/about/">About</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          <li class="nav-link"><a href="/posts/">Posts</a>
+        
+        
+        
+          <li class="nav-link"><a href="/projects/">Projects</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:rydeenworks[at]gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">rydeenworks[at]gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://twitter.com/rydeenworks" title="Follow me on Twitter">
+              <i class="fa fa-twitter"></i>
+              <span class="username">rydeenworks</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://github.com/rydeenworks" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">rydeenworks</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">RydeenWorks is my development site.
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+});
+
+</script>
+
+
+
+
+
+
+  </body>
+
+</html>

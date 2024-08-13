@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>React入門</title>
+  <meta name="description" content="入門の動機">
+  
+  <meta name="author" content="rydeenworks">
+  <meta name="copyright" content="&copy; rydeenworks 2024">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/zenburn.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://rydeenworks.github.io/2024/07/10/beggining-of-react">
+  <link rel="alternate" type="application/rss+xml" title="RydeenWorks Dev Note" href="https://rydeenworks.github.io/feed.xml" />
+</head>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-119889066-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="RydeenWorks Dev Note">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        
+          
+          <li class="nav-link"><a href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <li class="nav-link"><a href="/posts/">Posts</a>
+          
+        
+          
+          <li class="nav-link"><a href="/projects/">Projects</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">React入門</h1>
+      <!-- <p class="info">by <strong></strong></p> -->
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">July 10, 2024</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/posts/#dev">Dev</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1 id="入門の動機">入門の動機</h1>
+
+<ul>
+  <li>UIフレームワークは技術の変化が早くて追っかけられてなかったが一度最新の状況を理解しておきたい</li>
+  <li>業務でも個人開発でもUI開発のパラダイムを理解することで良い開発ができそうな感覚を持ったため</li>
+  <li>スマホアプリ・デスクトップアプリ・フロントエンドに依存しない共通したUI開発のベストプラクティスの引き出しを増やしたい</li>
+  <li>Flutterアプリ・WPFアプリ・Kotlinアプリいずれにしても最新のパラダイムの理解が必要な感覚があった</li>
+  <li>Webアプリケーションのクライアント側の挙動を概要レベルで語れるようにしておきたい</li>
+  <li>フロントエンドという領域や職種に対するイメージをアップデートした方が良さそうなくらい進化している(気がする)</li>
+  <li>Reactは標準技術と言えるくらい普及している(気がする)</li>
+</ul>
+
+<h1 id="入門の仕方">入門の仕方</h1>
+
+<ul>
+  <li>雑誌 <a href="https://amzn.to/4bynOTs">WEB+DB PRESS Vol.129</a> の特集「Reactの深層 変わる常識と変わらない思想」の記事に目を通して、Reactの本質的な思想とVer18以降の設計方針が理解できた</li>
+  <li>手を動かしたくなったので<a href="https://ja.react.dev/learn">公式ページのReactを学ぶ</a>に着手した</li>
+  <li><a href="https://ja.react.dev/learn/tutorial-tic-tac-toe">チュートリアル：三目並べ</a> は、最後まで実装してイメージつかめた</li>
+  <li><a href="https://ja.react.dev/learn/thinking-in-react">Reactの流儀</a> は、ひととおり目を通した</li>
+  <li>内容的には違和感はなく、慣れればしっくりきそうな気がする</li>
+</ul>
+
+<h2 id="感想">感想</h2>
+
+<ul>
+  <li>雑誌の特集記事がイメージはつかむのに役立った</li>
+  <li>三目並べのチュートリアルも雰囲気を把握するのによかった</li>
+  <li>バックエンド側との連携とかページ遷移とか理解したい</li>
+  <li><a href="https://nextjs.org/learn">Start building with Next.js</a> が良いのかもしれない
+    <ul>
+      <li>スタイリング: Next.js でアプリケーションにスタイルを設定するさまざまな方法。</li>
+      <li>最適化: 画像、リンク、フォントを最適化する方法。</li>
+      <li>ルーティング: ファイル システム ルーティングを使用してネストされたレイアウトとページを作成する方法。</li>
+      <li>データ取得: Vercel でデータベースを設定する方法と、取得およびストリーミングのベスト プラクティス。</li>
+      <li>検索とページネーション: URL 検索パラメータを使用して検索とページネーションを実装する方法。</li>
+      <li>データの変更: React Server Actions を使用してデータを変更し、Next.js キャッシュを再検証する方法。</li>
+      <li>エラー処理:404一般的なエラーおよび見つからないエラーを処理する方法。</li>
+      <li>フォームの検証とアクセシビリティ:サーバー側でのフォーム検証の方法とアクセシビリティを向上させるためのヒント。</li>
+      <li>認証: アプリケーションに認証を追加する方法NextAuth.jsおよびミドルウェア。</li>
+      <li>メタデータ: メタデータを追加し、アプリケーションをソーシャル共有用に準備する方法。</li>
+    </ul>
+  </li>
+  <li><a href="https://nextjs.org/learn/react-foundations">React foundations</a> は後でやりたい</li>
+</ul>
+
+<h2 id="参考">参考</h2>
+
+<ul>
+  <li><a href="https://amzn.to/3LflMg9">WEB+DB PRESS総集編［Vol.1～136］</a></li>
+</ul>
+
+</article>
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<!--
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+      <a href="//twitter.com/share?text=React%E5%85%A5%E9%96%80&url=https%3A%2F%2Frydeenworks.github.io%2F2024%2F07%2F10%2Fbeggining-of-react&via=rydeenworks"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=255');return false;">
+        <i class="fa fa-twitter-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+-->
+
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">RydeenWorks Dev Note</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+        
+        
+          <li class="nav-link"><a href="/about/">About</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          <li class="nav-link"><a href="/posts/">Posts</a>
+        
+        
+        
+          <li class="nav-link"><a href="/projects/">Projects</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:rydeenworks[at]gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">rydeenworks[at]gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://twitter.com/rydeenworks" title="Follow me on Twitter">
+              <i class="fa fa-twitter"></i>
+              <span class="username">rydeenworks</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://github.com/rydeenworks" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">rydeenworks</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">RydeenWorks is my development site.
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+});
+
+</script>
+
+
+
+
+
+
+  </body>
+
+</html>

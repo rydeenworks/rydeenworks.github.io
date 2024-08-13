@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>組み込みプログラミングのためのハードウェア基礎知識</title>
+  <meta name="description" content="組み込み系のC言語/C++の開発現場に配属された人">
+  
+  <meta name="author" content="rydeenworks">
+  <meta name="copyright" content="&copy; rydeenworks 2024">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/zenburn.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://rydeenworks.github.io/2019/11/20/embedded-programing">
+  <link rel="alternate" type="application/rss+xml" title="RydeenWorks Dev Note" href="https://rydeenworks.github.io/feed.xml" />
+</head>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-119889066-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="RydeenWorks Dev Note">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        
+          
+          <li class="nav-link"><a href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <li class="nav-link"><a href="/posts/">Posts</a>
+          
+        
+          
+          <li class="nav-link"><a href="/projects/">Projects</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">組み込みプログラミングのためのハードウェア基礎知識</h1>
+      <!-- <p class="info">by <strong></strong></p> -->
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">November 20, 2019</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/posts/#programming">Programming</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <p><strong>組み込み系のC言語/C++の開発現場に配属された人</strong></p>
+
+<p>組み込み系のC言語/C++の開発現場に配属されたんだけど、なんか、CPUやメモリなどハードウェアの事についてよく知らない、組み込みプログラミングの基礎知識が欲しい。あと、ついでに良い学習の仕方があれば知りたい、と考えていませんか？</p>
+
+<p><img src="/assets/computer-board.jpg" alt="computer-board" /></p>
+
+<p>本記事では、この疑問を解決します。</p>
+
+<p><strong>本記事の内容</strong></p>
+
+<ul>
+  <li>
+    <p>ハードウェアの基礎知識</p>
+  </li>
+  <li>
+    <p>ハードウェアの基礎知識の学習方法</p>
+  </li>
+</ul>
+
+<p><strong>著者について</strong></p>
+
+<p>この記事を書いている私はプログラミング歴が15年ほどあり、直近5年は組み込みプログラミングの開発をしています。</p>
+
+<p>デスクトップアプリ開発５年(C/C++)→スマホアプリ開発５年(Java/Objective-C)→組み込みアプリ開発５年(C/C++)</p>
+
+<p>経歴は上記の通りですが、初心者の時に学んだハードウェアの基礎知識はずっと役に立ってきました。</p>
+
+<h1 id="1-ハードウェアの基礎知識">1 ハードウェアの基礎知識</h1>
+
+<p><img src="/assets/office-taking-note.jpg" alt="office-taking-note.jpg" /></p>
+
+<h2 id="11-ハードウェア特性の理解">1.1 ハードウェア特性の理解</h2>
+
+<p>プログラムはハードウェア上で動作しますので、ハードウェアの特性を理解してプログラムする必要があります。</p>
+
+<p>たくさんの種類の部品が集合してハードウェアを構成していますが、はじめのうちは主要なものだけ理解すれば良いです。</p>
+
+<ul>
+  <li>CPU</li>
+  <li>メモリ</li>
+  <li>ストレージ</li>
+  <li>ネットワーク</li>
+</ul>
+
+<p>各ハードの主要な特性は以下の通りです。</p>
+
+<h3 id="cpu">CPU</h3>
+
+<ul>
+  <li>CPUはプログラムで命令した計算処理を行うハード</li>
+  <li>一定時間内にどれだけの計算量をこなせるかはCPUによって決まる</li>
+  <li>一定時間内の計算量上限に達するとCPU使用率100%になる、それ以上の計算は待たされるので最終的な計算完了までの時間が長くなる。</li>
+  <li>たくさんの計算量をこなせるCPUは高価</li>
+</ul>
+
+<h3 id="メモリ">メモリ</h3>
+
+<ul>
+  <li>メモリはプログラムで処理するデータを保持するハード</li>
+  <li>保持できるデータサイズはメモリによって決まる</li>
+  <li>メモリが保持できるデータサイズの上限を超えた場合、メモリ上のデータをストレージに退避する。退避処理が発生するとプログラム動作が遅くなる。ストレージに退避したデータをメモリに復帰させる処理も、同様にプログラム動作が遅くなる。</li>
+  <li>たくさんのデータを保持できるメモリは高価</li>
+</ul>
+
+<h3 id="ストレージ">ストレージ</h3>
+
+<ul>
+  <li>ストレージはデータをファイルとして保存するハード</li>
+  <li>プログラムはファイルからデータを読み込んでメモリに保持する、またデータをファイルに保存する</li>
+  <li>ストレージに保存できるデータサイズ上限はストレージ容量によって決まる</li>
+  <li>
+    <p>ストレージ容量を超えて保存させようとした場合、保存処理は失敗する</p>
+  </li>
+  <li>
+    <p>ストレージのハードの種類は色々ある(ハードディスク/SSD/USBメモリ/SDカード)</p>
+  </li>
+  <li>ハードディスクはSSDに比べて安くて大容量、ただしデータ保存・読み込みのためにディスクを物理的に回転させるのでプログラムの動作が遅くなる</li>
+  <li>たくさんのデータを保持できるストレージは高価</li>
+</ul>
+
+<h3 id="ネットワーク">ネットワーク</h3>
+
+<ul>
+  <li>ネットワークはコンピュータ間でデータを送受信するためのハード</li>
+  <li>一定時間内にどれだけの通信量をこなせるかはネットワーク環境とハードで決まる</li>
+  <li>一定時間内の通信量上限に達するとネットワーク使用率100%になる、それ以上の通信は待たされるので最終的な通信完了までの時間が長くなる。</li>
+  <li>たくさんの通信量をこなせるハード・ネットワーク環境は高価</li>
+</ul>
+
+<h2 id="12-利用可能なハードウェア資源の確認">1.2 利用可能なハードウェア資源の確認</h2>
+
+<p>ハードウェア特性の理解 を踏まえて、実際にプログラムする上で利用可能なハードウェア資源を確認します。</p>
+
+<h3 id="全般">全般</h3>
+
+<ul>
+  <li>ハードウェア上で動作するプログラムは１つだけか？</li>
+</ul>
+
+<p>複数のプログラムを同時に実行する場合、１つのプログラムがハードウェア資源を使い切ってしまうと困るので確認します。</p>
+
+<h3 id="cpu-1">CPU</h3>
+
+<ul>
+  <li>CPU使用率100%まで使い切って問題ないか？</li>
+</ul>
+
+<p>基本的には100%まで使い切るのは良くありません。CPUが熱くなったり、電力をたくさん消費したり、他のプログラムが止まってしまったり、色々と支障があります。</p>
+
+<h3 id="メモリ-1">メモリ</h3>
+
+<ul>
+  <li>プログラムが利用可能なメモリサイズ上限は？</li>
+</ul>
+
+<h3 id="ストレージ-1">ストレージ</h3>
+
+<ul>
+  <li>プログラムが利用可能なストレージ容量上限は？</li>
+</ul>
+
+<h3 id="ネットワーク-1">ネットワーク</h3>
+
+<ul>
+  <li>プログラムが利用可能な通信量上限は？</li>
+</ul>
+
+<h2 id="13-ソフトウェア設計の確認">1.3 ソフトウェア設計の確認</h2>
+
+<p>利用可能なハードウェア資源を踏まえてソフトウェア設計します。</p>
+
+<p>基本的には以下のことを行うイメージです。</p>
+
+<ul>
+  <li>設計上のハードウェア資源使用量を算出する</li>
+  <li>資源使用量の実績値をログ出力して可視化する</li>
+  <li>設計改善によって資源使用量を削減する</li>
+</ul>
+
+<p>基本的にはハードウェア資源使用量を減らすということは、性能がそれだけ落ちます。ハードウェア資源使用量と性能のバランスを理解した上でトレードオフします。（処理データ量削減やアルゴリズム改善によってハードウェア資源使用量を減らした場合は性能は落ちません）</p>
+
+<p><img src="/assets/computer-log.jpg" alt="computer-log" /></p>
+
+<h3 id="cpu-2">CPU</h3>
+
+<ul>
+  <li>計算量が多いプログラムの特定</li>
+  <li>計測処理ログ出力(処理時間、CPU使用率)の検討</li>
+  <li>改善設計の検討(データ削減、アルゴリズム改善)</li>
+</ul>
+
+<h3 id="メモリ-2">メモリ</h3>
+
+<ul>
+  <li>プログラムの設計上のメモリ使用量の算出</li>
+  <li>メモリ使用量のログ出力の検討</li>
+  <li>改善設計の検討(データ削減、アルゴリズム改善)</li>
+</ul>
+
+<h3 id="ストレージ-2">ストレージ</h3>
+
+<ul>
+  <li>プログラムの設計上のストレージ使用量の算出</li>
+  <li>ストレージ読み書き処理のログ出力(ファイルサイズ、処理時間)の検討</li>
+  <li>改善設計の検討(データ削減、ストレージアクセス回数削減)</li>
+</ul>
+
+<h3 id="ネットワーク-2">ネットワーク</h3>
+
+<ul>
+  <li>プログラムの設計上の通信量の算出</li>
+  <li>通信ログ出力(通信量、通信回数)の検討</li>
+  <li>改善設計の検討(データ削減、アルゴリズム改善)</li>
+</ul>
+
+<h1 id="2-ハードウェアの基礎知識の学習方法">2 ハードウェアの基礎知識の学習方法</h1>
+
+<h2 id="21-組み込み系なら初学者のうちに基礎知識を習得しましょう">2.1 組み込み系なら初学者のうちに基礎知識を習得しましょう</h2>
+
+<p>ハードウェアの知識はなるべく早く身につけた方が良いです。</p>
+
+<p>なぜなら、どんなハードウェアもCPU/メモリ/ストレージというハードウェア構成は変わらないため、一度これらの知識を身につけておくと一生この知識がプログラミングで生かせてコストパフォーマンスが良いからです。</p>
+
+<p>また、近年ではネットワーク常時接続が当たり前になっているためネットワークの知識を持っている方が良いです。</p>
+
+<h2 id="22-学習の仕方">2.2 学習の仕方</h2>
+
+<p>インターネットでたくさんの情報が得られますが、それらは断片的で体系的ではない事があり初学者に情報の取捨選択するのは大変だと思います。</p>
+
+<p>そのため、評判の良い本でハードウェアの基礎知識について体系的な全体像を学ぶのがおすすめです。以下の方法で調べると良いでしょう。</p>
+
+<ul>
+  <li>Google検索で評判の良い本を調べる</li>
+  <li>Amazonで本のレビューを調べる</li>
+</ul>
+
+<h2 id="23-ハードウェア基礎知識の学習の実例">2.3 ハードウェア基礎知識の学習の実例</h2>
+
+<p>初学者には次の本が特にオススメです。</p>
+
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=tf_til&amp;t=dynamitecruis-22&amp;m=amazon&amp;o=9&amp;p=8&amp;l=as1&amp;IS2=1&amp;detail=1&amp;asins=4822281655&amp;linkId=1d286cf9ce36cf74cc6ed7834b3251e3&amp;bc1=000000&amp;lt1=_blank&amp;fc1=333333&amp;lc1=0066c0&amp;bg1=ffffff&amp;f=ifr">
+    </iframe>
+
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=tf_til&amp;t=dynamitecruis-22&amp;m=amazon&amp;o=9&amp;p=8&amp;l=as1&amp;IS2=1&amp;detail=1&amp;asins=4822283151&amp;linkId=48d8b55dbc42075d55aea109bcaf0aa0&amp;bc1=000000&amp;lt1=_blank&amp;fc1=333333&amp;lc1=0066c0&amp;bg1=ffffff&amp;f=ifr">
+    </iframe>
+
+<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=tf_til&amp;t=dynamitecruis-22&amp;m=amazon&amp;o=9&amp;p=8&amp;l=as1&amp;IS2=1&amp;detail=1&amp;asins=4822283119&amp;linkId=235547d37a920430e71c6880ee38e387&amp;bc1=000000&amp;lt1=_blank&amp;fc1=333333&amp;lc1=0066c0&amp;bg1=ffffff&amp;f=ifr">
+    </iframe>
+
+<h1 id="図書館の予約を便利にするアプリの紹介">図書館の予約を便利にするアプリの紹介</h1>
+
+<p>私は図書館をよく利用するのですが、上記の本も図書館から借りました。本が図書館にあるかAndroidアプリ <a href="https://play.google.com/store/apps/details?id=com.rydeenworks.mybooksearch">図書さがし(Google Play)</a>で簡単に調べることができて便利です。</p>
+
+<p><img src="/assets/goole-play-mybooksearch.png" alt="goole-play-mybooksearch" /></p>
+
+</article>
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<!--
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+      <a href="//twitter.com/share?text=%E7%B5%84%E3%81%BF%E8%BE%BC%E3%81%BF%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E3%83%8F%E3%83%BC%E3%83%89%E3%82%A6%E3%82%A7%E3%82%A2%E5%9F%BA%E7%A4%8E%E7%9F%A5%E8%AD%98&url=https%3A%2F%2Frydeenworks.github.io%2F2019%2F11%2F20%2Fembedded-programing&via=rydeenworks"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=255');return false;">
+        <i class="fa fa-twitter-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+-->
+
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">RydeenWorks Dev Note</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+        
+        
+          <li class="nav-link"><a href="/about/">About</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          <li class="nav-link"><a href="/posts/">Posts</a>
+        
+        
+        
+          <li class="nav-link"><a href="/projects/">Projects</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:rydeenworks[at]gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">rydeenworks[at]gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://twitter.com/rydeenworks" title="Follow me on Twitter">
+              <i class="fa fa-twitter"></i>
+              <span class="username">rydeenworks</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://github.com/rydeenworks" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">rydeenworks</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">RydeenWorks is my development site.
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+});
+
+</script>
+
+
+
+
+
+
+  </body>
+
+</html>

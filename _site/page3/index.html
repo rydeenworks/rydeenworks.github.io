@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>RydeenWorks Dev Note</title>
+  <meta name="description" content="RydeenWorks is my development site.
+">
+  
+  <meta name="author" content="rydeenworks">
+  <meta name="copyright" content="&copy; rydeenworks 2024">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/zenburn.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://rydeenworks.github.io/page3/">
+  <link rel="alternate" type="application/rss+xml" title="RydeenWorks Dev Note" href="https://rydeenworks.github.io/feed.xml" />
+</head>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-119889066-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="RydeenWorks Dev Note">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        
+          
+          <li class="nav-link"><a href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <li class="nav-link"><a href="/posts/">Posts</a>
+          
+        
+          
+          <li class="nav-link"><a href="/projects/">Projects</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="home">
+
+<div class="site-header-container has-cover" style="background-image: url(/assets/header_image.jpg);">
+  <div class="scrim has-cover">
+    <header class="site-header">
+      <h1 class="title">RydeenWorks Dev Note</h1>
+      
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+<ul class="post-list">
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/2019/12/30/github-issue">GitHub issueによる個人開発プログラミングの高速化</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <!-- <p>個人開発のスピードを上げるためにすべき事 個人開発していて開発スピードが上がらないことはありませんか？ 開発したい内容をタスクとして整理したり、タスク粒度を適度に小さくする事で開発スピードを上げられる場合があります。 前提条件 プログラミング経験はある 技術的な事はネットを検索して自分で解決できる 本記事では、この疑問を解決します。 本記事の内容 開発内容をタスクとして整理する方法がわかる GitHub issueを使った開発ワークフローがわかる photo credit: ben_nuttall Octocat @ GitHub’s Oval Office via photopin (license) 著者について この記事を書いている私はプログラミング歴15年です。 個人開発歴は3年で、会社員をしながら２つのアプリをGooglePlayにリリースした実績があります。 1 GitHub issueを使った開発タスク整理 1.1 開発タスクを箇条書きで書き出す まず最初にGitHub issueに登録するために、開発タスクを箇条書きで書き出します。 以下の理由があります。 頭の中にある開発内容を書き出すことで整理できる 開発タスクを並べることで優先順位をつけられる 開発の全体ボリュームがなんとなくわかる 紙に書き出しても良いですし、PCにテキストで書いても良いです。 1.2 開発タスクの粒度を半日程度の規模に分割する 個人開発は時間との勝負です。 そして開発することが目的ではなく、リリースして初めて意味があります。 そのためにも開発タスクの粒度は半日程度にしてください。 以下の理由があります。 開発に着手するときのハードルが低い タスクが小さいので開発の中断と再開がしやすい タスクをcloseするまでの時間が短くて達成感を得やすい 1.3 開発タスクをGitHub issueに登録する 私が個人開発している「図書さがし」を例に...</p> -->
+      <p><h1 id="個人開発のスピードを上げるためにすべき事">個人開発のスピードを上げるためにすべき事</h1>
+</p>
+    </section>
+    <section class="post-meta">
+      <div class="post-date">December 30, 2019</div>
+      <div class="post-categories">
+      in 
+        
+        <a href="/posts/#dev">Dev</a>
+        
+      
+      </div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/2019/12/07/reading-book">読書「ルキリウスへの手紙/モラル通信」</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <!-- <p>セネカ という哲学者に興味を持ったので「セネカ 道徳書簡集―倫理の手紙集」に続いて「ルキリウスへの手紙/モラル通信」という本を読んでいます。 目次 001:時間は唯一の資産 002:読書について 003:友情について 004:真の豊かさとは 005:哲学が約束すること 006:生き方を学ぶ 007:内面に見出す価値 008:哲学の使命 009:自己に充足する 010:自己の進歩 011:生き方のモデル 012:毎日を最後の日として 013:恐怖の克服について 014:避難場所としての哲学 015:心身へのきくばり 016:哲学は人生への指針 017:望ましき貧困 018:貧困の訓練 019:社会からの撤退 020:みずからの哲学を生きる 021:困難のもとは自分に 022:野心は奴隷精神 023:内面からの喜び 024:不安の克服 025:真の同伴者 026:死を学ぶ 027:自分の人生の完成 028:自己認識はすべての始まり 029:大衆的賞賛について 030:心安らかに人生から立ち去る 031:ライフ・スタイルの確立 032:ほんとうの幸福 033:学者批判と自立した思案 034:生き方と善の実現の一務 035:自己との調和 036:死と永劫回帰 037:全力で活路を切り開く 038:小さな言葉を豊かな思索へ 039:自然の節度 040:思索を穏やかに語る 041:賢者は超人的存在 042:虚栄の資産 043:生き方の評価 044:ほんとうの高貴さ 045:詭弁術批判 046:ルキリウスの著作評価...</p> -->
+      <p><p><a href="https://ja.wikipedia.org/wiki/%E3%83%AB%E3%82%AD%E3%82%A6%E3%82%B9%E3%83%BB%E3%82%A2%E3%83%B3%E3%83%8A%E3%82%A8%E3%82%A6%E3%82%B9%E3%83%BB%E3%82%BB%E3%83%8D%E3%82%AB">セネカ</a> という哲学者に興味を持ったので「セネカ 道徳書簡集―倫理の手紙集」に続いて「ルキリウスへの手紙/モラル通信」という本を読んでいます。</p>
+</p>
+    </section>
+    <section class="post-meta">
+      <div class="post-date">December 7, 2019</div>
+      <div class="post-categories">
+      in 
+        
+        <a href="/posts/#book">Book</a>
+        
+      
+      </div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/2019/11/23/emacs-orgmode-gtd-at-work">EmacsとorgmodeによるGTD実例【ビジネススキル】</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <!-- <p>Emacsでorgmodeを使いこなしたい人 Emacsでorgmodeを使ってタスク管理しているんだけど、なんか使いこなせない。 あと、なんか便利なテンプレートや設定があれば知りたい。と考えていませんか？ 本記事では、この疑問を解決します。 本記事の内容 Emacsでorgmodeを使ってGTDする方法がわかる タスク管理と週次レビューはセットで実行すべき 著者について この記事を書いている私はGTD歴10年、Emacsとorgmode歴が3年ほどです。仕事で毎日orgmodeを使ってタスク管理と振り返りを継続してます。 1 orgmodeを使ったGTDシステムの構築方法 1.1 org-capture-templatesを設定する orgmodeを使ってGTDするためにはorg-capture-templatesの設定を行います。 以下の理由があります。 キーボードショートカットでGTDの操作を身体で覚えられてストレスなく作業できる 記述内容のテンプレートが自動で挿入されて高速に作業できる Emacsでのorgmodeの環境構築は過去記事を参考にしてください。記事の中でorg-capture-templatesの設定も説明しています。 私生活向けorgmodeによるGTDの使い方 org-capture-templatesの設定内容を以下に抜粋しました。 (setq org-capture-templates '(("t" "Todo entry" entry (file "~/Dropbox/org-for-cat/private/todo.org") "* TODO %?\n :LOGBOOK:\n - Added: %U\n :END:" :empty-lines 1) ("p" "Plan entry" entry (file+datetree "~/Dropbox/org-for-cat/private/plan.org") "- [ ] %?") ("j" "Journal...</p> -->
+      <p><p><strong>Emacsでorgmodeを使いこなしたい人</strong></p>
+</p>
+    </section>
+    <section class="post-meta">
+      <div class="post-date">November 23, 2019</div>
+      <div class="post-categories">
+      in 
+        
+        <a href="/posts/#orgmode">Orgmode</a>
+        
+      
+      </div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/2019/11/20/embedded-programing">組み込みプログラミングのためのハードウェア基礎知識</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <!-- <p>組み込み系のC言語/C++の開発現場に配属された人 組み込み系のC言語/C++の開発現場に配属されたんだけど、なんか、CPUやメモリなどハードウェアの事についてよく知らない、組み込みプログラミングの基礎知識が欲しい。あと、ついでに良い学習の仕方があれば知りたい、と考えていませんか？ 本記事では、この疑問を解決します。 本記事の内容 ハードウェアの基礎知識 ハードウェアの基礎知識の学習方法 著者について この記事を書いている私はプログラミング歴が15年ほどあり、直近5年は組み込みプログラミングの開発をしています。 デスクトップアプリ開発５年(C/C++)→スマホアプリ開発５年(Java/Objective-C)→組み込みアプリ開発５年(C/C++) 経歴は上記の通りですが、初心者の時に学んだハードウェアの基礎知識はずっと役に立ってきました。 1 ハードウェアの基礎知識 1.1 ハードウェア特性の理解 プログラムはハードウェア上で動作しますので、ハードウェアの特性を理解してプログラムする必要があります。 たくさんの種類の部品が集合してハードウェアを構成していますが、はじめのうちは主要なものだけ理解すれば良いです。 CPU メモリ ストレージ ネットワーク 各ハードの主要な特性は以下の通りです。 CPU CPUはプログラムで命令した計算処理を行うハード 一定時間内にどれだけの計算量をこなせるかはCPUによって決まる 一定時間内の計算量上限に達するとCPU使用率100%になる、それ以上の計算は待たされるので最終的な計算完了までの時間が長くなる。 たくさんの計算量をこなせるCPUは高価 メモリ メモリはプログラムで処理するデータを保持するハード 保持できるデータサイズはメモリによって決まる メモリが保持できるデータサイズの上限を超えた場合、メモリ上のデータをストレージに退避する。退避処理が発生するとプログラム動作が遅くなる。ストレージに退避したデータをメモリに復帰させる処理も、同様にプログラム動作が遅くなる。 たくさんのデータを保持できるメモリは高価 ストレージ ストレージはデータをファイルとして保存するハード プログラムはファイルからデータを読み込んでメモリに保持する、またデータをファイルに保存する ストレージに保存できるデータサイズ上限はストレージ容量によって決まる ストレージ容量を超えて保存させようとした場合、保存処理は失敗する ストレージのハードの種類は色々ある(ハードディスク/SSD/USBメモリ/SDカード) ハードディスクはSSDに比べて安くて大容量、ただしデータ保存・読み込みのためにディスクを物理的に回転させるのでプログラムの動作が遅くなる たくさんのデータを保持できるストレージは高価 ネットワーク ネットワークはコンピュータ間でデータを送受信するためのハード 一定時間内にどれだけの通信量をこなせるかはネットワーク環境とハードで決まる 一定時間内の通信量上限に達するとネットワーク使用率100%になる、それ以上の通信は待たされるので最終的な通信完了までの時間が長くなる。 たくさんの通信量をこなせるハード・ネットワーク環境は高価 1.2 利用可能なハードウェア資源の確認 ハードウェア特性の理解 を踏まえて、実際にプログラムする上で利用可能なハードウェア資源を確認します。 全般 ハードウェア上で動作するプログラムは１つだけか？...</p> -->
+      <p><p><strong>組み込み系のC言語/C++の開発現場に配属された人</strong></p>
+</p>
+    </section>
+    <section class="post-meta">
+      <div class="post-date">November 20, 2019</div>
+      <div class="post-categories">
+      in 
+        
+        <a href="/posts/#programming">Programming</a>
+        
+      
+      </div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/2019/11/14/obayashi-nobuhiko-movie">映画監督「大林宣彦」作品をAmazonプライムビデオで観る</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <!-- <p>映画監督の大林宣彦さんの作品を観たい人へ。「大林宣彦監督の映画作品をあまり観たことが無いけど知りたい。どの作品を観たら良いだろう。あと、Amazonプライムビデオで視聴できる映画も知りたい」こういった疑問に答えます。 本記事の内容 大林宣彦監督の主要な映画作品 Amazonプライムビデオで視聴できる大林宣彦監督作品 この記事を書いている私自身は”異人たちとの夏”という映画が特に好きで５回くらい観てます。毎年お盆が近づくとこの映画を観たくなります。 1. 大林宣彦監督の主要な映画作品 大林宣彦さんは多くの映画作品を製作しています。大林宣彦監督の全作品を年代別に並べたものは次の通りです。( Wikipediaから引用 ) その中から私の趣味と興味で主要な作品をピックアップします。 初期作品 HOUSE ハウス 『HOUSE ハウス』は、1977年公開の日本映画。ファンタジータッチのホラー・コメディ作品。 CM監督として活動していた大林宣彦の初劇場用映画監督作品。元祖”Jホラー(ジャパニーズホラー)”とも、元祖”アイドル×ホラー”とも評される。 ( Wikipediaから引用 ) 尾道三部作 転校生 時をかける少女 さびしんぼう 1982年、自身の郷愁を込めて尾道を舞台とした『転校生』を発表。『時をかける少女』、『さびしんぼう』と合わせ”尾道三部作として多くの熱狂的な支持を集め、1984年にはロケ地巡り目的で、20万人以上の若い観光客が訪れたといわれる。”尾道三部作”という言葉は大林映画のファンが作った言葉である。( Wikipediaから引用 ) アイドル映画 ねらわれた学園 角川映画のアイドル路線および、大林宣彦の“大林ワールド”と呼ばれる独自の映像スタイルを確立させた作品。薬師丸ひろ子も本作でアイドルとしての地位を確立させた。「キャンペーンの最中に行く先々でファンが増えてくる、アイドルが誕生する過程を体験した」と大林は話している。このため『ねらわれた学園』は「アイドル映画」時代の開幕を告げる作品と評される。( Wikipediaから引用 ) 天国にいちばん近い島 1980年代〜1990年代 異人たちとの夏 妻子と別れ、孤独な日々を送るシナリオライターは、故郷・浅草の街で幼い頃に死別した若い父母とそっくりな二人に出逢った。だが、美しい恋人・ケイは、二人にもう決して逢わないでくれと迫ってくる。渇ききった現代人の生活に、そっと忍び込んでくる孤独と幻想。お伽話といって笑えない不思議な時間と非現実な空間を描く。(Amazonプライムビデオあらすじ引用) 彼のオートバイ、彼女の島 日本殉情伝 おかしなふたり ものくるおしきひとびとの群 ふたり 青春デンデケデケデケ 2000年代以降 この空の花 長岡花火物語 野のなななのか 花筐／HANAGATAMI 2000年代に入ると尾道を舞台にした映画は無くなり、代わって、大分や長野、新潟、北海道芦別など、その町の伝統や歴史を題材にした映画を製作している。大林はこれを「ふるさと映画」と称している。(Wikipediaから引用) 2. Amazonプライムビデオで視聴できる大林宣彦監督作品...</p> -->
+      <p><p><strong>映画監督の大林宣彦さんの作品を観たい人へ。</strong>「大林宣彦監督の映画作品をあまり観たことが無いけど知りたい。どの作品を観たら良いだろう。あと、Amazonプライムビデオで視聴できる映画も知りたい」こういった疑問に答えます。</p>
+</p>
+    </section>
+    <section class="post-meta">
+      <div class="post-date">November 14, 2019</div>
+      <div class="post-categories">
+      in 
+        
+        <a href="/posts/#book">Book</a>
+        
+      
+      </div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/2019/11/13/reading-book">読書「セネカ 道徳書簡集―倫理の手紙集」、そして時間の大切さ</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <!-- <p>セネカ という哲学者に興味を持ったので「セネカ 道徳書簡集―倫理の手紙集」という本を読んでいます。哲学と聞くと身構えてしまうかもしれませんが、2000年も受け継がれて残ってきた文章なので、なるほど大事なことだと私には共感できました。 内容紹介 書籍の紹介文から引用。 「道徳書簡集」は現存する124通の手紙を収め、セネカ最晩年の作とされる。多事多難の生涯にわたって長年体験し考え続けてきた思想を、平易に、簡潔に、それでいて俗には堕さず、学問的色彩も失わずに説く。本邦初の全訳。 ほんの10章程度しか読んでないのですが手元に置いて繰り返し読みたくなるような文章でした。とても読みやすいです。 Amazonのレビューには翻訳があまり良くないと書いてありましたが、興味本位で読んでる自分としては読みやすくて良かったです。内容が全部理解できると思って読まずに、2000年も残されてきた文章への興味で読んでいます。 最初の章の「時間に節約について」は本当に大事なことだなと感じました。前半部を抜粋します。 001:時間の節約について ルキリウス君。 君はこうなさったらよいでしょうーーー 自分自身のために自分を自由にし、今までに君から奪い去られ、盗み取られ、あるいは逃げ去った時間を拾い集め、それを守ることです。 次に書くような僕の言葉の真実を、ご自分に説得してください。 或る時間はわれわれから裂き取られ、或る時間は運び去られ、また或る時間は流れ去る。 しかし、なかんずく最も恥ずべき時間の損失は、怠慢によって生ずるそれです。 またもし、よく気を付けて見るならば、人生の最も大きな部分が良からぬ事をしている間に、またその大きな部分が何もしていない間に、また人生全部が何かつまらぬ事をしている間に、消え失せていることが分かるでしょう。 君は誰を僕に教えてくれるでしょうかーーー いやしくも時間に何らかの価値を認める人を、毎日毎日を重んずる人を、自分が日々死につつある事を知っている人を。 死を遠くに見るなどと思ったら大間違いですから。死の大部分はすでに通り過ぎてしまっているのです。 どれだけの年月が残されていようとも、死がそれを支配しているのです。 それゆえ、わがルキリウス君、君はお手紙に書いているような、現に自分で行なっていることを行うがよい。 つまり、毎時毎時をしっかりと抱きしめることです。君がもし今日のことに手をかけているならば、明日のことには余り頼らなくなるでしょう。 愚図々々している間に、人生は走り過ぎ去って行くのです。 ルキリウス君、あらゆるものは他者のものですが、時間だけはわれわれのものです。 私は読書が好きなので色々な本を読みますが「002:読書の散漫について」も、読んでいてハッとさせられる内容でした。 目次 001:時間の節約について 002:読書の散漫について 003:真の友情と偽の友情について 004:死の恐怖について 005:哲学者の中庸について 006:知識の共有について 007:大衆について 008:哲学者の隠遁について 009:哲学と友情について 010:自分自身で生きることについて 011:羞恥の赤面について 012:老年について 013:謂れのない恐怖について 014:世の中を引退する理由について 015:筋肉と頭脳について 016:哲学、ないし生活の指針について 017:哲学と富について 018:祭りと断食について 019:俗世の生活と引退について 020:教えの実践について 021:手紙のもたらす栄誉について 022:中途半端な遣り方の無益さについて 023:哲学の真の喜びについて...</p> -->
+      <p><p><a href="https://ja.wikipedia.org/wiki/%E3%83%AB%E3%82%AD%E3%82%A6%E3%82%B9%E3%83%BB%E3%82%A2%E3%83%B3%E3%83%8A%E3%82%A8%E3%82%A6%E3%82%B9%E3%83%BB%E3%82%BB%E3%83%8D%E3%82%AB">セネカ</a> という哲学者に興味を持ったので「セネカ 道徳書簡集―倫理の手紙集」という本を読んでいます。哲学と聞くと身構えてしまうかもしれませんが、2000年も受け継がれて残ってきた文章なので、なるほど大事なことだと私には共感できました。</p>
+</p>
+    </section>
+    <section class="post-meta">
+      <div class="post-date">November 13, 2019</div>
+      <div class="post-categories">
+      in 
+        
+        <a href="/posts/#book">Book</a>
+        
+      
+      </div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/2019/10/27/simple-task-management">仕事で頼まれたことを忘れないためのタスク管理法【紙とペン】</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <!-- <p>仕事で上手にタスク管理をしたい方へ 人から仕事を頼まれた時に、約束や締め切りを守れない。なんか忘れてしまう。 便利なツールとかあれば知りたい。と考えていませんか？ 本記事では、この疑問を解決します。 本記事の内容 タスクを忘れずに片付ける方法とは タスクを受け取る時に締め切りと成果内容を具体化すべき 著者について この記事を書いている私は会社員としてソフトウェア開発の経験が18年ほどあり、 直近3年は20名程度のプロジェクトでリーダーとして開発管理をしています。 上司・部下・顧客から依頼されるタスクを日々片付けています。 1 タスクを忘れずに片付ける方法とは 1.1 タスクを記録する タスク管理のために、まずはタスクを記録します。 人間は時間が経過すると忘れてしまいます、だから記録して残してください。記憶力に頼ってはいけません。 タスクが記録に残っていると思えば、そのタスクに取り掛かっていない時に安心して忘れることができます。 (自宅で休息している時、通勤している時、他のタスクに取り掛かっている時、など) 依頼されたタスクの内容を安心して忘れることはストレスの軽減になります。 その結果、あなたの仕事のパフォーマンスは良くなります。 記録する媒体は紙が良いでしょう。 私は会社の備品のキャンパスノートを使っています。 ノートPCのメモ帳、スマホのノートアプリ、TODO管理のWebサービスなど世の中にはたくさんのツールがありますが まずは紙のノートでタスク管理することをオススメします。 紙のノートの利点は次の通りです。 (1)メモするまでのハードルが低い ノートPC・スマホアプリ・Webサービスは環境の準備の手間がかかりますし、ツールの使い方を習得する必要があります。 紙のノートなら誰でも使ったことがありますし、ノートを開けばすぐにメモできます。 社内や顧客との打ち合わせに手軽に持って行くことができますので、その場で記録すれば忘れることはありません。 (2)自由に書ける 紙のノートなら図や表など、なんでも自由に書けます。 追加の説明を書き込んだ事も、内容を訂正したことも、見たらわかります。 ちなみに私は三菱鉛筆のジェットストリームボールペンを愛用しています。 (3)検索が速い 紙のノートなら開けばすぐに内容を確認することができます。 ノートを使い慣れると、視覚と触覚で記憶が強化されると個人的に感じています。 どのあたりに何が書いてあるか確認して思い出せる事を体感すれば、安心して忘れることができます。 1.2 タスクの優先順位をつける あなたのノートにタスクが並んだら、タスクの優先順位をつけます。 なぜなら全てのタスクを同時に片付けることは出来ないからです。 AさんとBさんの二人から別々のタスクを依頼された場合、 あなたに上司や先輩がいるなら相談して優先順位をつけてもらうと良いでしょう。 いない場合は、タスクの締め切り日や依頼者の重要度・得られる報酬などを元に自分で優先順位を判断します。 タスクの優先順位をつけた結果、締め切りを守れないタスクがある時は タスクの依頼者に正直に話して、締め切りやタスク内容の変更を打診して達成可能になるように調整しましょう。 出来ないことを事前に伝えて調整する姿勢は、相手から信頼を得ることが出来ます。 やって見たけどダメでした、と事後に伝えると信頼を失います。 相手に出来ないと伝えることは気が引けますが、仕事をする上でとても大切なことだと思います。...</p> -->
+      <p><p><strong>仕事で上手にタスク管理をしたい方へ</strong></p>
+</p>
+    </section>
+    <section class="post-meta">
+      <div class="post-date">October 27, 2019</div>
+      <div class="post-categories">
+      in 
+        
+        <a href="/posts/#orgmode">Orgmode</a>
+        
+      
+      </div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/2019/09/16/orgmode-workflow-update">最近のorgmodeの使い方</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <!-- <p>私はSpacemacsでorg-modeを愛用しています。平日は会社、週末は自宅というように毎日使っています。Emacs使用歴は2-3年と浅いので知らないことが多いです。最近知ったEmacsとorg-modeのTipsをまとめます。 Tips アウトラインにIDをつける このTipsとコードはRainer氏のブログ と動画を見つけて取り込みました。 (defun my/copy-idlink-to-clipboard() "Copy an ID link with the headline to killring, if no ID is there then create a new unique ID. This function works only in org-mode or org-agenda buffers. The purpose of this function is to easily construct id:-links to org-mode items. If...</p> -->
+      <p><p>私はSpacemacsでorg-modeを愛用しています。平日は会社、週末は自宅というように毎日使っています。Emacs使用歴は2-3年と浅いので知らないことが多いです。最近知ったEmacsとorg-modeのTipsをまとめます。</p>
+</p>
+    </section>
+    <section class="post-meta">
+      <div class="post-date">September 16, 2019</div>
+      <div class="post-categories">
+      in 
+        
+        <a href="/posts/#orgmode">Orgmode</a>
+        
+      
+      </div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/2019/09/01/reading-book">読書「哲学の原風景」</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <!-- <p>古代ギリシア哲学の初期の哲学者について知りたくて読みました。タレス、クセノパネス、ヘラクレイトス、パルメニデスという哲学者が興味深かったです。私自身はまったくの素人ですが楽しく読めました。
+
+
+    
+
+内容説明
+
+
+  「私自身を知りたい」紀元前五世紀のヘラクレイトスの言葉は極めて今日的である。タレス、ピタゴラス、パルメニデス、プロタゴラス…、ソクラテス以前の思想家たちは様々に「世界」や「人間」を探究していたが、そこには今日へと繋がる共通の思考態度＝論理の誕生があった。彼らの残した言葉を読むことにより「哲学の始まり」の時期に立会い、「哲学とは何か」をその原風景から問いなおす書。
+
+
+目次
+
+序章　哲学の始まりとしての古代ギリシア
+
+第１章　「万物の原理」を求めて―タレスとミレトス派
+
+第２章　「宇宙の調和」と数の神秘―ピタゴラス派
+
+第３章　オリンポスの神々を越えて―神話の論理と倫理
+
+第４章　「万物は流転する」―ヘラクレイトスの謎の箴言
+
+第５章　存在と論理―パルメニデスとエレア派の道
+
+第６章　自然像の再構築をめざして―多元論と原子論
+
+第７章　人間への眼差し―ソフィストと相対主義
+
+終章　「ソクラテス以前の思想家」とギリシア哲学の「合理性」
+
+補論―古代ギリシア哲学を学ぶために
+
+参照
+
+
+  Amazon - 哲学の原風景 古代ギリシアの知恵とことば (NHKライブラリー)
+
+
+図書館の予約を便利にするアプリの紹介
+
+私は図書館をよく利用するのですが、この本も図書館から借りました。本が図書館にあるかAndroidアプリ 図書さがし(Google Play)で簡単に調べることができて便利です。
+
+
+
+</p> -->
+      <p><p>古代ギリシア哲学の初期の哲学者について知りたくて読みました。<a href="https://ja.wikipedia.org/wiki/タレス">タレス</a>、<a href="https://ja.wikipedia.org/wiki/クセノパネス">クセノパネス</a>、<a href="https://ja.wikipedia.org/wiki/ヘラクレイトス">ヘラクレイトス</a>、<a href="https://ja.wikipedia.org/wiki/パルメニデス">パルメニデス</a>という哲学者が興味深かったです。私自身はまったくの素人ですが楽しく読めました。</p>
+</p>
+    </section>
+    <section class="post-meta">
+      <div class="post-date">September 1, 2019</div>
+      <div class="post-categories">
+      in 
+        
+        <a href="/posts/#book">Book</a>
+        
+      
+      </div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/2019/08/31/mac-timer-app-effortless-on-emacs">Mac Effortless App on Emacs</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <!-- <p>仕事にプライベートに毎日Emacsのorgmodeを愛用していて、だんだんとパワフルな環境になってきました。先日、Rebuild.fm を聞いていて Effortless というポモドーロテクニック的なタイマーアプリが紹介されて調べてみたのですが、これは・・・Emacs なら自分で作れそうだと思いました。そしてこのタイマーは私のorgmodeシステムのplan.orgにピッタリだと思いました。
+
+機能仕様案
+
+タイマースタート
+
+矢印 -&gt; を書いたらスタートする。タスク名とタイマーをmode line部に表示しカウントダウンする。
+
+
+
+タイマーストップ
+
+時間が経過したらストップする。またはチェックをつけたらストップする。矢印の右側には個人的に実績値を書けるようにしたい。
+
+
+
+車輪の再発明はしない
+
+上記のような内容なら既にありそうな気がしました。ネットで検索しましたがズバリそのものは見つかりませんでした。無いならEmacs Lispを覚えながら作ってみたいです。GitHubで見つけた chronos は近そうに思いました。ReadMe.mdを 読むとやはりタイマーアプリはたくさん存在するようです。
+
+
+  There are a number of Emacs packages that provide timer functionality, such as job tracking, alarms or a countdown timer in the mode line.
+
+
+ただ、chronos 作者は自分が欲しいものとは違ったため作ったそうです。私も無いなら作ってみようと思いました。
+
+</p> -->
+      <p><p>仕事にプライベートに毎日Emacsのorgmodeを愛用していて、だんだんとパワフルな環境になってきました。先日、<a href="https://rebuild.fm/">Rebuild.fm</a> を聞いていて <a href="https://www.effortless.app/">Effortless</a> というポモドーロテクニック的なタイマーアプリが紹介されて調べてみたのですが、これは・・・Emacs なら自分で作れそうだと思いました。そしてこのタイマーは私のorgmodeシステムのplan.orgにピッタリだと思いました。</p>
+</p>
+    </section>
+    <section class="post-meta">
+      <div class="post-date">August 31, 2019</div>
+      <div class="post-categories">
+      in 
+        
+        <a href="/posts/#orgmode">Orgmode</a>
+        
+      
+      </div>
+    </section>
+  </li>
+  
+  
+</ul>
+
+<nav class="pagination" role="navigation">
+	<p>
+    
+			
+			<a class="newer-posts" href="/page2">
+				<span class="fa-stack fa-lg">
+					<i class="fa fa-square fa-stack-2x"></i>
+					<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+				</span>
+			</a>
+			
+		
+		<span class="page-number">Page 3 of 4</span>
+		
+		<a class="newer-posts" href="/page4">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-square fa-stack-2x"></i>
+        <i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+		
+	</p>
+</nav>
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">RydeenWorks Dev Note</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+        
+        
+          <li class="nav-link"><a href="/about/">About</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          <li class="nav-link"><a href="/posts/">Posts</a>
+        
+        
+        
+          <li class="nav-link"><a href="/projects/">Projects</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:rydeenworks[at]gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">rydeenworks[at]gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://twitter.com/rydeenworks" title="Follow me on Twitter">
+              <i class="fa fa-twitter"></i>
+              <span class="username">rydeenworks</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://github.com/rydeenworks" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">rydeenworks</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">RydeenWorks is my development site.
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+});
+
+</script>
+
+
+
+
+
+
+  </body>
+
+</html>

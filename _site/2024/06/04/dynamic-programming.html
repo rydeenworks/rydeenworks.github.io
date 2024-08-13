@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>動的計画法の習得</title>
+  <meta name="description" content="競技プログラミングについて">
+  
+  <meta name="author" content="rydeenworks">
+  <meta name="copyright" content="&copy; rydeenworks 2024">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/zenburn.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://rydeenworks.github.io/2024/06/04/dynamic-programming">
+  <link rel="alternate" type="application/rss+xml" title="RydeenWorks Dev Note" href="https://rydeenworks.github.io/feed.xml" />
+</head>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-119889066-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="RydeenWorks Dev Note">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        
+          
+          <li class="nav-link"><a href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <li class="nav-link"><a href="/posts/">Posts</a>
+          
+        
+          
+          <li class="nav-link"><a href="/projects/">Projects</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">動的計画法の習得</h1>
+      <!-- <p class="info">by <strong></strong></p> -->
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">June 4, 2024</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/posts/#dev">Dev</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1 id="競技プログラミングについて">競技プログラミングについて</h1>
+
+<p>競技プログラミングが面白いです。始めのうちは簡単な問題はどんどん正解できて面白いのですが、進めていくうちにだんだんと難しめの問題が解けなくて悔しい思いをすることがありました。そのため、難しい問題も解けるようになりたいという欲が出てきました。最近では、競技プログラミングを学ぶのに良い書籍が色々と出ています。</p>
+
+<ul>
+  <li><a href="https://amzn.to/3Kv6L9U">問題解決のための「アルゴリズム×数学」が基礎からしっかり身につく本</a></li>
+  <li><a href="https://amzn.to/4ea2beA">競技プログラミングの鉄則 ~アルゴリズム力と思考力を高める77の技術~</a></li>
+</ul>
+
+<p>書籍をざっと眺めみたところ、動的計画法というテクニックを習得することでクリアできる問題が増えそうです。そのため、動的計画法について習得することにしました。</p>
+
+<h1 id="問題解決のためのアルゴリズム数学が基礎からしっかり身につく本">問題解決のための「アルゴリズム×数学」が基礎からしっかり身につく本</h1>
+
+<p>書籍の3.7節で動的計画法について詳しく説明されています。本を読むことで動的計画法の概要は把握できて、いまは節末問題に取り組んでいます。問題についてはAtCoderで解答を提出できるようになっていて便利です。</p>
+
+<h2 id="009---brute-force-2"><a href="https://atcoder.jp/contests/math-and-algorithm/tasks/math_and_algorithm_i">009 - Brute Force 2</a></h2>
+
+<p>ナップサック問題の解法を応用して２次元配列で解けました。どうやったら解法を応用できるか試行錯誤してたら、うまく当てはめることができました。</p>
+
+<h2 id="031---taros-vacation"><a href="https://atcoder.jp/contests/math-and-algorithm/tasks/math_and_algorithm_ac">031 - Taro’s Vacation</a></h2>
+
+<p>この問題が解けたことで、少しだけコツがつかめました。最初は場合分けや組み合わせ方を考えてたのですが、いまいち解ける気がしませんでした。一晩寝て起きて、あらためて問題を整理しながら考えると、きれいな漸化式で表現ができました。それをプログラムに落とし込んで動作確認して、AtCoderで提出するとクリアできました。</p>
+
+<h1 id="競技プログラミングの鉄則-アルゴリズム力と思考力を高める77の技術">競技プログラミングの鉄則 ~アルゴリズム力と思考力を高める77の技術~</h1>
+
+<p>自分の理解度を試すために、4章の動的計画法の演習問題を解いてます。以下の問題はすんなり解くことができました。こちらもAtCoderで解答を提出できるようになっていて便利です。</p>
+
+<ul>
+  <li><a href="https://atcoder.jp/contests/tessoku-book/tasks/dp_a">B16 - Frog 1</a></li>
+  <li><a href="https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_cp">B17 - Frog 1 with Restoration</a></li>
+  <li><a href="https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_cq">B18 - Subset Sum with Restoration</a></li>
+</ul>
+
+<h2 id="b19---knapsack-2"><a href="https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_cr">B19 - Knapsack 2</a></h2>
+
+<p>2-3日ほど考えてましたが自力で解答できず13/26のテストケースは通るのに残り13ケースが全然クリアできませんでした。あきらめて<a href="https://github.com/E869120/kyopro-tessoku?tab=readme-ov-file">githubの解答ページ</a>を参照したところ、自分のハマりポイントは2つあって、品物の選び方とdp配列初期値に問題がありました。同じ価値なら重さが軽い方を選ぶという考えはあったのですが、品物の選び方を漸化式で表現しきらずに、重さの条件文を追加してなんとかしようとした所に課題があったと気付けた点が収穫でした。</p>
+
+<h2 id="b20---edit-distance"><a href="https://atcoder.jp/contests/tessoku-book/tasks/tessoku_book_cs">B20 - Edit Distance</a></h2>
+
+<p>“編集距離”でググってアルゴリズムを理解して実装したところ、あまり苦労せずにクリアできました。</p>
+
+<h1 id="まとめ">まとめ</h1>
+
+<p>動的計画法について基本的な考え方を理解した上で演習問題を解いたことで、過去に解けなかった問題が解けるようになった。また、新規問題に挑戦して動的計画法で解けた。以上のことから、一定レベルで動的計画法を習得できた。</p>
+
+</article>
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<!--
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+      <a href="//twitter.com/share?text=%E5%8B%95%E7%9A%84%E8%A8%88%E7%94%BB%E6%B3%95%E3%81%AE%E7%BF%92%E5%BE%97&url=https%3A%2F%2Frydeenworks.github.io%2F2024%2F06%2F04%2Fdynamic-programming&via=rydeenworks"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=255');return false;">
+        <i class="fa fa-twitter-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+-->
+
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">RydeenWorks Dev Note</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+        
+        
+          <li class="nav-link"><a href="/about/">About</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          <li class="nav-link"><a href="/posts/">Posts</a>
+        
+        
+        
+          <li class="nav-link"><a href="/projects/">Projects</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:rydeenworks[at]gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">rydeenworks[at]gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://twitter.com/rydeenworks" title="Follow me on Twitter">
+              <i class="fa fa-twitter"></i>
+              <span class="username">rydeenworks</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://github.com/rydeenworks" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">rydeenworks</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">RydeenWorks is my development site.
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+});
+
+</script>
+
+
+
+
+
+
+  </body>
+
+</html>

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>AWS-Amplifyのクイックスタートアプリの詳細調査(AppSync,CDK)</title>
+  <meta name="description" content="AWS-Amplifyのクイックスタートで開発したアプリのシステム構成">
+  
+  <meta name="author" content="rydeenworks">
+  <meta name="copyright" content="&copy; rydeenworks 2024">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/zenburn.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://rydeenworks.github.io/2024/07/19/detail-of-aws-amplify-quick-start-app">
+  <link rel="alternate" type="application/rss+xml" title="RydeenWorks Dev Note" href="https://rydeenworks.github.io/feed.xml" />
+</head>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-119889066-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="RydeenWorks Dev Note">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        
+          
+          <li class="nav-link"><a href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <li class="nav-link"><a href="/posts/">Posts</a>
+          
+        
+          
+          <li class="nav-link"><a href="/projects/">Projects</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">AWS-Amplifyのクイックスタートアプリの詳細調査(AppSync,CDK)</h1>
+      <!-- <p class="info">by <strong></strong></p> -->
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">July 19, 2024</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/posts/#dev">Dev</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <h1 id="aws-amplifyのクイックスタートで開発したアプリのシステム構成">AWS-Amplifyのクイックスタートで開発したアプリのシステム構成</h1>
+
+<h2 id="バックエンドリソース一覧">バックエンドリソース一覧</h2>
+
+<ul>
+  <li>AWS::AppSync</li>
+  <li>AWS::CDK</li>
+  <li>AWS::Cognito</li>
+  <li>AWS::IAM</li>
+  <li>AWS::Lambda</li>
+  <li>AWS::S3</li>
+  <li>AWS::SSM</li>
+  <li>AWS::StepFunctions</li>
+</ul>
+
+<h2 id="awsappsync"><a href="https://aws.amazon.com/jp/appsync/">AWS::AppSync</a></h2>
+
+<h3 id="概要">概要</h3>
+
+<p>公式ページの説明は次のとおり。</p>
+
+<blockquote>
+  <p>ウェブとモバイルのフロントエンド</p>
+
+  <p>安全でサーバーレスで高性能な GraphQL と Pub/Sub API を使用して、アプリをデータやイベントに接続</p>
+</blockquote>
+
+<blockquote>
+  <p>1 つのネットワークリクエストで、1 つまたは複数のソースやマイクロサービスからデータにアクセスできますAPI を 1 つのマージ済み API に結合します。</p>
+
+  <p>サーバーレスの WebSocket を通じて、任意のイベントソースからサブスクライブしたクライアントにデータを公開することで、魅力的なリアルタイムエクスペリエンスを実現します。</p>
+
+  <p>セキュリティ、監視、ロギング、トレースが組み込まれています。低レイテンシーを実現するオプションのキャッシュ。</p>
+
+  <p>API へのリクエストと、接続されたクライアントに配信されたリアルタイムのメッセージに対してのみお支払いいただけます。</p>
+</blockquote>
+
+<blockquote>
+  <p>仕組み</p>
+
+  <p>AWS AppSync は、サーバーレスの GraphQL および Pub/Sub API を作成し、単一のエンドポイントを通じて安全にデータの照会、更新、公開を行うことで、アプリケーションの開発を簡素化します。</p>
+</blockquote>
+
+<p>AppSync - GraphQLシステム構成図</p>
+
+<p><img src="/assets/2024-07-18_appsync_graphql.png" alt="2024-07-18_appsync_graphql.png" /></p>
+
+<p>AppSync - Pub/Sub APIシステム構成図</p>
+
+<p><img src="/assets/2024-07-18_pubsub_api.png" alt="2024-07-18_pubsub_api.png" /></p>
+
+<h3 id="クイックスタートアプリの実装appsync-graphql-api">クイックスタートアプリの実装(AppSync GraphQL API)</h3>
+
+<p><a href="https://docs.amplify.aws/react/how-amplify-works/concepts/#data">コンセプト説明ページのDataセクション</a>に次の説明がある。</p>
+
+<p>「The @aws-amplify/backend library offers a TypeScript-first Data library for setting up fully typed real-time APIs (powered by AWS AppSync GraphQL APIs) and NoSQL databases (powered by Amazon DynamoDB tables). After you generate an Amplify backend, you will have an amplify/data/resource.ts file, which will contain your app’s data schema. The defineData function turns the schema into a fully functioning data backend with all the boilerplate handled automatically.」</p>
+
+<p>つまり、@aws-amplify/backendを使うことで、resource.tsのスキーマ定義に応じたGraphQL APIが自動的に用意される。</p>
+
+<p>resource.tsでTodoというスキーマを定義している。</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">schema</span> <span class="o">=</span> <span class="nx">a</span><span class="p">.</span><span class="nx">schema</span><span class="p">({</span>
+  <span class="na">Todo</span><span class="p">:</span> <span class="nx">a</span>
+    <span class="p">.</span><span class="nx">model</span><span class="p">({</span>
+      <span class="na">content</span><span class="p">:</span> <span class="nx">a</span><span class="p">.</span><span class="nx">string</span><span class="p">(),</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="nx">authorization</span><span class="p">((</span><span class="nx">allow</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">allow</span><span class="p">.</span><span class="nx">owner</span><span class="p">()]),</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p>App.tsxでcreateTodo/deleteTodo/fetchTodoなどTODOタスク操作を実現している。</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">function</span> <span class="nx">deleteTodo</span><span class="p">(</span><span class="nx">id</span><span class="p">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">client</span><span class="p">.</span><span class="nx">models</span><span class="p">.</span><span class="nx">Todo</span><span class="p">.</span><span class="k">delete</span><span class="p">({</span><span class="nx">id</span><span class="p">});</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>clientはApp.tsxで以下のように実装している。</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="nx">generateClient</span><span class="o">&lt;</span><span class="nx">Schema</span><span class="o">&gt;</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>generateClientはAmplifyライブラリ側の実装となるが、ソースコードを見ると次のようになっている。
+node_modules/@aws-amplify/api/dist/esm/API.d.ts</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">CommonPublicClientOptions</span><span class="p">,</span> <span class="nx">V6Client</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">'</span><span class="s1">@aws-amplify/api-graphql</span><span class="dl">'</span><span class="p">;</span>
+<span class="cm">/**
+ * Generates an API client that can work with models or raw GraphQL
+ */</span>
+<span class="k">export</span> <span class="nx">declare</span> <span class="kd">function</span> <span class="nx">generateClient</span><span class="o">&lt;</span><span class="nx">T</span> <span class="kd">extends</span> <span class="nx">Record</span><span class="o">&lt;</span><span class="nx">any</span><span class="p">,</span> <span class="nx">any</span><span class="o">&gt;</span> <span class="o">=</span> <span class="nx">never</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">options</span><span class="p">?:</span> <span class="nx">CommonPublicClientOptions</span><span class="p">):</span> <span class="nx">V6Client</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>コメントに書いてあるとおりclientを使うことで、GraphQLのAPIを隠蔽してモデルを操作できるという事。</p>
+
+<p>前掲のConceptページには以下の記載がある。
+「On your app’s frontend, you can use the generateClient function, which provides a typed client instance, making it easy to integrate CRUD (create, read, update, delete) operations for your models in your application code.」
+つまりCRUD操作ができる。それ以上に複雑なことを実現する場合は、何らかの機能拡張が必要となる。おそらくAWS::CDKを使ってAWS::Lambdaで個別に機能実現していくのではないだろうか。</p>
+
+<h3 id="クイックスタートアプリの実装appsync-pubsub-api">クイックスタートアプリの実装(AppSync Pub/Sub API)</h3>
+
+<p>以下ソースコードのsubscribe/unsubscribeがPub/Sub API呼び出しに該当する。
+subscribeしておくと、1つ目のWebページでTodoタスクを追加すると、
+2つ目のWebページにもリアルタイムでTodoタスクが追加される挙動にできる。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">useEffect</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">useEffect::user=</span><span class="dl">"</span> <span class="o">+</span> <span class="nx">user</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">user</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">fetchTodos</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="kd">const</span> <span class="nx">subscribe</span> <span class="o">=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">models</span><span class="p">.</span><span class="nx">Todo</span><span class="p">.</span><span class="nx">observeQuery</span><span class="p">().</span><span class="nx">subscribe</span><span class="p">({</span>
+      <span class="na">next</span><span class="p">:</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">useEffect::Todo.observeQuery()&gt;&gt;&gt;setTodos</span><span class="dl">"</span><span class="p">);</span>
+        <span class="nx">setTodos</span><span class="p">([...</span><span class="nx">data</span><span class="p">.</span><span class="nx">items</span><span class="p">]);</span>
+      <span class="p">},</span>
+    <span class="p">});</span>
+    <span class="k">return</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">useEffect::unsubscribe()</span><span class="dl">"</span><span class="p">);</span>
+      <span class="nx">subscribe</span><span class="p">.</span><span class="nx">unsubscribe</span><span class="p">();</span>
+      <span class="nx">setTodos</span><span class="p">([]);</span>
+    <span class="p">}</span>
+  <span class="p">},</span> <span class="p">[</span><span class="nx">user</span><span class="p">]);</span>
+</code></pre></div></div>
+
+<p><a href="https://docs.amplify.aws/react/build-a-backend/data/subscribe-data/">Build &amp; connect backend &gt; Data &gt; Subscribe to real-time events</a>ページに詳しい説明が載っている。</p>
+
+<h2 id="awscdk"><a href="https://aws.amazon.com/jp/cdk/">AWS::CDK</a></h2>
+
+<h3 id="概要-1">概要</h3>
+
+<blockquote>
+  <p>デベロッパーツール</p>
+
+  <p>AWS クラウド開発キット</p>
+
+  <p>使い慣れたプログラミング言語を使用したクラウドアプリケーションリソースの定義</p>
+
+  <p>仕組み
+AWS Cloud Development Kit (CDK) は、一般的なプログラミング言語を使用してアプリケーションをモデル化し、クラウド開発を加速します。</p>
+</blockquote>
+
+<p>上記の文章だけだとイメージがつかめませんでした。</p>
+
+<p><a href="https://docs.aws.amazon.com/cdk/v2/guide/home.html">開発者ガイドページ - AWS CDK とは何ですか?</a>によると、「AWS Cloud Development Kit (AWS CDK) は、 AWS CloudFormationクラウドインフラストラクチャをコードで定義し、それをプロビジョニングするためのオープンソースのソフトウェア開発フレームワークです。」とのこと。</p>
+
+<p><a href="https://aws.amazon.com/jp/cloudformation/">AWS CloudFormation</a>はリンク先に以下の説明がありました。</p>
+
+<blockquote>
+  <p>管理ツール
+AWS CloudFormation
+Infrastructure as Code でクラウドプロビジョニングを高速化する
+仕組み
+AWS CloudFormation は、インフラストラクチャをコードとして扱うことで、AWS およびサードパーティーのリソースをモデル化、プロビジョニング、管理することができます。</p>
+</blockquote>
+
+<p>管理ツールとしてのAWS CloudFormationをAWS CDKでラッパーして開発者でも使いやすくしたのだと理解しました。</p>
+
+<p>AWS CDKの開発者ガイドページに以下の文章と図があったので、引用します。
+「AWS CDK は、TypeScript、JavaScript、Python、Java、C#/.Net、Go をサポートしています。これらのサポートされているプログラミング言語のいずれかを使用して、コンストラクトと呼ばれる再利用可能なクラウドコンポーネントを定義できます。これらを組み合わせてスタックとアプリを作成します。次に、CDK アプリケーションを AWS CloudFormation にデプロイして、リソースをプロビジョニングまたは更新します。」</p>
+
+<p><img src="/assets/2024-07-19_aws_cd_app_stack_construct.png" alt="2024-07-19_aws_cd_app_stack_construct.png" /></p>
+
+<p><a href="https://docs.aws.amazon.com/cdk/v2/guide/apps.html">CDKアプリケーション</a>の説明ページに以下の文章と図がありました。
+「CDK アプリをデプロイすると、次のフェーズが実行されます。これはアプリライフサイクルと呼ばれます。」</p>
+
+<p><img src="/assets/2024-07-19_aws_cdk_app.png" alt="2024-07-19_aws_cdk_app.png" /></p>
+
+<p>以上の内容から、おおまかなイメージは理解しました。</p>
+
+<h3 id="aws-amplifyでのcdkの使い方コンセプト">AWS AmplifyでのCDKの使い方コンセプト</h3>
+
+<p><a href="https://docs.amplify.aws/react/how-amplify-works/concepts/#connecting-to-aws-beyond-amplify">Connecting to AWS beyond Amplify</a>にコンセプトが書いてあります。</p>
+
+<p>「Gen 2 is layered on top of AWS Cloud Development Kit (CDK)—the Data and Auth capabilities in @aws-amplify/backend wrap L3 AWS CDK constructs. As a result, extending the resources generated by Amplify does not require any special configuration. The following example adds Amazon Location Services by adding a file: amplify/custom/maps/resource.ts.」とのことで、resource.tsを追加して記述するとAmazon Location Servicesがアプリに追加できるようです。
+つまり、CDKを意識せずにアプリにサービス機能を拡張できるようです。</p>
+
+<h2 id="感想">感想</h2>
+
+<p>AppSyncとCDKはイメージつかめました。
+他のサービスも調査することでシステム全体構成を描けそうです。</p>
+
+<h2 id="参考">参考</h2>
+
+<p>特になし</p>
+
+</article>
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<!--
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+      <a href="//twitter.com/share?text=AWS-Amplify%E3%81%AE%E3%82%AF%E3%82%A4%E3%83%83%E3%82%AF%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%88%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E8%A9%B3%E7%B4%B0%E8%AA%BF%E6%9F%BB%28AppSync%2CCDK%29&url=https%3A%2F%2Frydeenworks.github.io%2F2024%2F07%2F19%2Fdetail-of-aws-amplify-quick-start-app&via=rydeenworks"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=255');return false;">
+        <i class="fa fa-twitter-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+-->
+
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">RydeenWorks Dev Note</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+        
+        
+          <li class="nav-link"><a href="/about/">About</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          <li class="nav-link"><a href="/posts/">Posts</a>
+        
+        
+        
+          <li class="nav-link"><a href="/projects/">Projects</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:rydeenworks[at]gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">rydeenworks[at]gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://twitter.com/rydeenworks" title="Follow me on Twitter">
+              <i class="fa fa-twitter"></i>
+              <span class="username">rydeenworks</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://github.com/rydeenworks" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">rydeenworks</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">RydeenWorks is my development site.
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+});
+
+</script>
+
+
+
+
+
+
+  </body>
+
+</html>

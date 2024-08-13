@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>RydeenWorks Dev Note</title>
+  <meta name="description" content="RydeenWorks is my development site.
+">
+  
+  <meta name="author" content="rydeenworks">
+  <meta name="copyright" content="&copy; rydeenworks 2024">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/zenburn.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://rydeenworks.github.io/page2/">
+  <link rel="alternate" type="application/rss+xml" title="RydeenWorks Dev Note" href="https://rydeenworks.github.io/feed.xml" />
+</head>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-119889066-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="RydeenWorks Dev Note">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        
+          
+          <li class="nav-link"><a href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <li class="nav-link"><a href="/posts/">Posts</a>
+          
+        
+          
+          <li class="nav-link"><a href="/projects/">Projects</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="home">
+
+<div class="site-header-container has-cover" style="background-image: url(/assets/header_image.jpg);">
+  <div class="scrim has-cover">
+    <header class="site-header">
+      <h1 class="title">RydeenWorks Dev Note</h1>
+      
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+<ul class="post-list">
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/2024/06/04/dynamic-programming">動的計画法の習得</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <!-- <p>競技プログラミングについて 競技プログラミングが面白いです。始めのうちは簡単な問題はどんどん正解できて面白いのですが、進めていくうちにだんだんと難しめの問題が解けなくて悔しい思いをすることがありました。そのため、難しい問題も解けるようになりたいという欲が出てきました。最近では、競技プログラミングを学ぶのに良い書籍が色々と出ています。 問題解決のための「アルゴリズム×数学」が基礎からしっかり身につく本 競技プログラミングの鉄則 ~アルゴリズム力と思考力を高める77の技術~ 書籍をざっと眺めみたところ、動的計画法というテクニックを習得することでクリアできる問題が増えそうです。そのため、動的計画法について習得することにしました。 問題解決のための「アルゴリズム×数学」が基礎からしっかり身につく本 書籍の3.7節で動的計画法について詳しく説明されています。本を読むことで動的計画法の概要は把握できて、いまは節末問題に取り組んでいます。問題についてはAtCoderで解答を提出できるようになっていて便利です。 009 - Brute Force 2 ナップサック問題の解法を応用して２次元配列で解けました。どうやったら解法を応用できるか試行錯誤してたら、うまく当てはめることができました。 031 - Taro’s Vacation この問題が解けたことで、少しだけコツがつかめました。最初は場合分けや組み合わせ方を考えてたのですが、いまいち解ける気がしませんでした。一晩寝て起きて、あらためて問題を整理しながら考えると、きれいな漸化式で表現ができました。それをプログラムに落とし込んで動作確認して、AtCoderで提出するとクリアできました。 競技プログラミングの鉄則 ~アルゴリズム力と思考力を高める77の技術~ 自分の理解度を試すために、4章の動的計画法の演習問題を解いてます。以下の問題はすんなり解くことができました。こちらもAtCoderで解答を提出できるようになっていて便利です。 B16 - Frog 1 B17 - Frog 1 with Restoration B18 - Subset Sum with Restoration B19 - Knapsack 2 2-3日ほど考えてましたが自力で解答できず13/26のテストケースは通るのに残り13ケースが全然クリアできませんでした。あきらめてgithubの解答ページを参照したところ、自分のハマりポイントは2つあって、品物の選び方とdp配列初期値に問題がありました。同じ価値なら重さが軽い方を選ぶという考えはあったのですが、品物の選び方を漸化式で表現しきらずに、重さの条件文を追加してなんとかしようとした所に課題があったと気付けた点が収穫でした。 B20 - Edit Distance “編集距離”でググってアルゴリズムを理解して実装したところ、あまり苦労せずにクリアできました。 まとめ 動的計画法について基本的な考え方を理解した上で演習問題を解いたことで、過去に解けなかった問題が解けるようになった。また、新規問題に挑戦して動的計画法で解けた。以上のことから、一定レベルで動的計画法を習得できた。...</p> -->
+      <p><h1 id="競技プログラミングについて">競技プログラミングについて</h1>
+</p>
+    </section>
+    <section class="post-meta">
+      <div class="post-date">June 4, 2024</div>
+      <div class="post-categories">
+      in 
+        
+        <a href="/posts/#dev">Dev</a>
+        
+      
+      </div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/2023/10/29/update-portfolio-and-jekyll">JekyllによるWebサイト構築(2023年度版)</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <!-- <p>Webサイトを構築しなおす背景
+
+ブログではなくカテゴライズされた資料置き場として整備したくなったので、ウェブサイトを見直したい。GitHub Pagesは以前と変わらずJekyllに対応しているので、サイドバーに対応したJekyllのテンプレートを探したところ、jekyll-libdocというテンプレートが良さそうなので、これをベースに資料置き場を構築する。
+
+2019年当時はRubyやJekyllへのモチベーションがあったが、2023年はPCローカルには環境構築せずに全てWebブラウザ上で完結させる方針とする。jekyll-libdocのGitHubに詳細の手順が紹介されているが、基本的にテンプレートをForkしてオンライのVSCodeで編集してコミットすることでWebページが更新できることがわかった。GitHubのリポジトリのページでピリオドキーを押すだけでVSCodeを使ってオンライン上で編集できる体験はとても感動した。
+
+Codespacesについて
+
+オンラインのVSCodeで編集する機能はGitHubが提供するCodespacesというサービスによるもの。個人ユーザはベータ版を無料で使えるようだ。
+
+GitHub codespaces
+
+
+  個人向けFreeプランのユーザーには、Codespacesベータ版を継続して提供しています。ベータ版の利用に関して変更がある場合は別途お知らせします。
+
+
+
+  個人でCodespacesの使用が可能になる状況についての詳細は、今後お伝えする予定です。現在ベータ版を使用している個人のユーザーは、引き続きCodespacesにアクセスすることができ、料金を請求されることはありません。
+
+
+Markdownをプレビューする方法
+
+オンラインのVSCode上でMarkdownファイルを編集した時にプレビューする必要がある。VSCode上でファイルを右クリック&gt;”プレビューを開く”で確認することができる
+
+参考
+
+
+  2019年に当サイトを構築したときの記録 Jekyllによるウェブサイト構築方法
+
+
+</p> -->
+      <p><h1 id="webサイトを構築しなおす背景">Webサイトを構築しなおす背景</h1>
+</p>
+    </section>
+    <section class="post-meta">
+      <div class="post-date">October 29, 2023</div>
+      <div class="post-categories">
+      in 
+        
+        <a href="/posts/#dev">Dev</a>
+        
+      
+      </div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/2023/01/14/book-search-in-library-history">Androidアプリ「図書さがし」更新履歴</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <!-- <p>2023/01/14 ver13.0
+
+  書影のみ表示する機能を廃止しました
+  書籍リストの見た目を変更しました
+  アプリ右上のメニューからアプリ更新履歴ページを表示できるようにしました
+
+
+2022/12/30 ver12.0
+
+  アプリが利用するAndroid SDKバージョンを最新版に更新しました
+
+
+2021/01/22 ver9.0, 10.0, 11.0
+
+  本の検索を失敗しにくくしました
+  クラッシュする不具合の修正
+
+
+2020/03/18 ver8.0
+
+  図書さがし履歴のデザインを見直しました
+
+
+2020/02/29 ver7.0
+
+  本の検索ができない場合がある不具合を修正しました
+
+
+2020/01/01 ver6.0
+
+  アプリのレビュー・要望をメニューからできるようにしました
+
+
+2019/12/31 ver5.0
+
+  図書さがしの履歴内容をクリップボードにコピーできるようにしました
+  図書さがしの履歴内容を読み込んで復元する機能を追加しました
+  図書さがしの履歴を元に本の書影リストを表示する機能を追加しました
+
+
+2019/09/18 ver4.0
+
+  アプリ右上のメニューからヘルプページを表示できるようにしました
+
+
+2019/07/31 ver3.0
+
+  検索履歴を表示する機能を追加しました
+
+
+2018/03/02 ver1.0
+
+  ファーストリリース
+
+</p> -->
+      <p><p><strong>2023/01/14 ver13.0</strong></p>
+<ul>
+  <li>書影のみ表示する機能を廃止しました</li>
+  <li>書籍リストの見た目を変更しました</li>
+  <li>アプリ右上のメニューからアプリ更新履歴ページを表示できるようにしました</li>
+</ul>
+</p>
+    </section>
+    <section class="post-meta">
+      <div class="post-date">January 14, 2023</div>
+      <div class="post-categories">
+      in 
+        
+        <a href="/posts/#mybooksearch">Mybooksearch</a>
+        
+      
+      </div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/2022/11/19/rydeenworks-app-privacy-policy">RydeenWorks Android Application Privacy Policy</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <!-- <p>Privacy Policy RydeenWorks built the app as an Ad Supported app. This SERVICE is provided by RydeenWorks at no cost and is intended for use as is. This page is used to inform visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to...</p> -->
+      <p><p><strong>Privacy Policy</strong></p>
+</p>
+    </section>
+    <section class="post-meta">
+      <div class="post-date">November 19, 2022</div>
+      <div class="post-categories">
+      in 
+        
+        <a href="/posts/#dev">Dev</a>
+        
+      
+      </div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/2021/03/04/amazon-shopping">Androidアプリ 「World Ama Shopping」のご紹介</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <!-- <p>当該アプリはGooglePlay公開を終了いたしました。
+
+本記事の概要
+
+各国Amazonサイトの商品を調べるときに簡単に調べられるように
+Androidアプリ「World Ama Shopping」を開発・リリースしました。
+簡単に各国Amazonサイトの商品を調べられます。
+
+
+
+本記事では以下を説明します。
+
+
+  アプリの使い方
+  各国の商品の違い(利用例)
+
+
+アプリの使い方
+
+入手方法
+
+GooglePlayからインストールします。
+
+https://play.google.com/store/apps/details?id=com.rydeenworks.amago
+
+
+
+アプリの説明
+
+メイン画面
+
+
+
+AmazonURL
+
+検索対象のAmazonサイトを表示します。タップすると”Select Country”画面に遷移して、Amazonサイトを選択できます。
+
+Search Word
+
+検索したいキーワードを入力できます。
+
+Sort Order
+
+Amazon商品検索結果の並び順を指定できます。
+
+GoTo Amazonボタン
+
+Amazonサイトで商品検索を実行します。
+
+各国の商品の違い(利用例)
+
+“Emacs”で検索してみました。各国で違いがあって面白いです。
+
+
+
+
+
+
+
+
+
+</p> -->
+      <p><p><em>当該アプリはGooglePlay公開を終了いたしました。</em></p>
+</p>
+    </section>
+    <section class="post-meta">
+      <div class="post-date">March 4, 2021</div>
+      <div class="post-categories">
+      in 
+        
+        <a href="/posts/#dev">Dev</a>
+        
+      
+      </div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/2021/01/01/gtd-recently">ブラウザブックマークによるGTDのinbox整理方法について</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <!-- <p>本記事で解決する事 GTDではinboxに情報収集するという考えがあります。 inboxにどんどん情報を収集した結果、情報を整理できずに活用できなくなってしまう事があると思います。 本記事ではinboxの整理を上手くやる方法について紹介します。 本記事の概要 本記事ではGTDの5ステップのうち、ステップ1-3をブックマーク機能を使って実現する方法を説明します。 STEP1 CAPTURE - あなたの気を引くものを捕らえる -&gt;ブラウザからブックマークする STEP2 CLARIFY - それが何を意味するのか明確にする -&gt;ブックマークを定期的に見直す STEP3 ORGANIZE - それをあるべき所に整理する -&gt; ブックマークを定期的にしかるべきフォルダに移動する この運用のメリットは次のとおりです。 ブックマークするだけで CAPTURE できる ネットから得た情報はブックマークで一元管理するルールにできる ブックマークはアカウントに紐づくのでスマホ・ノートPCなど端末に依存せずに参照できる ブックマークでinboxを簡潔に運用する事で、ステップ1−3のサイクルが回るようになります。 本記事の著者について もともと手帳術のようなものが好きで20年くらい続けています。 その過程でGTDを知って、自分なりのやり方をブラッシュアップし続けています。 メモ帳を電子化する事で手帳術を強化できないかと考えて、Emacsとorg-modeも5年ほど愛好しています。 STEP1 CAPTURE - あなたの気を引くものを捕らえる 準備 ブックマークのフォルダ構成を決めておく事が大事です。 フォルダ構成を決めておかないと、GTDをスピーディに運用できないからです。 フォルダは1つのinbox、複数の整理用フォルダを用意します。整理用フォルダは、過去記事のgoal.org「私生活の大事な事や目標など実現したい事」の構成に合わせます。 私の場合、トップフォルダは以下のようなイメージです。 ブックマークが多くなってきたらサブフォルダを作ってください。 フォルダ名 役割 inbox 最初に入れる場所 goal 自分の人生を通して極めたい事の参考資料 life-work...</p> -->
+      <p><h1 id="本記事で解決する事">本記事で解決する事</h1>
+</p>
+    </section>
+    <section class="post-meta">
+      <div class="post-date">January 1, 2021</div>
+      <div class="post-categories">
+      in 
+        
+        <a href="/posts/#orgmode">Orgmode</a>
+        
+      
+      </div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/2020/12/29/books-in-2020">Androidアプリ「図書さがし」で20冊借りた2020年読書を振り返る</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <!-- <p>1. Android向けアプリ「図書さがし」の紹介 読書好きの自分がもっと便利に図書館から予約するために作ったアプリです。 私の使い方は以下の通りです。 (1)ネットをしていて気になる本に出会うと、まずAmazonのレビューを見ます。 (2)レビュー見て自分が読みたいと思ったらアプリで調べます。 (3)図書館で借りられる場合は、予約します。 アプリはGooglePlayからインストールできます。全く文字入力せずに調べられるのが、このアプリの良いところです。 2. 借りた本 2.1. ビジネススキル関連(7冊) 今年は働き方や採用など長期的な展望や指針を考えるために本を読みましたが、のめり込む本に出会えませんでした。特定の状況で通用する事例や経験論よりも論理的で再現可能な内容の方が好みです。 「NO HARD WORK!」「ビジネスマンの父より息子への30通の手紙」は参考になりました。来年は(事例や経験論ではなく)具体的スキルに落とし込まれた本を読みたいと思います。 タイトル NO HARD WORK! 3分間コーチ 人事の超プロが明かす評価基準 NETFLIXの最強人事戦略 ビジョナリーカンパニー 2 ビジネスマンの父より息子への30通の手紙 ワーク・ルールズ! 2.2. 科学・哲学関連(7冊) 「確率の出現」がとても面白かったです。あとは「ストア派(文庫クセジュ)」が良くて、ストア派についての知識の整理ができました。「セネカ」は年末年始に読みます。「自省録」は今年３回借りましたが読み切っておらず来年も様子見しそう、相性の問題かも。2021年は「セネカ 道徳書簡集―倫理の手紙集」「自省録」と確率関係の本に絞ろうと思います。図書館の良いところは、本が合わなくても金銭的ダメージが少ない所ですね。 タイトル 感想 運ぶヒトの人類学 面白いが興味なかった セネカ 読書中 ストア派 とても良い 自省録 未読了。来年持ち越し 測りすぎ いまいちピンと来ない 確率の出現 とても良い その悩み、哲学者がすでに答えを出しています 興味なかった 2.3. プログラミング系(4冊) どれもほとんど読んでません。プログラミングはネットや動画を活用しています。2020年はSDL2というゲーム用ライブラリで遊んでました。あとは9ccというCコンパイラ作りがためになりました。PodCast「Rebuild...</p> -->
+      <p><h1 id="1-android向けアプリ図書さがしの紹介">1. Android向けアプリ「図書さがし」の紹介</h1>
+</p>
+    </section>
+    <section class="post-meta">
+      <div class="post-date">December 29, 2020</div>
+      <div class="post-categories">
+      in 
+        
+        <a href="/posts/#mybooksearch">Mybooksearch</a>
+        
+      
+      </div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/2020/01/11/books-in-2019">Androidアプリ「図書さがし」で34冊借りた2019年読書を振り返る</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <!-- <p>1. Android向けアプリ「図書さがし」の紹介 読書好きの自分がもっと便利に図書館から予約するために作ったアプリです。 私の使い方は以下の通りです。 (1)ネットをしていて気になる本に出会うと、まずAmazonのレビューを見ます。 (2)レビュー見て自分が読みたいと思ったらアプリで調べます。 (3)図書館で借りられる場合は、予約します。 アプリはGooglePlayからインストールできます。全く文字入力せずに調べられるのが、このアプリの良いところです。 2. 借りた本 2.1. ビジネススキル関連(11冊) 「学習する組織」「ケースで学ぶTOC思考プロセス」「全体最適の問題解決入門」「ロジカル・プレゼンテーション」「はじめてのGTD ストレスフリーの整理術」の５冊が特にのめり込んで読みました。ビジネス系の本は内容が論理的で再現可能かどうかで自分は評価します。時間がなくてほとんど読まずに返却したため評価してない本もあります。 タイトル 「仕組み」仕事術 アナタはなぜチェックリストを使わないのか? 学習する組織 ケースで学ぶTOC思考プロセス 無敵の思考 全体最適の問題解決入門 過剰管理の処方箋 ロジカル・プレゼンテーション 60分間・企業ダントツ化プロジェクト はじめてのGTD ストレスフリーの整理術 起業の科学 2.2. 科学・哲学関連(12冊) 「道徳書簡集」を知ったのが一番の収穫でした。「哲学の原風景」「ストア派の哲人たち」も興味深かったです。「科学哲学への招待」も自分の興味ある内容で良かったです。 もともとはナシーム・ニコラス・タレブの影響で、古代から淘汰されずに残った本の方が(新書よりも)価値があるという考えに基づいて、古代の哲学の思想に取り組んだのが2019年でした。大変面白かったです。最初は間違って東洋の思想ということで四書五経を読もうとしたのですが、なんか違うと気づいて西洋哲学にしました。 タイトル 強さと脆さ ブラック・スワンの箴言 セネカ入門 ルキリウスへの手紙/モラル通信 道徳書簡集 人生談義 （上） ストア派の哲人たち 科学哲学の冒険 科学哲学への招待 哲学の原風景 四書五経入門 日本の名著 (13) 伊藤仁斎 2.3. プログラミング系(5冊) どれもほとんど読んでません。プログラミングはネットや動画で学ぶ時代だと思います。ドットインストールとProgateは時々課金して有料講座受けてます。2020年はPythonとKotlinに習熟したい。本を読むよりは手を動かしてアプリ作ってリリースした方が100倍学びになります。本の場合は学ぶというよりは読んで楽しむ方が自分の好みに合ってます。あとはPodCastだと「Rebuild...</p> -->
+      <p><h1 id="1-android向けアプリ図書さがしの紹介">1. Android向けアプリ「図書さがし」の紹介</h1>
+</p>
+    </section>
+    <section class="post-meta">
+      <div class="post-date">January 11, 2020</div>
+      <div class="post-categories">
+      in 
+        
+        <a href="/posts/#mybooksearch">Mybooksearch</a>
+        
+      
+      </div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/2020/01/03/android-release">AndroidアプリをGooglePlayストアに公開する手順[APK版]</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <!-- <p>AndroidアプリをGooglePlayストアに公開するまでの手順についてまとめました。大まかな流れは以下の通りです。 アプリのバージョンを上げる AndroidStudioでリリース向けのapkを作成をする GooglePlayConsoleで新しいリリースを作成する 私が個人開発したAndroid向けアプリ「図書さがし」を例に手順を説明します。 (注意事項) GoogleではBundle版でのリリースを推奨しているようですが、本記事ではAPKによるリリースの手順となっています。 (著者について) この記事を書いている私は個人開発歴は3年、今までに２つのアプリをリリースしています。 1 アプリのバージョンを上げる GooglePlayストアではアプリのバージョン情報を管理しているため、リリース済みのバージョンのままリリースする事はできません。バージョンを上げてリリースします。 1.1 build.gradleの表示 AndroidStudioのProjectツールウィンドウからbuild.gradleを表示しましょう。 1.2 バージョンを上げる 上の画像の versionCodeとversionName の部分がバージョンの記述です。この部分を書き換えればOKです。私は1ずつ上げてます。 versionCode 5 versionName "5.0" 2 AndroidStudioでリリース向けのapkを作成をする AndroidStudioの Buildメニュー &gt; Generate Signed Bundle / APK… を選択する。 APKを選択して[Next]ボタンを押す。 key情報を設定して[Next]ボタンを押す。 releaseを選択する。Signatureは V1 と V2 両方をチェックする。[Finish]ボタンを押す。 ビルドが終わるとAndroidStudio上に通知が出る。 作成したapkはきちんとバージョンがわかるようにして管理しましょう。以上でapk作成は完了です。 3 GooglePlayConsoleで新しいリリースを作成する 今回は過去にGooglePlayConsoleでリリースしたことがあると前提とします。 “アプリのリリース”の製品版の”管理”をクリックする。 [リリースを作成]ボタンを押す。 [ファイルを選択]ボタンを押して、作成したapkを選択する。...</p> -->
+      <p><p>AndroidアプリをGooglePlayストアに公開するまでの手順についてまとめました。大まかな流れは以下の通りです。</p>
+</p>
+    </section>
+    <section class="post-meta">
+      <div class="post-date">January 3, 2020</div>
+      <div class="post-categories">
+      in 
+        
+        <a href="/posts/#dev">Dev</a>
+        
+      
+      </div>
+    </section>
+  </li>
+  
+  <hr>
+  
+  
+  <li>
+    <h2>
+      <a class="post-link" href="/2019/12/30/magit">GitHub Flowとmagitによるプルリクエスト開発フロー[個人開発向け]</a>
+    </h2>
+    <section class="post-excerpt" itemprop="description">
+      <!-- <p>GitHub issueを対応するときの開発フローについてまとめました。大まかな流れは以下の通りです。 gitブランチを作成しcheckoutする ブランチ上で開発し実装完了したらコミットする リモートにブランチ名でpushする(masterにpushしない) GitHub上でプルリクエストを作成してmasterにマージする issueをクローズする ローカルにpullする photo credit: ben_nuttall Octocat @ GitHub’s Oval Office via photopin (license) 著者について この記事を書いている私はプログラミング歴15年です。 個人開発歴は3年、magit歴は2年程度です。 1 magitの使い方 私はSpacemacsを愛用しています。以降の操作は全てSpacemacs環境での利用を想定しています。 1.1 magit-status git管理下にあるファイルをemacsで表示中に magit-status を実行する。 1.2 magitヘルプ表示 magit-status画面で ?キーを押すとヘルプを表示できる。 2 gitブランチを作成しcheckoutする ヘルプ表示より bキーを押すとブランチが作成できることがわかりましたので bキーを押します。 そうするとブランチのメニュー表示が出ます。 今回はブランチを作成してcheckoutしたいので cキーを押します。 次にブランチの元を入力する画面が表示されます。masterをブランチ元とします。 ブランチ元を入力したら、今度はブランチ名を入力する画面が表示されます。 ブランチ名は feature/#issue番号/issue概要 にします。全部英語。 “feature”は機能開発用のブランチという意味です。 入力するとmagit-status画面に戻り、ブランチが作成されてcheckoutされた状態になりました。 一応ターミナル上でもgitの状態を確認してみると、ブランチがcheckoutされていることがわかります。...</p> -->
+      <p><p>GitHub issueを対応するときの開発フローについてまとめました。大まかな流れは以下の通りです。</p>
+</p>
+    </section>
+    <section class="post-meta">
+      <div class="post-date">December 30, 2019</div>
+      <div class="post-categories">
+      in 
+        
+        <a href="/posts/#dev">Dev</a>
+        
+      
+      </div>
+    </section>
+  </li>
+  
+  
+</ul>
+
+<nav class="pagination" role="navigation">
+	<p>
+    
+			
+			<a class="newer-posts" href="/">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-square fa-stack-2x"></i>
+          <i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+        </span>
+      </a>
+			
+		
+		<span class="page-number">Page 2 of 4</span>
+		
+		<a class="newer-posts" href="/page3">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-square fa-stack-2x"></i>
+        <i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+		
+	</p>
+</nav>
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">RydeenWorks Dev Note</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+        
+        
+          <li class="nav-link"><a href="/about/">About</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          <li class="nav-link"><a href="/posts/">Posts</a>
+        
+        
+        
+          <li class="nav-link"><a href="/projects/">Projects</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:rydeenworks[at]gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">rydeenworks[at]gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://twitter.com/rydeenworks" title="Follow me on Twitter">
+              <i class="fa fa-twitter"></i>
+              <span class="username">rydeenworks</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://github.com/rydeenworks" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">rydeenworks</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">RydeenWorks is my development site.
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+});
+
+</script>
+
+
+
+
+
+
+  </body>
+
+</html>

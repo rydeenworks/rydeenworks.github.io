@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>GitHub Flowとmagitによるプルリクエスト開発フロー[個人開発向け]</title>
+  <meta name="description" content="GitHub issueを対応するときの開発フローについてまとめました。大まかな流れは以下の通りです。">
+  
+  <meta name="author" content="rydeenworks">
+  <meta name="copyright" content="&copy; rydeenworks 2024">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/zenburn.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="https://rydeenworks.github.io/2019/12/30/magit">
+  <link rel="alternate" type="application/rss+xml" title="RydeenWorks Dev Note" href="https://rydeenworks.github.io/feed.xml" />
+</head>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-119889066-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/" class="logo">
+      
+      <img src="/assets/logo.png" alt="RydeenWorks Dev Note">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav role="navigation">
+      <ul id="js-navigation-menu" class="navigation-menu show">
+        
+          
+          <li class="nav-link"><a href="/about/">About</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+          <li class="nav-link"><a href="/posts/">Posts</a>
+          
+        
+          
+          <li class="nav-link"><a href="/projects/">Projects</a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+    <div class="page-content">
+        <div class="post">
+
+<div class="post-header-container " >
+  <div class="scrim ">
+    <header class="post-header">
+      <h1 class="title">GitHub Flowとmagitによるプルリクエスト開発フロー[個人開発向け]</h1>
+      <!-- <p class="info">by <strong></strong></p> -->
+    </header>
+  </div>
+</div>
+
+<div class="wrapper">
+
+ <span class="page-divider">
+  <span class="one"></span>
+  <span class="two"></span>
+</span>
+ 
+
+<section class="post-meta">
+  <div class="post-date">December 30, 2019</div>
+  <div class="post-categories">
+  in 
+    
+    <a href="/posts/#dev">Dev</a>
+    
+  
+  </div>
+</section>
+
+<article class="post-content">
+  <p>GitHub issueを対応するときの開発フローについてまとめました。大まかな流れは以下の通りです。</p>
+
+<ul>
+  <li>gitブランチを作成しcheckoutする</li>
+  <li>ブランチ上で開発し実装完了したらコミットする</li>
+  <li>リモートにブランチ名でpushする(masterにpushしない)</li>
+  <li>GitHub上でプルリクエストを作成してmasterにマージする</li>
+  <li>issueをクローズする</li>
+  <li>ローカルにpullする</li>
+</ul>
+
+<p><img src="/assets/github-octocat.jpg" alt="github-octocat" />
+photo credit: ben_nuttall <a href="http://www.flickr.com/photos/101462707@N03/26056639835">Octocat @ GitHub’s Oval Office</a> via <a href="http://photopin.com">photopin</a> <a href="https://creativecommons.org/licenses/by-sa/2.0/">(license)</a></p>
+
+<p><strong>著者について</strong></p>
+
+<p>この記事を書いている私はプログラミング歴15年です。
+個人開発歴は3年、magit歴は2年程度です。</p>
+
+<h1 id="1-magitの使い方">1 magitの使い方</h1>
+
+<p>私はSpacemacsを愛用しています。以降の操作は全てSpacemacs環境での利用を想定しています。</p>
+
+<h1 id="11-magit-status">1.1 magit-status</h1>
+
+<p>git管理下にあるファイルをemacsで表示中に <code class="language-plaintext highlighter-rouge">magit-status</code> を実行する。</p>
+
+<p><img src="/assets/magit/magit-status.png" alt="magit-status" /></p>
+
+<h1 id="12-magitヘルプ表示">1.2 magitヘルプ表示</h1>
+
+<p>magit-status画面で <code class="language-plaintext highlighter-rouge">?</code>キーを押すとヘルプを表示できる。</p>
+
+<p><img src="/assets/magit/magit_help.png" alt="magit-help" /></p>
+
+<h1 id="2-gitブランチを作成しcheckoutする">2 gitブランチを作成しcheckoutする</h1>
+
+<p>ヘルプ表示より <code class="language-plaintext highlighter-rouge">b</code>キーを押すとブランチが作成できることがわかりましたので <code class="language-plaintext highlighter-rouge">b</code>キーを押します。
+そうするとブランチのメニュー表示が出ます。
+今回はブランチを作成してcheckoutしたいので <code class="language-plaintext highlighter-rouge">c</code>キーを押します。</p>
+
+<p><img src="/assets/magit/magit-branch-menu.png" alt="magit-branch-menu" /></p>
+
+<p>次にブランチの元を入力する画面が表示されます。masterをブランチ元とします。</p>
+
+<p><img src="/assets/magit/magit-branch-start-at.png" alt="magit-branch-start-at" /></p>
+
+<p>ブランチ元を入力したら、今度はブランチ名を入力する画面が表示されます。
+ブランチ名は <code class="language-plaintext highlighter-rouge">feature/#issue番号/issue概要</code> にします。全部英語。
+“feature”は機能開発用のブランチという意味です。</p>
+
+<p><img src="/assets/magit/magit-branch-new-name.png" alt="magit-branch-new-name" /></p>
+
+<p>入力するとmagit-status画面に戻り、ブランチが作成されてcheckoutされた状態になりました。</p>
+
+<p><img src="/assets/magit/magit-branch-on-feature-branch.png" alt="magit-branch-on-feature-branch" /></p>
+
+<p>一応ターミナル上でもgitの状態を確認してみると、ブランチがcheckoutされていることがわかります。</p>
+
+<p><img src="/assets/magit/magit-branch-terminal.png" alt="magit-branch-terminal" /></p>
+
+<h1 id="3-ブランチ上で開発し実装完了したらコミットする">3 ブランチ上で開発し実装完了したらコミットする</h1>
+
+<h1 id="31-修正ファイルのstage">3.1 修正ファイルのstage</h1>
+
+<p>今回はAndroidStudioで開発しましたが、git操作は全てmagitで行うことにします。修正は完了した状態とします。</p>
+
+<p>magit-statusのヘルプ表示から <code class="language-plaintext highlighter-rouge">g</code>キーを押すとmagit-statusの表示更新ができることがわかります。<code class="language-plaintext highlighter-rouge">g</code>キーを押すと修正ファイルがunstageの状態となっています。</p>
+
+<p><img src="/assets/magit/magit-branch-unstage.png" alt="magit-branch-unstage" /></p>
+
+<p>修正ファイルの行にカーソルを当てて <code class="language-plaintext highlighter-rouge">s</code>キーを押すとstage状態になります。<code class="language-plaintext highlighter-rouge">S</code>(大文字S)キーで一括でstageできます。</p>
+
+<h1 id="32-修正ファイルのcommit">3.2 修正ファイルのcommit</h1>
+
+<p>stage状態の設定が終わったらcommitします。commitは<code class="language-plaintext highlighter-rouge">c</code>キーです。commitメニューが表示されます。メニュー画面で<code class="language-plaintext highlighter-rouge">c</code>キーを押すとcommitできます。</p>
+
+<p><img src="/assets/magit/magit-branch-commit-menu.png" alt="magit-branch-commit-menu" /></p>
+
+<p>そうするとdiff画面とcommitコメントを入力する画面が表示されます。とても便利です。
+commitコメントには issue番号 を必ず入れます。issue番号を入れるとGitHubが自動でissueとcommitを紐づけてくれるからです。</p>
+
+<p>今回のissue番号は #18 です。コメント記入したら<code class="language-plaintext highlighter-rouge">C-c C-c</code>とキー入力するとcommit実行できます。</p>
+
+<p><img src="/assets/magit/magit-branch-commit-diff.png" alt="magit-branch-commit-diff" /></p>
+
+<h1 id="4-リモートにブランチ名でpushする">4 リモートにブランチ名でpushする</h1>
+
+<p>magit-status画面で<code class="language-plaintext highlighter-rouge">P</code>(大文字P)キーを押すとpushメニューが表示されます。
+push先のURLが設定済みの前提ですが、<code class="language-plaintext highlighter-rouge">u</code>キーでpushします。</p>
+
+<p><img src="/assets/magit/magit-branch-push-menu.png" alt="magit-branch-push-menu" /></p>
+
+<p>ブランチ名を入力する画面が表示されます。<code class="language-plaintext highlighter-rouge">origin/</code> + <code class="language-plaintext highlighter-rouge">ブランチ名</code> を入力します。
+<code class="language-plaintext highlighter-rouge">origin/feature/#18/issue_test</code>です。これでpush完了です。</p>
+
+<p><img src="/assets/magit/magit-branch-push-upstream.png" alt="magit-branch-push-upstream" /></p>
+
+<h1 id="5-github上でプルリクエストを作成してmasterにマージする">5 GitHub上でプルリクエストを作成してmasterにマージする</h1>
+
+<h2 id="51-github上でブランチを確認しプルリクエストを作成する">5.1 GitHub上でブランチを確認しプルリクエストを作成する</h2>
+
+<p>GitHubリポジトリのPullRequestsタブを開くと、ブランチがpushされたと表示されています。
+<code class="language-plaintext highlighter-rouge">Compare &amp; pull request</code>ボタンを押てプルリクエストを作成します。</p>
+
+<p><img src="/assets/magit/github-branch.png" alt="github-branch" /></p>
+
+<p>ボタンを押すとプルリクエスト作成画面になります。必要な情報を入力して<code class="language-plaintext highlighter-rouge">Create pull request</code>ボタンを押します。</p>
+
+<p><img src="/assets/magit/github-branch-open-pull-request.png" alt="github-branch-open-pull-request" /></p>
+
+<h2 id="52-github上でmergeする">5.2 GitHub上でmergeする</h2>
+
+<p>プルリクエストが作成されると、<code class="language-plaintext highlighter-rouge">Merge pull request</code>ボタンが出現しますので、ボタンを押します。</p>
+
+<p><img src="/assets/magit/github-branch-pull-request-menu.png" alt="github-branch-pull-request-menu" /></p>
+
+<p>次に<code class="language-plaintext highlighter-rouge">Confirm merge</code>ボタンを押します。confirmとはマージして良いかの確認を意味します。</p>
+
+<p><img src="/assets/magit/github-branch-pull-request-confirm.png" alt="github-branch-pull-request-confirm" /></p>
+
+<p>画面上に<code class="language-plaintext highlighter-rouge">merged</code>と表示されました。マージ成功です。マージが終わったらブランチは不要なので<code class="language-plaintext highlighter-rouge">Delete baranch</code>ボタンを押してブランチを削除します。</p>
+
+<p><img src="/assets/magit/github-branch-pull-request-merged.png" alt="github-branch-pull-request-merged" /></p>
+
+<h1 id="6-issueをクローズする">6 issueをクローズする</h1>
+
+<p>issue画面を表示するとブランチでコミットした内容とプルリクエストによってマージした内容が表示されています。
+<code class="language-plaintext highlighter-rouge">Close issue</code>ボタンを押してissueをクローズします。</p>
+
+<p><img src="/assets/magit/github-issue-merged.png" alt="github-issue-marged" /></p>
+
+<p>クローズしました。</p>
+
+<p><img src="/assets/magit/github-issue-closed.png" alt="github-issue-closed" /></p>
+
+<h1 id="7-ローカルにpullする">7 ローカルにpullする</h1>
+
+<p>リモートのmasterの内容をローカルにpullします。まずはmagit-statusで状態の確認します。
+featureブランチのままだったので、masterブランチに切り替えます。</p>
+
+<p><img src="/assets/magit/magit-branch-before-pull.png" alt="magit-branch-before-pull" /></p>
+
+<p>magit-statusの画面で <code class="language-plaintext highlighter-rouge">b</code>キーを押してブランチメニューを表示します。ブランチメニューでも <code class="language-plaintext highlighter-rouge">b</code>キーを押してcheckoutするブランチを入力します。</p>
+
+<p><img src="/assets/magit/magit-branch-menu-before-pull.png" alt="magit-branch-menu-before-pull" /></p>
+
+<p>checkoutするのはmasterですので、masterと入力します。</p>
+
+<p><img src="/assets/magit/magit-branch-menu-checkout.png" alt="magit-branch-menu-checkout" /></p>
+
+<p>入力完了するとmagit-statusの画面に戻り、masterに切り替わった事がわかります。</p>
+
+<p><img src="/assets/magit/magit-status-master.png" alt="magit-status-master" /></p>
+
+<p>masterに対してpullします。magit-status画面で<code class="language-plaintext highlighter-rouge">F</code>(大文字F)キーでpullのメニュー画面が表示されます。メニューでは<code class="language-plaintext highlighter-rouge">u</code>キーを押す事でリモートのmasterの内容をローカルに反映できます。</p>
+
+<p><img src="/assets/magit/magit-status-pull-menu.png" alt="magit-status-pull-menu" /></p>
+
+<p>反映できました。</p>
+
+<p><img src="/assets/magit/magit-status-pulled-master.png" alt="magit-status-pulled-master" /></p>
+
+<p>不要になったブランチは削除しましょう。”feature/#18/issue_test”ブランチを削除しました。<code class="language-plaintext highlighter-rouge">b</code>キーでブランチメニューを表示して<code class="language-plaintext highlighter-rouge">x</code>キーでdeleteを選択し、削除するブランチ名を入力すればOKです。</p>
+
+<p><img src="/assets/magit/magit-status-deleted-branch.png" alt="magit-status-deleted-branch" /></p>
+
+<h1 id="参考">参考</h1>
+
+<div class="kattene">
+    <div class="kattene__imgpart"><a target="_blank" rel="noopener" href="https://www.amazon.co.jp/gp/product/477416366X/ref=as_li_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=477416366X&amp;linkCode=as2&amp;tag=dynamitecruis-22&amp;linkId=0a59c69f70038c34694fbc085c51dd2f"><img src="https://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;MarketPlace=JP&amp;ASIN=477416366X&amp;ServiceVersion=20070822&amp;ID=AsinImage&amp;WS=1&amp;Format=_SL250_&amp;tag=dynamitecruis-22" /></a></div>
+    <div class="kattene__infopart">
+      <div class="kattene__title"><a target="_blank" rel="noopener" href="https://www.amazon.co.jp/gp/product/477416366X/ref=as_li_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=477416366X&amp;linkCode=as2&amp;tag=dynamitecruis-22&amp;linkId=0a59c69f70038c34694fbc085c51dd2f">GitHub実践入門 ~Pull Requestによる開発の変革 (WEB+DB PRESS plus)</a></div>
+      <div class="kattene__description">GitHubの実践的な使い方を、実際に手を動かす形で解説する書籍です。初学者の方にもわかりやすいよう、基本的なGitやGitHubの使い方から、「ソーシャルコーディング」の目玉機能であるPull Requestの送り方・受け方まで解説します。また、外部ツールとの連携、GitHub FlowやGit Flowなど、GitHubを中心とした開発手法についてもしっかり解説しているので、中・上級者の方にも参考になるはずです。</div>
+      <div class="kattene__btns __five">
+        <div><a class="kattene__btn __orange" target="_blank" rel="noopener" href="https://www.amazon.co.jp/gp/product/477416366X/ref=as_li_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=477416366X&amp;linkCode=as2&amp;tag=dynamitecruis-22&amp;linkId=0a59c69f70038c34694fbc085c51dd2f">Amazon</a></div>
+      </div>
+    </div>
+</div>
+
+<ul>
+  <li><a href="https://qiita.com/maueki/items/70dbf62d8bd2ee348274">Emacs magitチュートリアル(Qiita)</a></li>
+</ul>
+
+<p><a href="https://px.a8.net/svt/ejp?a8mat=35UQJU+AZXA2A+4B5K+5Z6WX" rel="nofollow">
+<img border="0" width="468" height="60" alt="" src="https://www23.a8.net/svt/bgt?aid=191230698665&amp;wid=001&amp;eno=01&amp;mid=s00000020108001004000&amp;mc=1" /></a>
+<img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=35UQJU+AZXA2A+4B5K+5Z6WX" alt="" /></p>
+
+
+</article>
+
+
+
+<section class="rss">
+  <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+</section>
+
+<!--
+<section class="share">
+  <span>Share: </span>
+  
+    
+    
+      <a href="//twitter.com/share?text=GitHub+Flow%E3%81%A8magit%E3%81%AB%E3%82%88%E3%82%8B%E3%83%97%E3%83%AB%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88%E9%96%8B%E7%99%BA%E3%83%95%E3%83%AD%E3%83%BC%5B%E5%80%8B%E4%BA%BA%E9%96%8B%E7%99%BA%E5%90%91%E3%81%91%5D&url=https%3A%2F%2Frydeenworks.github.io%2F2019%2F12%2F30%2Fmagit&via=rydeenworks"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=255');return false;">
+        <i class="fa fa-twitter-square fa-lg"></i>
+      </a>
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+</section>
+-->
+
+
+
+
+</div>
+</div>
+
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">RydeenWorks Dev Note</h3>
+
+    <div class="site-navigation">
+
+      <p><strong>Site Map</strong></p>
+      <ul class="pages">
+        
+        
+          <li class="nav-link"><a href="/about/">About</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+          <li class="nav-link"><a href="/posts/">Posts</a>
+        
+        
+        
+          <li class="nav-link"><a href="/projects/">Projects</a>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      </ul>
+    </div>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:rydeenworks[at]gmail.com">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">rydeenworks[at]gmail.com</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://twitter.com/rydeenworks" title="Follow me on Twitter">
+              <i class="fa fa-twitter"></i>
+              <span class="username">rydeenworks</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://github.com/rydeenworks" title="Fork me on GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">rydeenworks</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/feed.xml">via RSS</a></strong></p>
+      <p class="text">RydeenWorks is my development site.
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  // Default syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  // Header
+  var menuToggle = $('#js-mobile-menu').unbind();
+  $('#js-navigation-menu').removeClass("show");
+  menuToggle.on('click', function(e) {
+    e.preventDefault();
+    $('#js-navigation-menu').slideToggle(function(){
+      if($('#js-navigation-menu').is(':hidden')) {
+        $('#js-navigation-menu').removeAttr('style');
+      }
+    });
+  });
+});
+
+</script>
+
+
+
+
+
+
+  </body>
+
+</html>
