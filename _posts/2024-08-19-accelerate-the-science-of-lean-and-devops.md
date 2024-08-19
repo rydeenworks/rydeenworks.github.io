@@ -10,7 +10,7 @@ categories: book
 
 # 背景
 
-- 和田卓人氏の[「質とスピード」という講演資料](https://speakerdeck.com/twada/quality-and-speed-aws-dev-day-2023-tokyo-edition)で当該書籍から引用されていて読まねばと思っていた
+- 和田卓人氏の[「質とスピード」という講演資料](https://speakerdeck.com/twada/quality-and-speed-aws-dev-day-2023-tokyo-edition)で当該書籍を引用していて読まねばと思っていた
 - ソフトウェアの保守性を向上させる取り組みを主導していたので、質の向上により開発速度が増すという実感はあった
 - しかし、継続的デリバリやDevOpsという観点について全然知らなかったので、書籍を読んで理解する事にした
 
