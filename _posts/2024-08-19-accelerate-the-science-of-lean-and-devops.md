@@ -77,5 +77,5 @@ categories: book
 # 参考
 
 - [texta.fm 5.Accelerate](https://open.spotify.com/episode/7JP6BFOB2grTJt5V3VmI9Z)
-- [『Lean と DevOps の科学』って教養ないと理解できないじゃん！っていう話](https://qiita.com/yoshitaro-yoyo/items/ed7f1855df78f0c80a25
+- [『Lean と DevOps の科学』って教養ないと理解できないじゃん！っていう話](https://qiita.com/yoshitaro-yoyo/items/ed7f1855df78f0c80a25)
 
